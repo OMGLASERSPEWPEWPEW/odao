@@ -60,3 +60,13 @@ dependencies.lock
 # VS Code "Local History" extension snapshots
 .history/
 **/.history/
+
+# Onion OS SPIFFS staging — scripts_*.lua are CMake-generated copies of
+# scripts/*.lua (committed assets like images stay tracked)
+software/mods/onion-os/data/scripts_*.lua
+
+# Full-flash badge dumps (may contain wallet NVS data — never commit)
+software/*-backup.bin
+
+# Claude Code session journals (per-machine noise)
+**/.claude/journals/
