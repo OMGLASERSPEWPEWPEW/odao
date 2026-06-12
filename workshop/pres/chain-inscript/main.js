@@ -1,17 +1,20 @@
-import './styles.css'
 import { slides } from './slides.js'
 
 const deck = document.getElementById('deck')
 const progressFill = document.getElementById('progress-fill')
-const counter = document.getElementById('slide-counter')
+const counter = document.getElementById('topbar-counter')
 
 let current = 0
 const total = slides.length
 
+const pad = (n) => String(n).padStart(2, '0')
+
 function renderSlides() {
   deck.innerHTML = slides.map((html, i) =>
-    `<div class="slide ${i === 0 ? 'active' : ''}" data-index="${i}">${html}</div>`
+    `<div class="slide ${i === 0 ? 'active booting' : ''}" data-index="${i}" data-screen-label="${pad(i + 1)}">${html}</div>`
   ).join('')
+
+  setTimeout(() => deck.querySelector('.slide').classList.remove('booting'), 1100)
 
   document.body.insertAdjacentHTML('beforeend',
     `<div class="key-hint">← → navigate &nbsp;|&nbsp; space = next</div>`
@@ -23,17 +26,18 @@ function renderSlides() {
 function goTo(index) {
   if (index < 0 || index >= total || index === current) return
 
-  const slides = document.querySelectorAll('.slide')
-  const leaving = slides[current]
-  const entering = slides[index]
+  const slideEls = document.querySelectorAll('.slide')
+  const leaving = slideEls[current]
+  const entering = slideEls[index]
 
   leaving.classList.remove('active')
   leaving.classList.add('exiting')
 
   entering.style.transform = index > current ? 'translateX(60px)' : 'translateX(-60px)'
   entering.offsetHeight
-  entering.classList.add('active')
+  entering.classList.add('active', 'booting')
   entering.style.transform = ''
+  setTimeout(() => entering.classList.remove('booting'), 1100)
 
   setTimeout(() => leaving.classList.remove('exiting'), 500)
 
@@ -44,7 +48,7 @@ function goTo(index) {
 function updateProgress() {
   const pct = ((current + 1) / total) * 100
   progressFill.style.width = `${pct}%`
-  counter.textContent = `${current + 1} / ${total}`
+  if (counter) counter.textContent = `${pad(current + 1)} / ${pad(total)}`
 }
 
 document.addEventListener('keydown', (e) => {

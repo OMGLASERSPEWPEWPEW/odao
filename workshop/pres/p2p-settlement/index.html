@@ -4,24 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>P2P Swarm Chat + Settlement Token</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* PHOSPHOR remap — repaint Tailwind's palette so the existing utility
+       classes render in the CRT green/amber theme without touching markup */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: '#060908',
+            white: '#E9FFF2',
+            zinc: { 300: '#C8E8D2', 400: '#9DBBA8', 500: '#6E8A78', 600: '#4E6B58', 700: '#1F4630', 800: '#16402A', 900: '#0B1F14', 950: '#081209' },
+            amber: { 300: '#FFD89B', 400: '#FFBE55', 500: '#E8A640' },
+            yellow: { 400: '#FFBE55', 500: '#E8A640' },
+            emerald: { 400: '#3FF583', 500: '#2E9659' },
+            red: { 400: '#FF7A6B', 500: '#E05A4C' },
+            blue: { 300: '#C5F5DB', 400: '#A7F0C8', 500: '#6FCF9A' },
+            purple: { 400: '#6FCF9A', 500: '#4FAE7C' },
+          },
+          fontFamily: {
+            sans: ["'IBM Plex Mono'", 'monospace'],
+            mono: ["'IBM Plex Mono'", 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
   <style>
-    body { background: #000; color: #d4d4d8; font-family: system-ui, sans-serif; }
-    .tab-active { border-color: #f59e0b; color: #fbbf24; background: rgba(245,158,11,0.08); }
-    .tab-inactive { border-color: transparent; color: #71717a; }
-    .tab-inactive:hover { color: #a1a1aa; border-color: #3f3f46; }
+    body { background: #060908; color: #C8E8D2; font-family: 'IBM Plex Mono', monospace; }
+    /* CRT scanlines + vignette */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0) 0 2px, rgba(0,0,0,0.22) 2px 3px),
+        radial-gradient(ellipse at center, transparent 58%, rgba(0,0,0,0.42) 100%);
+    }
+    @media print { body::after { display: none; } }
+    .tab-active { border-color: #3FF583; color: #3FF583; background: rgba(63,245,131,0.08); text-shadow: 0 0 12px rgba(63,245,131,0.35); }
+    .tab-inactive { border-color: transparent; color: #6E8A78; }
+    .tab-inactive:hover { color: #9DBBA8; border-color: #1F4630; }
     .pulse-node { animation: nodePulse 2s ease-in-out infinite; }
     @keyframes nodePulse { 0%,100% { r: 6; opacity: 0.9; } 50% { r: 8; opacity: 1; } }
     .msg-particle { animation: particleMove 1.5s ease-out forwards; }
     @keyframes particleMove { 0% { offset-distance: 0%; opacity: 1; } 80% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
-    .glow { filter: drop-shadow(0 0 6px rgba(245,158,11,0.4)); }
+    .glow { filter: drop-shadow(0 0 6px rgba(255,190,85,0.4)); }
     .settle-bar { transition: width 1.5s cubic-bezier(0.4,0,0.2,1); }
     .layer-card { transition: all 0.3s ease; }
-    .layer-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(245,158,11,0.1); }
+    .layer-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(63,245,131,0.1); }
     .metric-num { font-variant-numeric: tabular-nums; }
     @keyframes flowPulse { 0% { stroke-dashoffset: 20; } 100% { stroke-dashoffset: 0; } }
     .flow-line { stroke-dasharray: 6 4; animation: flowPulse 1s linear infinite; }
-    .token-glow { filter: drop-shadow(0 0 4px rgba(234,179,8,0.5)); }
+    .token-glow { filter: drop-shadow(0 0 4px rgba(255,190,85,0.5)); }
   </style>
 </head>
 <body class="bg-black text-zinc-300 min-h-screen">
@@ -234,34 +272,34 @@
         <div class="mt-6 bg-zinc-950 rounded-xl border border-zinc-800 p-4">
           <svg viewBox="0 0 700 180" class="w-full">
             <!-- Layer stack -->
-            <rect x="50" y="10" width="600" height="28" rx="6" fill="#052e16" stroke="#16a34a" stroke-width="0.5" opacity="0.6"/>
-            <text x="350" y="28" text-anchor="middle" fill="#4ade80" font-size="11" font-family="monospace">5. Economics: Token transfers, tips, withdrawals</text>
+            <rect x="50" y="10" width="600" height="28" rx="6" fill="#123823" stroke="#2E9659" stroke-width="0.5" opacity="0.6"/>
+            <text x="350" y="28" text-anchor="middle" fill="#3FF583" font-size="11" font-family="monospace">5. Economics: Token transfers, tips, withdrawals</text>
 
-            <rect x="50" y="44" width="600" height="28" rx="6" fill="#172554" stroke="#3b82f6" stroke-width="0.5" opacity="0.6"/>
-            <text x="350" y="62" text-anchor="middle" fill="#60a5fa" font-size="11" font-family="monospace">4. Ordering: Post-facto time settlement (PoH-inspired)</text>
+            <rect x="50" y="44" width="600" height="28" rx="6" fill="#122A1E" stroke="#6FCF9A" stroke-width="0.5" opacity="0.6"/>
+            <text x="350" y="62" text-anchor="middle" fill="#A7F0C8" font-size="11" font-family="monospace">4. Ordering: Post-facto time settlement (PoH-inspired)</text>
 
-            <rect x="50" y="78" width="600" height="28" rx="6" fill="#451a03" stroke="#f59e0b" stroke-width="0.5" opacity="0.6"/>
-            <text x="350" y="96" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="monospace">3. Distribution: BitTorrent swarming, file chunks, seeding</text>
+            <rect x="50" y="78" width="600" height="28" rx="6" fill="#2E2010" stroke="#E8A640" stroke-width="0.5" opacity="0.6"/>
+            <text x="350" y="96" text-anchor="middle" fill="#FFBE55" font-size="11" font-family="monospace">3. Distribution: BitTorrent swarming, file chunks, seeding</text>
 
-            <rect x="50" y="112" width="600" height="28" rx="6" fill="#451a03" stroke="#f59e0b" stroke-width="0.5" opacity="0.6"/>
-            <text x="350" y="130" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="monospace">2. Transport: Trystero WebRTC mesh, gossip groups</text>
+            <rect x="50" y="112" width="600" height="28" rx="6" fill="#2E2010" stroke="#E8A640" stroke-width="0.5" opacity="0.6"/>
+            <text x="350" y="130" text-anchor="middle" fill="#FFBE55" font-size="11" font-family="monospace">2. Transport: Trystero WebRTC mesh, gossip groups</text>
 
-            <rect x="50" y="146" width="600" height="28" rx="6" fill="#052e16" stroke="#16a34a" stroke-width="0.5" opacity="0.6"/>
-            <text x="350" y="164" text-anchor="middle" fill="#4ade80" font-size="11" font-family="monospace">1. Integrity: Scuttle ed25519 signing, hash chains (BUILT)</text>
+            <rect x="50" y="146" width="600" height="28" rx="6" fill="#123823" stroke="#2E9659" stroke-width="0.5" opacity="0.6"/>
+            <text x="350" y="164" text-anchor="middle" fill="#3FF583" font-size="11" font-family="monospace">1. Integrity: Scuttle ed25519 signing, hash chains (BUILT)</text>
 
             <!-- Arrows -->
-            <line x1="30" y1="160" x2="30" y2="24" stroke="#f59e0b" stroke-width="1" marker-end="url(#arrowUp)" opacity="0.4"/>
-            <text x="18" y="92" text-anchor="middle" fill="#f59e0b" font-size="9" transform="rotate(-90,18,92)" opacity="0.5">data flows up</text>
+            <line x1="30" y1="160" x2="30" y2="24" stroke="#E8A640" stroke-width="1" marker-end="url(#arrowUp)" opacity="0.4"/>
+            <text x="18" y="92" text-anchor="middle" fill="#E8A640" font-size="9" transform="rotate(-90,18,92)" opacity="0.5">data flows up</text>
 
-            <line x1="670" y1="24" x2="670" y2="160" stroke="#60a5fa" stroke-width="1" marker-end="url(#arrowDown)" opacity="0.4"/>
-            <text x="682" y="92" text-anchor="middle" fill="#60a5fa" font-size="9" transform="rotate(90,682,92)" opacity="0.5">verification flows down</text>
+            <line x1="670" y1="24" x2="670" y2="160" stroke="#A7F0C8" stroke-width="1" marker-end="url(#arrowDown)" opacity="0.4"/>
+            <text x="682" y="92" text-anchor="middle" fill="#A7F0C8" font-size="9" transform="rotate(90,682,92)" opacity="0.5">verification flows down</text>
 
             <defs>
               <marker id="arrowUp" markerWidth="6" markerHeight="4" refX="3" refY="2" orient="auto">
-                <path d="M0,4 L3,0 L6,4" fill="#f59e0b" opacity="0.6"/>
+                <path d="M0,4 L3,0 L6,4" fill="#E8A640" opacity="0.6"/>
               </marker>
               <marker id="arrowDown" markerWidth="6" markerHeight="4" refX="3" refY="2" orient="auto">
-                <path d="M0,0 L3,4 L6,0" fill="#60a5fa" opacity="0.6"/>
+                <path d="M0,0 L3,4 L6,0" fill="#A7F0C8" opacity="0.6"/>
               </marker>
             </defs>
           </svg>
@@ -281,69 +319,69 @@
         <div class="bg-zinc-950 rounded-xl border border-zinc-800 p-4 mb-6">
           <svg viewBox="0 0 700 260" class="w-full">
             <!-- Unsettled pool -->
-            <rect x="20" y="20" width="200" height="120" rx="10" fill="#1c1917" stroke="#78716c" stroke-width="0.5"/>
-            <text x="120" y="42" text-anchor="middle" fill="#a8a29e" font-size="10" font-family="monospace">UNSETTLED POOL</text>
-            <text x="120" y="58" text-anchor="middle" fill="#57534e" font-size="9">messages in flight</text>
+            <rect x="20" y="20" width="200" height="120" rx="10" fill="#0B1F14" stroke="#6E8A78" stroke-width="0.5"/>
+            <text x="120" y="42" text-anchor="middle" fill="#9DBBA8" font-size="10" font-family="monospace">UNSETTLED POOL</text>
+            <text x="120" y="58" text-anchor="middle" fill="#4E6B58" font-size="9">messages in flight</text>
 
             <!-- Floating messages in pool -->
             <g id="unsettledMsgs">
-              <rect x="35" y="68" width="80" height="18" rx="4" fill="#292524" stroke="#57534e" stroke-width="0.5"/>
-              <text x="75" y="80" text-anchor="middle" fill="#d6d3d1" font-size="8" font-family="monospace">msg @alice:47</text>
-              <rect x="125" y="72" width="80" height="18" rx="4" fill="#292524" stroke="#57534e" stroke-width="0.5"/>
-              <text x="165" y="84" text-anchor="middle" fill="#d6d3d1" font-size="8" font-family="monospace">msg @bob:103</text>
-              <rect x="40" y="95" width="80" height="18" rx="4" fill="#292524" stroke="#57534e" stroke-width="0.5"/>
-              <text x="80" y="107" text-anchor="middle" fill="#d6d3d1" font-size="8" font-family="monospace">msg @carl:22</text>
-              <rect x="130" y="100" width="80" height="18" rx="4" fill="#292524" stroke="#57534e" stroke-width="0.5"/>
-              <text x="170" y="112" text-anchor="middle" fill="#d6d3d1" font-size="8" font-family="monospace">tip @d&rarr;@a:5</text>
+              <rect x="35" y="68" width="80" height="18" rx="4" fill="#12241A" stroke="#4E6B58" stroke-width="0.5"/>
+              <text x="75" y="80" text-anchor="middle" fill="#C8E8D2" font-size="8" font-family="monospace">msg @alice:47</text>
+              <rect x="125" y="72" width="80" height="18" rx="4" fill="#12241A" stroke="#4E6B58" stroke-width="0.5"/>
+              <text x="165" y="84" text-anchor="middle" fill="#C8E8D2" font-size="8" font-family="monospace">msg @bob:103</text>
+              <rect x="40" y="95" width="80" height="18" rx="4" fill="#12241A" stroke="#4E6B58" stroke-width="0.5"/>
+              <text x="80" y="107" text-anchor="middle" fill="#C8E8D2" font-size="8" font-family="monospace">msg @carl:22</text>
+              <rect x="130" y="100" width="80" height="18" rx="4" fill="#12241A" stroke="#4E6B58" stroke-width="0.5"/>
+              <text x="170" y="112" text-anchor="middle" fill="#C8E8D2" font-size="8" font-family="monospace">tip @d&rarr;@a:5</text>
             </g>
 
             <!-- Arrow -->
-            <line x1="230" y1="80" x2="280" y2="80" stroke="#f59e0b" stroke-width="1.5" class="flow-line"/>
-            <polygon points="278,75 288,80 278,85" fill="#f59e0b"/>
-            <text x="255" y="70" text-anchor="middle" fill="#f59e0b" font-size="8">settle</text>
+            <line x1="230" y1="80" x2="280" y2="80" stroke="#E8A640" stroke-width="1.5" class="flow-line"/>
+            <polygon points="278,75 288,80 278,85" fill="#E8A640"/>
+            <text x="255" y="70" text-anchor="middle" fill="#E8A640" font-size="8">settle</text>
 
             <!-- Settlement block -->
-            <rect x="290" y="20" width="180" height="120" rx="10" fill="#1a1200" stroke="#f59e0b" stroke-width="0.5"/>
-            <text x="380" y="42" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="monospace">SETTLEMENT BLOCK #N</text>
+            <rect x="290" y="20" width="180" height="120" rx="10" fill="#201708" stroke="#E8A640" stroke-width="0.5"/>
+            <text x="380" y="42" text-anchor="middle" fill="#FFBE55" font-size="10" font-family="monospace">SETTLEMENT BLOCK #N</text>
 
-            <text x="305" y="62" fill="#a8a29e" font-size="8" font-family="monospace">prev: %a3f2..sha256</text>
-            <text x="305" y="76" fill="#a8a29e" font-size="8" font-family="monospace">time: 1747238400000</text>
-            <text x="305" y="90" fill="#a8a29e" font-size="8" font-family="monospace">msgs: [alice:47, bob:103,</text>
-            <text x="305" y="102" fill="#a8a29e" font-size="8" font-family="monospace">       carl:22]</text>
-            <text x="305" y="116" fill="#a8a29e" font-size="8" font-family="monospace">txns: [tip d&rarr;a: 5 GLY]</text>
-            <text x="305" y="130" fill="#a8a29e" font-size="8" font-family="monospace">root: %7e1c..sha256</text>
+            <text x="305" y="62" fill="#9DBBA8" font-size="8" font-family="monospace">prev: %a3f2..sha256</text>
+            <text x="305" y="76" fill="#9DBBA8" font-size="8" font-family="monospace">time: 1747238400000</text>
+            <text x="305" y="90" fill="#9DBBA8" font-size="8" font-family="monospace">msgs: [alice:47, bob:103,</text>
+            <text x="305" y="102" fill="#9DBBA8" font-size="8" font-family="monospace">       carl:22]</text>
+            <text x="305" y="116" fill="#9DBBA8" font-size="8" font-family="monospace">txns: [tip d&rarr;a: 5 GLY]</text>
+            <text x="305" y="130" fill="#9DBBA8" font-size="8" font-family="monospace">root: %7e1c..sha256</text>
 
             <!-- Arrow to chain -->
-            <line x1="480" y1="80" x2="530" y2="80" stroke="#60a5fa" stroke-width="1.5" class="flow-line"/>
-            <polygon points="528,75 538,80 528,85" fill="#60a5fa"/>
-            <text x="505" y="70" text-anchor="middle" fill="#60a5fa" font-size="8">chain</text>
+            <line x1="480" y1="80" x2="530" y2="80" stroke="#A7F0C8" stroke-width="1.5" class="flow-line"/>
+            <polygon points="528,75 538,80 528,85" fill="#A7F0C8"/>
+            <text x="505" y="70" text-anchor="middle" fill="#A7F0C8" font-size="8">chain</text>
 
             <!-- Settled chain -->
-            <rect x="540" y="20" width="140" height="120" rx="10" fill="#0c1426" stroke="#3b82f6" stroke-width="0.5"/>
-            <text x="610" y="42" text-anchor="middle" fill="#60a5fa" font-size="10" font-family="monospace">SETTLED CHAIN</text>
+            <rect x="540" y="20" width="140" height="120" rx="10" fill="#0E2418" stroke="#6FCF9A" stroke-width="0.5"/>
+            <text x="610" y="42" text-anchor="middle" fill="#A7F0C8" font-size="10" font-family="monospace">SETTLED CHAIN</text>
 
-            <rect x="555" y="55" width="110" height="20" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="0.3"/>
-            <text x="610" y="69" text-anchor="middle" fill="#93c5fd" font-size="8" font-family="monospace">Block #N-2</text>
-            <rect x="555" y="80" width="110" height="20" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="0.3"/>
-            <text x="610" y="94" text-anchor="middle" fill="#93c5fd" font-size="8" font-family="monospace">Block #N-1</text>
-            <rect x="555" y="105" width="110" height="20" rx="4" fill="#2d4a1f" stroke="#4ade80" stroke-width="0.5"/>
-            <text x="610" y="119" text-anchor="middle" fill="#4ade80" font-size="8" font-family="monospace">Block #N (new)</text>
+            <rect x="555" y="55" width="110" height="20" rx="4" fill="#143828" stroke="#6FCF9A" stroke-width="0.3"/>
+            <text x="610" y="69" text-anchor="middle" fill="#C5F5DB" font-size="8" font-family="monospace">Block #N-2</text>
+            <rect x="555" y="80" width="110" height="20" rx="4" fill="#143828" stroke="#6FCF9A" stroke-width="0.3"/>
+            <text x="610" y="94" text-anchor="middle" fill="#C5F5DB" font-size="8" font-family="monospace">Block #N-1</text>
+            <rect x="555" y="105" width="110" height="20" rx="4" fill="#1F4630" stroke="#3FF583" stroke-width="0.5"/>
+            <text x="610" y="119" text-anchor="middle" fill="#3FF583" font-size="8" font-family="monospace">Block #N (new)</text>
 
             <!-- Speed explanation -->
-            <rect x="20" y="160" width="660" height="85" rx="10" fill="#09090b" stroke="#27272a" stroke-width="0.5"/>
-            <text x="350" y="182" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="monospace">Settlement Speed = f(network activity)</text>
+            <rect x="20" y="160" width="660" height="85" rx="10" fill="#060908" stroke="#12241A" stroke-width="0.5"/>
+            <text x="350" y="182" text-anchor="middle" fill="#FFBE55" font-size="11" font-family="monospace">Settlement Speed = f(network activity)</text>
 
-            <text x="60" y="205" fill="#a1a1aa" font-size="9">50 active peers</text>
-            <rect x="200" y="197" width="100" height="12" rx="3" fill="#14532d" stroke="#16a34a" stroke-width="0.3"/>
-            <text x="310" y="207" fill="#4ade80" font-size="9" font-family="monospace">~30s blocks</text>
+            <text x="60" y="205" fill="#9DBBA8" font-size="9">50 active peers</text>
+            <rect x="200" y="197" width="100" height="12" rx="3" fill="#1F6B3E" stroke="#2E9659" stroke-width="0.3"/>
+            <text x="310" y="207" fill="#3FF583" font-size="9" font-family="monospace">~30s blocks</text>
 
-            <text x="60" y="225" fill="#a1a1aa" font-size="9">500 active peers</text>
-            <rect x="200" y="217" width="250" height="12" rx="3" fill="#14532d" stroke="#16a34a" stroke-width="0.3"/>
-            <text x="460" y="227" fill="#4ade80" font-size="9" font-family="monospace">~5s blocks</text>
+            <text x="60" y="225" fill="#9DBBA8" font-size="9">500 active peers</text>
+            <rect x="200" y="217" width="250" height="12" rx="3" fill="#1F6B3E" stroke="#2E9659" stroke-width="0.3"/>
+            <text x="460" y="227" fill="#3FF583" font-size="9" font-family="monospace">~5s blocks</text>
 
-            <text x="60" y="245" fill="#a1a1aa" font-size="9">5000 active peers</text>
-            <rect x="200" y="237" width="400" height="12" rx="3" fill="#14532d" stroke="#16a34a" stroke-width="0.3"/>
-            <text x="610" y="247" fill="#4ade80" font-size="9" font-family="monospace">~1s blocks</text>
+            <text x="60" y="245" fill="#9DBBA8" font-size="9">5000 active peers</text>
+            <rect x="200" y="237" width="400" height="12" rx="3" fill="#1F6B3E" stroke="#2E9659" stroke-width="0.3"/>
+            <text x="610" y="247" fill="#3FF583" font-size="9" font-family="monospace">~1s blocks</text>
           </svg>
         </div>
 
@@ -369,73 +407,73 @@
         <div class="bg-zinc-950 rounded-xl border border-zinc-800 p-4 mb-6">
           <svg viewBox="0 0 700 320" class="w-full">
             <!-- Fiat On-Ramp -->
-            <rect x="20" y="30" width="130" height="70" rx="10" fill="#1a1a2e" stroke="#6366f1" stroke-width="0.8"/>
-            <text x="85" y="55" text-anchor="middle" fill="#818cf8" font-size="11" font-weight="bold">Stripe</text>
-            <text x="85" y="70" text-anchor="middle" fill="#6366f1" font-size="9">Fiat on-ramp</text>
-            <text x="85" y="85" text-anchor="middle" fill="#4f46e5" font-size="8">$4.99 = 50 GLY</text>
+            <rect x="20" y="30" width="130" height="70" rx="10" fill="#0B1F14" stroke="#4FAE7C" stroke-width="0.8"/>
+            <text x="85" y="55" text-anchor="middle" fill="#6FCF9A" font-size="11" font-weight="bold">Stripe</text>
+            <text x="85" y="70" text-anchor="middle" fill="#4FAE7C" font-size="9">Fiat on-ramp</text>
+            <text x="85" y="85" text-anchor="middle" fill="#4FAE7C" font-size="8">$4.99 = 50 GLY</text>
 
             <!-- Arrow to wallet -->
-            <line x1="155" y1="65" x2="210" y2="65" stroke="#818cf8" stroke-width="1" class="flow-line"/>
-            <polygon points="208,60 218,65 208,70" fill="#818cf8"/>
+            <line x1="155" y1="65" x2="210" y2="65" stroke="#6FCF9A" stroke-width="1" class="flow-line"/>
+            <polygon points="208,60 218,65 208,70" fill="#6FCF9A"/>
 
             <!-- User Wallet -->
-            <rect x="220" y="20" width="160" height="90" rx="10" fill="#1a1200" stroke="#f59e0b" stroke-width="0.8"/>
-            <text x="300" y="45" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="bold">Your Wallet</text>
-            <text x="300" y="62" text-anchor="middle" fill="#a8a29e" font-size="9" font-family="monospace">ed25519 keypair</text>
-            <text x="300" y="80" text-anchor="middle" fill="#fbbf24" font-size="14" font-family="monospace" class="token-glow">127.5 GLY</text>
-            <text x="300" y="98" text-anchor="middle" fill="#57534e" font-size="8">signed by your Scuttle key</text>
+            <rect x="220" y="20" width="160" height="90" rx="10" fill="#201708" stroke="#E8A640" stroke-width="0.8"/>
+            <text x="300" y="45" text-anchor="middle" fill="#FFBE55" font-size="11" font-weight="bold">Your Wallet</text>
+            <text x="300" y="62" text-anchor="middle" fill="#9DBBA8" font-size="9" font-family="monospace">ed25519 keypair</text>
+            <text x="300" y="80" text-anchor="middle" fill="#FFBE55" font-size="14" font-family="monospace" class="token-glow">127.5 GLY</text>
+            <text x="300" y="98" text-anchor="middle" fill="#4E6B58" font-size="8">signed by your Scuttle key</text>
 
             <!-- Tip arrow -->
-            <line x1="385" y1="65" x2="440" y2="65" stroke="#f59e0b" stroke-width="1" class="flow-line"/>
-            <polygon points="438,60 448,65 438,70" fill="#f59e0b"/>
-            <text x="412" y="56" text-anchor="middle" fill="#f59e0b" font-size="8">tip 5 GLY</text>
+            <line x1="385" y1="65" x2="440" y2="65" stroke="#E8A640" stroke-width="1" class="flow-line"/>
+            <polygon points="438,60 448,65 438,70" fill="#E8A640"/>
+            <text x="412" y="56" text-anchor="middle" fill="#E8A640" font-size="8">tip 5 GLY</text>
 
             <!-- Recipient -->
-            <rect x="450" y="30" width="130" height="70" rx="10" fill="#0a1f0a" stroke="#16a34a" stroke-width="0.8"/>
-            <text x="515" y="55" text-anchor="middle" fill="#4ade80" font-size="11" font-weight="bold">Creator</text>
-            <text x="515" y="72" text-anchor="middle" fill="#166534" font-size="9">receives tips</text>
-            <text x="515" y="87" text-anchor="middle" fill="#4ade80" font-size="10" font-family="monospace">+5 GLY</text>
+            <rect x="450" y="30" width="130" height="70" rx="10" fill="#0A1A10" stroke="#2E9659" stroke-width="0.8"/>
+            <text x="515" y="55" text-anchor="middle" fill="#3FF583" font-size="11" font-weight="bold">Creator</text>
+            <text x="515" y="72" text-anchor="middle" fill="#1F6B3E" font-size="9">receives tips</text>
+            <text x="515" y="87" text-anchor="middle" fill="#3FF583" font-size="10" font-family="monospace">+5 GLY</text>
 
             <!-- Withdraw arrow -->
-            <line x1="515" y1="105" x2="515" y2="155" stroke="#16a34a" stroke-width="1" class="flow-line"/>
-            <polygon points="510,153 515,163 520,153" fill="#16a34a"/>
+            <line x1="515" y1="105" x2="515" y2="155" stroke="#2E9659" stroke-width="1" class="flow-line"/>
+            <polygon points="510,153 515,163 520,153" fill="#2E9659"/>
 
             <!-- Settlement Queue -->
-            <rect x="150" y="140" width="400" height="65" rx="10" fill="#09090b" stroke="#f59e0b" stroke-width="0.5"/>
-            <text x="350" y="162" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="monospace">SETTLEMENT QUEUE (serial processing)</text>
+            <rect x="150" y="140" width="400" height="65" rx="10" fill="#060908" stroke="#E8A640" stroke-width="0.5"/>
+            <text x="350" y="162" text-anchor="middle" fill="#FFBE55" font-size="10" font-family="monospace">SETTLEMENT QUEUE (serial processing)</text>
 
-            <rect x="170" y="172" width="90" height="22" rx="4" fill="#1a1200" stroke="#f59e0b" stroke-width="0.3"/>
-            <text x="215" y="187" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">tip a&rarr;b: 5</text>
+            <rect x="170" y="172" width="90" height="22" rx="4" fill="#201708" stroke="#E8A640" stroke-width="0.3"/>
+            <text x="215" y="187" text-anchor="middle" fill="#FFBE55" font-size="8" font-family="monospace">tip a&rarr;b: 5</text>
 
-            <rect x="268" y="172" width="90" height="22" rx="4" fill="#1a1200" stroke="#f59e0b" stroke-width="0.3"/>
-            <text x="313" y="187" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">tip c&rarr;d: 2</text>
+            <rect x="268" y="172" width="90" height="22" rx="4" fill="#201708" stroke="#E8A640" stroke-width="0.3"/>
+            <text x="313" y="187" text-anchor="middle" fill="#FFBE55" font-size="8" font-family="monospace">tip c&rarr;d: 2</text>
 
-            <rect x="366" y="172" width="90" height="22" rx="4" fill="#0a1f0a" stroke="#16a34a" stroke-width="0.3"/>
-            <text x="411" y="187" text-anchor="middle" fill="#4ade80" font-size="8" font-family="monospace">withdraw: 20</text>
+            <rect x="366" y="172" width="90" height="22" rx="4" fill="#0A1A10" stroke="#2E9659" stroke-width="0.3"/>
+            <text x="411" y="187" text-anchor="middle" fill="#3FF583" font-size="8" font-family="monospace">withdraw: 20</text>
 
-            <rect x="464" y="172" width="70" height="22" rx="4" fill="#27272a" stroke="#52525b" stroke-width="0.3"/>
-            <text x="499" y="187" text-anchor="middle" fill="#a1a1aa" font-size="8" font-family="monospace">...</text>
+            <rect x="464" y="172" width="70" height="22" rx="4" fill="#12241A" stroke="#4E6B58" stroke-width="0.3"/>
+            <text x="499" y="187" text-anchor="middle" fill="#9DBBA8" font-size="8" font-family="monospace">...</text>
 
             <!-- Network validates -->
-            <line x1="350" y1="210" x2="350" y2="240" stroke="#f59e0b" stroke-width="1" class="flow-line"/>
-            <polygon points="345,238 350,248 355,238" fill="#f59e0b"/>
-            <text x="405" y="230" fill="#f59e0b" font-size="8">peers validate</text>
+            <line x1="350" y1="210" x2="350" y2="240" stroke="#E8A640" stroke-width="1" class="flow-line"/>
+            <polygon points="345,238 350,248 355,238" fill="#E8A640"/>
+            <text x="405" y="230" fill="#E8A640" font-size="8">peers validate</text>
 
             <!-- Settlement block -->
-            <rect x="200" y="250" width="300" height="55" rx="10" fill="#1a1200" stroke="#f59e0b" stroke-width="0.8"/>
-            <text x="350" y="272" text-anchor="middle" fill="#fbbf24" font-size="10" font-weight="bold">Settlement Block #N</text>
-            <text x="350" y="290" text-anchor="middle" fill="#a8a29e" font-size="9" font-family="monospace">merkle_root: %7e1c.. | prev: %a3f2.. | validators: 47</text>
+            <rect x="200" y="250" width="300" height="55" rx="10" fill="#201708" stroke="#E8A640" stroke-width="0.8"/>
+            <text x="350" y="272" text-anchor="middle" fill="#FFBE55" font-size="10" font-weight="bold">Settlement Block #N</text>
+            <text x="350" y="290" text-anchor="middle" fill="#9DBBA8" font-size="9" font-family="monospace">merkle_root: %7e1c.. | prev: %a3f2.. | validators: 47</text>
 
             <!-- Side: how validation works -->
-            <rect x="590" y="140" width="100" height="165" rx="8" fill="#09090b" stroke="#27272a" stroke-width="0.5"/>
-            <text x="640" y="160" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="monospace">VALIDATION</text>
-            <text x="640" y="180" text-anchor="middle" fill="#71717a" font-size="7">each active peer</text>
-            <text x="640" y="195" text-anchor="middle" fill="#71717a" font-size="7">verifies transfers</text>
-            <text x="640" y="210" text-anchor="middle" fill="#71717a" font-size="7">they witnessed</text>
-            <text x="640" y="235" text-anchor="middle" fill="#4ade80" font-size="8">quorum reached</text>
-            <text x="640" y="250" text-anchor="middle" fill="#4ade80" font-size="7">= block settled</text>
-            <text x="640" y="275" text-anchor="middle" fill="#fbbf24" font-size="8">more peers</text>
-            <text x="640" y="290" text-anchor="middle" fill="#fbbf24" font-size="7">= faster quorum</text>
+            <rect x="590" y="140" width="100" height="165" rx="8" fill="#060908" stroke="#12241A" stroke-width="0.5"/>
+            <text x="640" y="160" text-anchor="middle" fill="#E8A640" font-size="8" font-family="monospace">VALIDATION</text>
+            <text x="640" y="180" text-anchor="middle" fill="#6E8A78" font-size="7">each active peer</text>
+            <text x="640" y="195" text-anchor="middle" fill="#6E8A78" font-size="7">verifies transfers</text>
+            <text x="640" y="210" text-anchor="middle" fill="#6E8A78" font-size="7">they witnessed</text>
+            <text x="640" y="235" text-anchor="middle" fill="#3FF583" font-size="8">quorum reached</text>
+            <text x="640" y="250" text-anchor="middle" fill="#3FF583" font-size="7">= block settled</text>
+            <text x="640" y="275" text-anchor="middle" fill="#FFBE55" font-size="8">more peers</text>
+            <text x="640" y="290" text-anchor="middle" fill="#FFBE55" font-size="7">= faster quorum</text>
           </svg>
         </div>
 
@@ -716,11 +754,11 @@
       groups = [];
 
       var groupDefs = [
-        { cx: 175, cy: 150, color: "#4ade80" },
-        { cx: 350, cy: 120, color: "#60a5fa" },
-        { cx: 525, cy: 150, color: "#c084fc" },
-        { cx: 260, cy: 280, color: "#f472b6" },
-        { cx: 440, cy: 280, color: "#fb923c" }
+        { cx: 175, cy: 150, color: "#3FF583" },
+        { cx: 350, cy: 120, color: "#A7F0C8" },
+        { cx: 525, cy: 150, color: "#6FCF9A" },
+        { cx: 260, cy: 280, color: "#FFBE55" },
+        { cx: 440, cy: 280, color: "#FFBE55" }
       ];
 
       for (var g = 0; g < groupDefs.length; g++) {
@@ -756,7 +794,7 @@
           group: g1,
           group2: g2,
           bridge: true,
-          color: "#fbbf24",
+          color: "#FFBE55",
           id: meshPeers.length
         };
         meshPeers.push(bridge);
@@ -801,7 +839,7 @@
         var p1 = meshPeers[meshEdges[e][0]];
         var p2 = meshPeers[meshEdges[e][1]];
         html += "<line x1='" + p1.x + "' y1='" + p1.y + "' x2='" + p2.x + "' y2='" + p2.y +
-                "' stroke='#3f3f46' stroke-width='0.5' data-edge='" + e + "'/>";
+                "' stroke='#1F4630' stroke-width='0.5' data-edge='" + e + "'/>";
       }
 
       // Peers
@@ -823,7 +861,7 @@
       // Highlight sender
       var senderCircle = meshSvg.querySelector("[data-peer='" + sender.id + "']");
       if (senderCircle) {
-        senderCircle.setAttribute("fill", "#ef4444");
+        senderCircle.setAttribute("fill", "#FF7A6B");
         senderCircle.setAttribute("r", "10");
       }
 
@@ -850,17 +888,17 @@
                 setTimeout(function() {
                   var line = meshSvg.querySelector("[data-edge='" + edgeIdx + "']");
                   if (line) {
-                    line.setAttribute("stroke", "#fbbf24");
+                    line.setAttribute("stroke", "#FFBE55");
                     line.setAttribute("stroke-width", "2");
                     setTimeout(function() {
-                      line.setAttribute("stroke", "#3f3f46");
+                      line.setAttribute("stroke", "#1F4630");
                       line.setAttribute("stroke-width", "0.5");
                     }, 800);
                   }
                   var circle = meshSvg.querySelector("[data-peer='" + neighborId + "']");
                   if (circle) {
                     var origColor = circle.getAttribute("fill");
-                    circle.setAttribute("fill", "#fbbf24");
+                    circle.setAttribute("fill", "#FFBE55");
                     circle.setAttribute("r", "9");
                     setTimeout(function() {
                       circle.setAttribute("fill", meshPeers[neighborId].color);

@@ -5,7 +5,7 @@ export const slides = [
 // ═══════════════════════════════════════════════════════
 `<div class="center">
   <div class="part-label">Workshop</div>
-  <h1>From Thought<br>to <span class="accent">Chain</span></h1>
+  <h1>From Thought<br>to <span class="accent">Chain</span><span class="cursor"></span></h1>
   <p class="subtitle">How Glyffiti inscribes content on Solana</p>
   <div class="stat-grid mt-3" style="max-width: 600px; margin-left: auto; margin-right: auto;">
     <div class="stat">
@@ -55,28 +55,28 @@ export const slides = [
   <p class="dim mb-2">A hierarchical on-chain storage model — each tier is one or more Solana transactions</p>
   <div class="two-col">
     <div class="tier-stack">
-      <div class="tier" style="background: linear-gradient(90deg, #7c5cff15, transparent);">
+      <div class="tier" style="background: linear-gradient(90deg, #3FF58315, transparent);">
         <div class="tier-num">1</div>
         <div>
           <div class="tier-label">DocScroll <span class="dim" style="font-size:0.8rem">— 1 tx</span></div>
           <div class="tier-desc">Top-level manifest: title, author, merkle root, format ID, block count</div>
         </div>
       </div>
-      <div class="tier" style="background: linear-gradient(90deg, #22d3ee10, transparent);">
+      <div class="tier" style="background: linear-gradient(90deg, #A7F0C810, transparent);">
         <div class="tier-num" style="background: var(--cyan);">2</div>
         <div>
           <div class="tier-label">BlockHashList <span class="dim" style="font-size:0.8rem">— 1 per 5 blocks</span></div>
           <div class="tier-desc">Groups of up to 5 block hashes — for incremental verification</div>
         </div>
       </div>
-      <div class="tier" style="background: linear-gradient(90deg, #4ade8010, transparent);">
+      <div class="tier" style="background: linear-gradient(90deg, #3FF58310, transparent);">
         <div class="tier-num" style="background: var(--green);">3</div>
         <div>
           <div class="tier-label">BlockMemo <span class="dim" style="font-size:0.8rem">— 1 per block</span></div>
           <div class="tier-desc">Block content: inline if it fits, or a spill header pointing to chunks</div>
         </div>
       </div>
-      <div class="tier" style="background: linear-gradient(90deg, #fbbf2410, transparent);">
+      <div class="tier" style="background: linear-gradient(90deg, #FFBE5510, transparent);">
         <div class="tier-num" style="background: var(--amber);">4</div>
         <div>
           <div class="tier-label">BlockChunk <span class="dim" style="font-size:0.8rem">— N per spilled block</span></div>
@@ -265,8 +265,8 @@ export const slides = [
             .node { fill: var(--surface); stroke: var(--border); stroke-width: 1.5; rx: 8; }
             .root { fill: var(--surface); stroke: var(--accent); stroke-width: 2; rx: 8; }
             .edge { stroke: var(--text-dim); stroke-width: 1.5; stroke-dasharray: 4 4; }
-            .hash { fill: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 10px; }
-            .label { fill: var(--text); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; }
+            .hash { fill: var(--text-dim); font-family: 'IBM Plex Mono', monospace; font-size: 10px; }
+            .label { fill: var(--text); font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; }
           </style>
           <line class="edge" x1="210" y1="50" x2="110" y2="100"/>
           <line class="edge" x1="210" y1="50" x2="310" y2="100"/>
@@ -275,7 +275,7 @@ export const slides = [
           <line class="edge" x1="310" y1="130" x2="260" y2="180"/>
           <line class="edge" x1="310" y1="130" x2="365" y2="180"/>
           <rect class="root" x="155" y="15" width="110" height="40"/>
-          <text class="label" x="210" y="38" text-anchor="middle" fill="#7c5cff">Merkle Root</text>
+          <text class="label" x="210" y="38" text-anchor="middle" fill="#3FF583">Merkle Root</text>
           <rect class="node" x="55" y="95" width="110" height="40"/>
           <text class="hash" x="110" y="118" text-anchor="middle">H(B0+B1)</text>
           <rect class="node" x="255" y="95" width="110" height="40"/>
@@ -288,7 +288,7 @@ export const slides = [
           <text class="hash" x="260" y="198" text-anchor="middle">Block 2</text>
           <rect class="node" x="315" y="175" width="100" height="40"/>
           <text class="hash" x="365" y="198" text-anchor="middle">Block 3</text>
-          <text class="hash" x="210" y="240" text-anchor="middle" fill="#546e7a">Pairs sorted lexicographically before hashing</text>
+          <text class="hash" x="210" y="240" text-anchor="middle" fill="#4E6B58">Pairs sorted lexicographically before hashing</text>
         </svg>
       </div>
     </div>
@@ -332,7 +332,7 @@ export const slides = [
     <div>
       <h3>Anatomy of One Tx</h3>
       <div class="tier-stack">
-        <div class="tier" style="background: linear-gradient(90deg, #fbbf2410, transparent);">
+        <div class="tier" style="background: linear-gradient(90deg, #FFBE5510, transparent);">
           <div class="tier-num" style="background: var(--amber);">1</div>
           <div>
             <div class="tier-label" style="font-size: 0.95rem;">ComputeBudget.setLimit</div>
@@ -346,7 +346,7 @@ export const slides = [
             <div class="tier-desc">50k microLamports priority fee — enough to avoid being dropped</div>
           </div>
         </div>
-        <div class="tier" style="background: linear-gradient(90deg, #7c5cff15, transparent);">
+        <div class="tier" style="background: linear-gradient(90deg, #3FF58315, transparent);">
           <div class="tier-num">3</div>
           <div>
             <div class="tier-label" style="font-size: 0.95rem;">Memo Program</div>
@@ -408,7 +408,7 @@ export const slides = [
     </div>
     <div class="pipeline-arrow">→</div>
     <div class="pipeline-step" style="border-color: var(--accent);">
-      <div class="step-icon">📜</div>
+      <div class="step-icon">▤</div>
       <div class="step-label">Scroll</div>
       <div class="step-detail">Tier 1</div>
     </div>
@@ -447,7 +447,7 @@ export const slides = [
   <p class="dim mb-1">Reverse the pipeline — progressive fetch with cryptographic verification</p>
   <div class="pipeline mt-2 mb-2">
     <div class="pipeline-step" style="border-color: var(--accent);">
-      <div class="step-icon">📜</div>
+      <div class="step-icon">▤</div>
       <div class="step-label">Fetch Scroll</div>
       <div class="step-detail">Tier 1</div>
     </div>
@@ -615,13 +615,13 @@ export const slides = [
 `<div class="section-divider">
   <h1>Questions?</h1>
   <p class="subtitle mt-2">Glyffiti Inscription Pipeline</p>
-  <div class="stat-grid mt-3" style="max-width: 500px;">
+  <div class="stat-grid mt-3" style="max-width: 900px;">
     <div class="stat">
-      <div class="stat-value" style="font-size: 1.5rem;">glyffiti-mobile.vercel.app</div>
+      <div class="stat-value" style="font-size: 1.05rem; white-space: nowrap;">glyffiti-mobile.vercel.app</div>
       <div class="stat-label">Try It</div>
     </div>
     <div class="stat">
-      <div class="stat-value" style="font-size: 1.5rem;">github.com/OnionDAO-git</div>
+      <div class="stat-value" style="font-size: 1.05rem; white-space: nowrap;">github.com/OnionDAO-git</div>
       <div class="stat-label">Source</div>
     </div>
   </div>
