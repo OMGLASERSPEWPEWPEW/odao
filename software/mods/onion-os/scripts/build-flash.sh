@@ -6,6 +6,7 @@ TARGET="esp32s3"
 BAUD="${BAUD:-460800}"
 PORT="${PORT:-}"
 MONITOR=0
+FLASH_DATA=0
 
 usage() {
   cat <<'EOF'
@@ -18,6 +19,7 @@ such as the wrapped Solana wallet seed.
 Options:
   -p, --port PORT    Flash a specific serial port instead of auto-detecting
   -b, --baud BAUD    Flash baud rate (default: 460800, or $BAUD)
+  --with-data        Also flash default scripts and images to SPIFFS
   --monitor          Open idf.py monitor after flashing
   -h, --help         Show this help
 
@@ -44,6 +46,10 @@ while [[ $# -gt 0 ]]; do
       echo "Refusing to erase flash: Onion OS stores the wrapped Solana wallet seed in NVS." >&2
       echo "Use idf.py erase-flash manually only when you intentionally want to delete badge state." >&2
       exit 2
+      ;;
+    --with-data)
+      FLASH_DATA=1
+      shift
       ;;
     --monitor)
       MONITOR=1
@@ -189,8 +195,13 @@ fi
 
 idf.py build
 
+idf.py -p "$PORT" -b "$BAUD" flash
+
+if [[ "$FLASH_DATA" -eq 1 ]]; then
+  echo "Flashing default scripts and images to SPIFFS..."
+  idf.py -p "$PORT" -b "$BAUD" spiffs-flash
+fi
+
 if [[ "$MONITOR" -eq 1 ]]; then
-  idf.py -p "$PORT" -b "$BAUD" flash monitor
-else
-  idf.py -p "$PORT" -b "$BAUD" flash
+  idf.py -p "$PORT" monitor
 fi
