@@ -1,0 +1,63 @@
+{
+  "divisions": [
+    {
+      "name": "Command",
+      "color": "yellow",
+      "hex": "#FFD700",
+      "emoji": "Y",
+      "description": "Strategic leadership and product orchestration",
+      "agents": [
+        "zephyr",
+        "prd-specialist"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "color": "blue",
+      "hex": "#3B82F6",
+      "emoji": "B",
+      "description": "Core development, architecture, and infrastructure",
+      "agents": [
+        "frontend-developer",
+        "backend-architect",
+        "Sashiko-code-architect",
+        "devops-engineer"
+      ]
+    },
+    {
+      "name": "Quality",
+      "color": "red",
+      "hex": "#EF4444",
+      "emoji": "R",
+      "description": "Testing, security, debugging, and performance",
+      "agents": [
+        "Argus-code-reviewer",
+        "test-engineer",
+        "security-engineer",
+        "debugger",
+        "performance-engineer"
+      ]
+    },
+    {
+      "name": "Operations",
+      "color": "cyan",
+      "hex": "#06B6D4",
+      "emoji": "C",
+      "description": "Git workflows, documentation, education, and legal",
+      "agents": [
+        "git-manager",
+        "technical-writer",
+        "montessori-guide",
+        "legal-advisor"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-16",
+    "totalAgents": 25,
+    "totalDivisions": 8,
+    "inspiration": "Star Trek Starfleet divisions",
+    "pattern": "HarborMoon"
+  }
+}
