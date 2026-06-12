@@ -3,4 +3,7 @@ node_modules/
 
 # Machine-specific Claude Code state
 .claude/settings.local.json
-.claude/journals/
+**/.claude/journals/
+
+# Vite build output
+workshop/dist/
