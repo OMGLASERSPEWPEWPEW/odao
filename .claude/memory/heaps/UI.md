@@ -165,3 +165,27 @@
 
 ---
 
+## 2026-06-12_10-23-48 (session 49323405)
+
+**assistant**: [tool: Bash]
+
+**assistant**: Eight stragglers remain (darker shades that weren't in the top-30 list). Mapping those too:
+
+**assistant**: [tool: Bash]
+
+**assistant**: All colors converted. Now verifying — checking the dev server and fetching all four pages:
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: All pages serve. Spot-checking that the Phosphor markers actually render in the served HTML, then running the production build:
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

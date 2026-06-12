@@ -265,3 +265,72 @@ Open this URL to continue in your web browser: https://github.com/login/device
 
 ---
 
+## 2026-06-12_10-23-48 (session 49323405)
+
+**assistant**: [tool: Bash]
+
+**assistant**: Eight stragglers remain (darker shades that weren't in the top-30 list). Mapping those too:
+
+**assistant**: [tool: Bash]
+
+**assistant**: All colors converted. Now verifying — checking the dev server and fetching all four pages:
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: All pages serve. Spot-checking that the Phosphor markers actually render in the served HTML, then running the production build:
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-06-12_10-33-01 (session 05880b1b)
+
+**assistant**: The presentation is live at **http://localhost:5180/pres/** — I've opened it in your browser. All four pages (hub + chain-inscript, coding-with-ai, p2p-settlement) serve with a 200.
+
+## What the last conversation was
+
+The crashed session (this morning, ~9:14–10:30) covered two arcs:
+
+1. **The monorepo push saga.** Five commits were made locally (SPIFFS build support, Glyffiti/Sub-GHz Lua scripts, hello-darklight example, Onion OS docs, gitignore fixes), but pushing to `OnionDAO-git/oniondao-badg...
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: Running the /cap snapshot:
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
