@@ -40,6 +40,9 @@ Execute these phases IN ORDER. Do not skip phases.
 |  Phase 4: ARCHITECTURE (Code Architect)                              |
 |  +-> Design folder structure, data models, API contracts             |
 |                          |                                            |
+|  Phase 4b: QA DOC                                                    |
+|  +-> Write docs/qa/<feature>.md checklist for bot verification       |
+|                          |                                            |
 |  Phase 5: IMPLEMENTATION (Developers)                                |
 |  +-> Build the feature following the PRD and architecture            |
 |                          |                                            |
@@ -62,6 +65,7 @@ Execute these phases IN ORDER. Do not skip phases.
 | 2. Requirements | `prd-specialist` | PRD creation |
 | 3. UX Research | `ui-designer`, `mobile-ux-optimizer` | User experience |
 | 4. Architecture | `code-architect` | Folder structure, data models |
+| 4b. QA Doc | (main context) | Bot-verifiable checklist in docs/qa/ |
 | 5. Implementation | `frontend-developer`, `backend-architect` | Building |
 | 6. Quality | `code-reviewer`, `test-engineer` | Review and testing |
 | 7. Documentation | (main context) | Doc updates |
@@ -121,6 +125,19 @@ Invoke the code architect agent to:
 
 **Output**: Architecture document or section in PRD
 
+## Phase 4b: QA Doc
+
+Before any implementation, write the feature's QA checklist to `docs/qa/<feature-slug>.md` (full contract in `.claude/rules/qa-docs.md`):
+
+1. **Derive items from the PRD's acceptance criteria** and the architecture doc — one `- [ ]` checkbox per observable user-facing behavior, grouped under `###` sections
+2. **Headers**: `**Date:**`, `**Scope:**`, plus `**Entry:**` (URL path where testing starts) and `**Todo:**` (the feature's `docs/todo/` file — enables automatic stage advancement) when known
+3. **Mark human-only items** with `<!-- qa:human <reason> -->` — mobile gestures, audio, visual polish
+4. **Add `## Regression Risks`** with `- **High/Medium/Low:**` bullets
+
+The transformers bot network sweeps these docs (`npm run qa`), verifies each item by squad consensus, files bug reports into `docs/todo/`, and advances the linked todo's stage. Writing the checklist now — while acceptance criteria are fresh — is what makes the feature testable later.
+
+**Output**: `docs/qa/<feature-slug>.md` committed alongside the PRD
+
 ## Phase 5: Implementation
 
 Based on the feature type, invoke the appropriate developer agents:
@@ -169,7 +186,8 @@ Before proceeding to the next phase, confirm:
 - [ ] **Phase 1 -> 2**: Orchestrator approved the feature
 - [ ] **Phase 2 -> 3**: PRD created and saved
 - [ ] **Phase 3 -> 4**: UX recommendations documented (if applicable)
-- [ ] **Phase 4 -> 5**: Architecture defined
+- [ ] **Phase 4 -> 4b**: Architecture defined
+- [ ] **Phase 4b -> 5**: QA doc created in `docs/qa/`
 - [ ] **Phase 5 -> 6**: Implementation complete
 - [ ] **Phase 6 -> 7**: Tests pass, code reviewed
 - [ ] **Phase 7 -> Done**: Docs updated, ready to commit
@@ -179,6 +197,7 @@ Before proceeding to the next phase, confirm:
 For small features (< 1 day effort), phases can be combined:
 - Phases 1+2: Orchestrator does quick strategic check, creates mini-PRD inline
 - Phases 3+4: Skip if no UI or obvious architecture
+- Phase 4b: never skipped for user-facing changes — a small feature still gets a QA doc, even if it's 3 items
 - Phases 6+7: Combine review and docs
 
 For large features (> 1 week effort):
