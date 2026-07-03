@@ -1,0 +1,44 @@
+{
+  "title": "Carve-Out for Community Events",
+  "subtitle": "Protect community builders. Exempt educational crypto events.",
+  "vehicle": "Amendment to DATA or HB 5798",
+  "policyBasis": "Illinois already exempts nonprofits and educational institutions from sales tax (35 ILCS 105/3-5). The same principle should apply to community digital asset activities that are free, educational, and operate without profit motive.",
+  "actionPlan": [
+    {
+      "title": "Draft Amendment Language",
+      "description": "Define 'community digital asset activity' exemption covering: free educational workshops, nonprofit community events, DAO-funded public goods with no profit motive, and digital asset distributions at zero cost to recipients.",
+      "status": "not-started"
+    },
+    {
+      "title": "Build the Story Coalition",
+      "description": "OnionDAO attendees, restaurant owners who hosted free meals, venue operators, kids who learned to solder, developers who taught workshops — real people affected by this tax. Collect 2-3 sentence testimonials from each.",
+      "status": "not-started"
+    },
+    {
+      "title": "Target Sympathetic Democrats",
+      "description": "This is an easier sell than full repeal: doesn't cut revenue significantly, aligns with education/community values. Focus on legislators who champion education, community investment, and small nonprofits.",
+      "status": "not-started"
+    },
+    {
+      "title": "Legal Research — Existing Exemption Models",
+      "description": "Document how Illinois handles similar exemptions: church bake sales, university research grants, nonprofit fundraising events. Map the legal framework to community crypto events.",
+      "status": "not-started"
+    },
+    {
+      "title": "Introduce via Friendly Legislator",
+      "description": "Identify a Democrat willing to introduce the carve-out amendment. This is bipartisan cover — they can support the carve-out without opposing the broader tax policy.",
+      "status": "not-started"
+    }
+  ],
+  "talkingPoints": [
+    "We're not asking to kill the tax. We're asking to protect community builders.",
+    "OnionDAO spent hundreds of thousands in Chicago — restaurants, venues, catering — all free to attendees. The organizer took no profit. This tax punishes that.",
+    "Illinois exempts churches and universities from taxes. Why not community tech events that provide free education?",
+    "A carve-out costs the state almost nothing — community DAOs are a tiny fraction of crypto volume — but it saves the events that make Chicago special.",
+    "400 people. All ages. All skill sets. Free workshops, free food, free coworking for a month. That's what this tax threatens.",
+    "The carve-out is narrowly tailored: free events, no profit motive, educational purpose. It doesn't protect traders or exchanges — just community builders.",
+    "Other states don't tax community crypto events at all. We're not asking for something radical — we're asking Illinois not to be uniquely punitive toward education."
+  ],
+  "testimonyAngle": "Focus on community impact: the Rizzy story (kid teaching soldering), the AI workshop, the gifting ceremony, the restaurants that fed everyone for free. Make legislators see the faces, not the technology. Emphasize that no one made money — this was mutual aid, education, and community building funded by a DAO with no profit motive.",
+  "fallbackStrategy": "If full repeal (HB 5798) stalls, the carve-out becomes the primary vehicle. It gives moderate Democrats a way to vote 'yes' on something without appearing soft on crypto regulation. Frame it as: 'We support responsible regulation AND we protect community builders.'"
+}

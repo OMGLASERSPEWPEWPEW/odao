@@ -1,0 +1,94 @@
+[
+  {
+    "id": "first-call",
+    "name": "First Call",
+    "description": "Complete your first phone call mission",
+    "icon": "phone",
+    "condition": {
+      "type": "mission-type-count",
+      "missionType": "call",
+      "count": 1
+    },
+    "xpBonus": 25
+  },
+  {
+    "id": "door-knocker",
+    "name": "Door Knocker",
+    "description": "Complete your first office visit",
+    "icon": "building",
+    "condition": {
+      "type": "mission-type-count",
+      "missionType": "visit",
+      "count": 1
+    },
+    "xpBonus": 50
+  },
+  {
+    "id": "voice-of-the-people",
+    "name": "Voice of the People",
+    "description": "Attend a town hall or public meeting and speak about HB 5798",
+    "icon": "megaphone",
+    "condition": {
+      "type": "mission-id",
+      "missionId": "w3d2-recruit-townhall"
+    },
+    "xpBonus": 75
+  },
+  {
+    "id": "coalition-builder",
+    "name": "Coalition Builder",
+    "description": "Complete 3 recruit missions — bring others into the fight",
+    "icon": "users",
+    "condition": {
+      "type": "mission-type-count",
+      "missionType": "recruit",
+      "count": 3
+    },
+    "xpBonus": 100
+  },
+  {
+    "id": "week-warrior",
+    "name": "Week Warrior",
+    "description": "Complete at least one mission every day for 7 consecutive days",
+    "icon": "flame",
+    "condition": {
+      "type": "streak",
+      "days": 7
+    },
+    "xpBonus": 75
+  },
+  {
+    "id": "month-of-action",
+    "name": "Month of Action",
+    "description": "Complete at least one mission every day for 30 consecutive days",
+    "icon": "trophy",
+    "condition": {
+      "type": "streak",
+      "days": 30
+    },
+    "xpBonus": 250
+  },
+  {
+    "id": "full-roster",
+    "name": "Full Roster",
+    "description": "Call all 13 Democratic target offices at least once",
+    "icon": "clipboard-check",
+    "condition": {
+      "type": "unique-legislators-called",
+      "count": 13
+    },
+    "xpBonus": 150
+  },
+  {
+    "id": "media-maven",
+    "name": "Media Maven",
+    "description": "Complete 5 social media missions — amplify the message",
+    "icon": "share",
+    "condition": {
+      "type": "mission-type-count",
+      "missionType": "social",
+      "count": 5
+    },
+    "xpBonus": 50
+  }
+]

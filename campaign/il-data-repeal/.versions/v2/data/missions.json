@@ -1,0 +1,681 @@
+[
+  {
+    "date": "2026-07-04",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w1d1-social-july4",
+        "type": "social",
+        "title": "Independence Day crypto freedom post",
+        "description": "Post connecting economic freedom to the crypto tax fight. Use any platform — X, Instagram, LinkedIn, Facebook.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "This Independence Day, Illinois is imposing the most punitive digital asset tax in the country. SB 3019 takes effect Jan 1, 2027 — taxing community crypto events, educational workshops, and DAO-funded public goods. Support HB 5798 to repeal. #RepealDATA #CryptoFreedom"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w1d2-call-buckner",
+        "type": "call",
+        "title": "Call Rep. Kam Buckner",
+        "description": "Kam Buckner represents Chicago's South Loop/Bronzeville — a tech-forward district. He chairs the House Judiciary committee. Ask him to support HB 5798.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 924-1755",
+        "legislator": "Kam Buckner",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019 that Governor Pritzker signed on June 16th. I'm asking Representative Buckner to support HB 5798, which would repeal this tax before it takes effect on January 1st. [PERSONAL REASON — e.g., I attended a free crypto education event in his district / I'm a small developer who will be affected]. Can you tell me the Representative's position on this issue?"
+      },
+      {
+        "id": "w1d2-call-croke",
+        "type": "call",
+        "title": "Call Rep. Margaret Croke",
+        "description": "Margaret Croke represents Lakeview/Lincoln Park — young, tech-literate constituents. She may be receptive to innovation arguments.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 348-8974",
+        "legislator": "Margaret Croke",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Croke to support HB 5798, which would repeal this tax. Illinois is the only state with this kind of punitive crypto tax, and it will drive innovators and community builders out of the state. [PERSONAL REASON]. Can you tell me the Representative's position on this issue?"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w1d3-call-didech",
+        "type": "call",
+        "title": "Call Rep. Daniel Didech",
+        "description": "Daniel Didech represents Buffalo Grove/Vernon Hills in the northern suburbs. Business-friendly district.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(847) 478-9909",
+        "legislator": "Daniel Didech",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Didech to support HB 5798, which would repeal this tax before it drives blockchain companies out of Illinois. [PERSONAL REASON]. Can you tell me the Representative's position on this issue?"
+      },
+      {
+        "id": "w1d3-call-tarver",
+        "type": "call",
+        "title": "Call Rep. Curtis Tarver",
+        "description": "Curtis Tarver represents South Shore/Chatham — community empowerment angle works well here.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 363-8870",
+        "legislator": "Curtis Tarver",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Tarver to support HB 5798. Community crypto events like OnionDAO brought hundreds of people together for free education and free meals in Chicago neighborhoods. This tax threatens those programs. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d3-email-blast",
+        "type": "email",
+        "title": "Email blast to all 13 Democratic offices",
+        "description": "Send a personalized email to all 13 Democratic representatives who may be persuadable. Use the template below and customize the [BRACKETS].",
+        "xp": 30,
+        "difficulty": "easy",
+        "template": "Subject: Constituent Request — Support HB 5798 (Repeal Digital Asset Tax)\n\nDear Representative [NAME],\n\nMy name is [YOUR NAME] and I am a constituent in [YOUR CITY/NEIGHBORHOOD]. I am writing to ask you to support HB 5798, which would repeal the Digital Asset Tax enacted in SB 3019.\n\nThis tax, which takes effect January 1, 2027, is the most punitive digital asset tax in the country. It will:\n- Drive blockchain innovators and jobs out of Illinois\n- Punish community builders who organize free educational events\n- Make Illinois uncompetitive with every neighboring state\n\n[PERSONAL PARAGRAPH — Why this matters to you specifically]\n\nI respectfully ask that you co-sponsor or publicly support HB 5798. I would welcome the opportunity to discuss this further with you or your staff.\n\nThank you for your time and service.\n\nSincerely,\n[YOUR NAME]\n[YOUR ADDRESS]\n[YOUR PHONE]"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-09",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w1d4-call-slaughter",
+        "type": "call",
+        "title": "Call Rep. Justin Slaughter",
+        "description": "Justin Slaughter represents South Chicago/Pullman. He's on the Judiciary committee. Emphasize economic impact on communities.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 445-9700",
+        "legislator": "Justin Slaughter",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Slaughter to support HB 5798 to repeal this tax. Free community events like OnionDAO invested hundreds of thousands of dollars in Chicago — restaurants, venues, catering — all free to attendees. This tax threatens those programs that bring economic activity to our neighborhoods. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d4-call-harper",
+        "type": "call",
+        "title": "Call Rep. Sonya Harper",
+        "description": "Sonya Harper represents Englewood/West Englewood. Community investment angle is strongest here.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 925-6580",
+        "legislator": "Sonya Harper",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Harper to support HB 5798. Community crypto events bring free education, free meals, and economic activity to Chicago neighborhoods — exactly the kind of investment her district benefits from. This tax punishes those organizers. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d4-call-andrade",
+        "type": "call",
+        "title": "Call Rep. Jaime Andrade",
+        "description": "Jaime Andrade represents Albany Park/Irving Park — working-class, immigrant community. Frame as protecting small operators.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 267-2880",
+        "legislator": "Jaime Andrade",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Andrade to support HB 5798. This tax doesn't just hit big corporations — it hits small community organizers, educators, and everyday people experimenting with new technology. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-10",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w1d5-call-delgado",
+        "type": "call",
+        "title": "Call Rep. Eva-Dina Delgado",
+        "description": "Eva-Dina Delgado represents Humboldt Park/West Town. Innovation and small business angle.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 237-4558",
+        "legislator": "Eva-Dina Delgado",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Delgado to support HB 5798. Illinois should be attracting tech innovators, not driving them away. No other state has this kind of punitive tax on digital assets. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d5-call-gonzalez",
+        "type": "call",
+        "title": "Call Rep. Edgar González",
+        "description": "Edgar González represents the southwest suburbs — Cicero, Berwyn, Stickney. Working families angle.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(708) 295-9159",
+        "legislator": "Edgar González",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative González to support HB 5798. Many working families are using digital assets to build wealth and access financial services. This tax punishes them for participating in the economy of the future. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d5-call-guzzardi",
+        "type": "call",
+        "title": "Call Rep. Will Guzzardi",
+        "description": "Will Guzzardi represents Logan Square/Hermosa — progressive, but may respond to community builder framing.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 853-2570",
+        "legislator": "Will Guzzardi",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Guzzardi to support HB 5798. I want to be clear — this isn't about protecting wealthy crypto traders. Community events like OnionDAO bring free education, free food, and open-source technology to hundreds of people. This tax punishes the community builders, not Wall Street. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-11",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w1d6-call-hernandez",
+        "type": "call",
+        "title": "Call Rep. Lisa Hernandez",
+        "description": "Lisa Hernandez represents Cicero/Berwyn/Lyons — longest-serving in our target list. Frame as constituent concern.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(708) 222-5240",
+        "legislator": "Lisa Hernandez",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Hernandez to support HB 5798. This tax makes Illinois the only state in the country with this kind of punitive policy on digital assets. It will cost us jobs and innovation. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d6-call-mayfield",
+        "type": "call",
+        "title": "Call Rep. Rita Mayfield",
+        "description": "Rita Mayfield represents Waukegan/North Chicago — economic opportunity framing.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(847) 599-2800",
+        "legislator": "Rita Mayfield",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Mayfield to support HB 5798. Digital assets represent economic opportunity for communities that have been excluded from traditional finance. This tax makes it harder for everyday people to participate. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d6-call-avelar",
+        "type": "call",
+        "title": "Call Rep. Dagmara Avelar",
+        "description": "Dagmara Avelar represents Bolingbrook/Romeoville — first-generation immigrant, may relate to financial access arguments.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(815) 372-0085",
+        "legislator": "Dagmara Avelar",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm calling about the Digital Asset Tax in SB 3019. I'm asking Representative Avelar to support HB 5798. For many immigrant families and young people, digital assets are their first entry point into building wealth. This tax creates barriers to financial participation. [PERSONAL REASON]. Can you tell me the Representative's position?"
+      },
+      {
+        "id": "w1d6-call-sosnowski",
+        "type": "call",
+        "title": "Coordinate with Rep. Sosnowski (R — HB 5798 sponsor)",
+        "description": "Joe Sosnowski is the Republican sponsor of HB 5798. This is a coordination call, not a persuasion call. Ask his office what they need from constituents to move the bill.",
+        "xp": 50,
+        "difficulty": "easy",
+        "phone": "(815) 547-3436",
+        "legislator": "Joe Sosnowski",
+        "script": "Hi, my name is [NAME]. I'm calling to thank Representative Sosnowski for sponsoring HB 5798 to repeal the Digital Asset Tax. I'm organizing constituent outreach to Democratic offices. Is there anything the Representative's office recommends we emphasize? Are there any Democrats he's spoken with who seem open to supporting the bill?"
+      },
+      {
+        "id": "w1d6-social-weekrecap",
+        "type": "social",
+        "title": "Week 1 recap post",
+        "description": "Share your experience making calls this week. Normalize the activity for others watching.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "Just finished my first week calling Illinois reps about the Digital Asset Tax (SB 3019). Made calls to all 13 Democratic offices. Most staffers were polite and took notes. If you're in IL, it takes 2 minutes. HB 5798 would repeal it. Scripts available — DM me. #RepealDATA"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-14",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w2d1-visit-first",
+        "type": "visit",
+        "title": "First office visit — most receptive office from Week 1",
+        "description": "Visit the district office of whichever representative's staff was most receptive during your calls. Bring a one-page leave-behind with key facts about the DATA tax.",
+        "xp": 150,
+        "difficulty": "hard",
+        "tips": [
+          "Call ahead to schedule a 10-minute meeting with district staff",
+          "Dress business casual — you want to look like a serious constituent",
+          "Bring a printed one-pager: what SB 3019 does, what HB 5798 fixes, who you are",
+          "Ask for the staffer's name and direct email for follow-up",
+          "If the rep is in, great — but staff meetings count too",
+          "Be brief, be respectful, be memorable. Personal stories > policy wonking."
+        ]
+      },
+      {
+        "id": "w2d1-research-ilba",
+        "type": "research",
+        "title": "Contact Illinois Blockchain Association",
+        "description": "Reach out to the Illinois Blockchain Association to coordinate efforts. They may already have lobbying infrastructure we can plug into.",
+        "xp": 20,
+        "difficulty": "easy"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-15",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w2d2-visit-second",
+        "type": "visit",
+        "title": "Second office visit",
+        "description": "Visit your second-most-receptive office. If possible, bring a fellow constituent for a stronger impression.",
+        "xp": 150,
+        "difficulty": "hard",
+        "tips": [
+          "Two constituents are twice as powerful as one",
+          "Coordinate with someone from the same district if possible",
+          "Mention that you called last week and wanted to follow up in person",
+          "Ask specifically: 'Has the Representative taken a position on HB 5798?'",
+          "Leave your contact info for follow-up"
+        ]
+      },
+      {
+        "id": "w2d2-recruit-oniondao",
+        "type": "recruit",
+        "title": "Reach out to OnionDAO organizer",
+        "description": "Contact the OnionDAO organizer to coordinate testimony and community impact stories. They have firsthand experience of what the tax threatens.",
+        "xp": 100,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-16",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w2d3-visit-third",
+        "type": "visit",
+        "title": "Third office visit",
+        "description": "Final visit of the week. Target a legislator whose staff was noncommittal — your persistence demonstrates serious constituent concern.",
+        "xp": 150,
+        "difficulty": "hard",
+        "tips": [
+          "If previous visits went well, try a harder target",
+          "Frame it as: 'I visited two other offices this week — this issue matters to many of us'",
+          "Ask for a formal written response to your constituent request",
+          "Mention the coalition you're building"
+        ]
+      },
+      {
+        "id": "w2d3-social-visits",
+        "type": "social",
+        "title": "Post about your office visits",
+        "description": "Share (tastefully) that you're visiting legislative offices. This normalizes civic engagement and recruits others.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "Visited my third Illinois state rep office this week about the Digital Asset Tax (SB 3019). Staff are listening. They track constituent contacts — every call and visit gets logged. If you're in IL, your voice matters more than you think. #RepealDATA"
+      },
+      {
+        "id": "w2d3-research-oped",
+        "type": "research",
+        "title": "Draft an op-ed",
+        "description": "Write a 500-700 word op-ed for local media about why Illinois should repeal the DATA tax. Focus on community impact, not crypto ideology. Target: Chicago Sun-Times, Chicago Tribune, Crain's Chicago Business, or your local paper.",
+        "xp": 20,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-17",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w2d4-research-districts",
+        "type": "research",
+        "title": "Research district mapping",
+        "description": "Use the Illinois General Assembly website to map which of the 13 target districts have the most crypto/tech activity. Identify co-working spaces, meetup groups, and tech companies in those districts.",
+        "xp": 20,
+        "difficulty": "easy"
+      },
+      {
+        "id": "w2d4-recruit-coalition",
+        "type": "recruit",
+        "title": "Start coalition group chat",
+        "description": "Create a Signal, Telegram, or Discord group for campaign coordination. Invite everyone you've connected with so far — other callers, the OnionDAO organizer, IL Blockchain Association contacts.",
+        "xp": 100,
+        "difficulty": "medium"
+      },
+      {
+        "id": "w2d4-research-oped-submit",
+        "type": "research",
+        "title": "Submit op-ed",
+        "description": "Submit your drafted op-ed to at least one publication. Chicago Sun-Times letters: letters@suntimes.com. Tribune: ctc-TribLetter@tribpub.com. Crain's: opinions@chicagobusiness.com.",
+        "xp": 20,
+        "difficulty": "easy"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-18",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w2d5-research-whipsheet",
+        "type": "research",
+        "title": "Update whip sheet",
+        "description": "Review all contacts from Weeks 1-2. Update the whip sheet with each legislator's current stance: supportive, leaning yes, noncommittal, leaning no, opposed, or unknown.",
+        "xp": 20,
+        "difficulty": "easy"
+      },
+      {
+        "id": "w2d5-social-weekrecap",
+        "type": "social",
+        "title": "Week 2 recap and recruit",
+        "description": "Share what you accomplished in two weeks. Explicitly ask others to join.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "Two weeks of calling and visiting Illinois reps about repealing the Digital Asset Tax. 13 offices contacted. 3 in-person visits. Coalition growing. We have until January to stop this. If you're in IL and care about crypto/community events, join us. DM for scripts and resources. #RepealDATA"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-21",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w3d1-recruit-share",
+        "type": "recruit",
+        "title": "Share call scripts with 5+ people",
+        "description": "Send the call scripts and phone numbers to at least 5 people who might be willing to make calls. Personal ask > mass blast. Text or DM individually.",
+        "xp": 100,
+        "difficulty": "medium"
+      },
+      {
+        "id": "w3d1-social-mobilize",
+        "type": "social",
+        "title": "Mobilization post",
+        "description": "Public call to action — make it easy for others to participate.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "Want to help repeal Illinois' Digital Asset Tax but don't know where to start? It takes 2 minutes. Call your state rep's district office. Say: 'I support HB 5798 to repeal the Digital Asset Tax.' That's it. Find your rep: ilga.gov. #RepealDATA"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-22",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w3d2-recruit-townhall",
+        "type": "recruit",
+        "title": "Attend any announced town halls",
+        "description": "Check your target legislators' websites and social media for upcoming town halls, office hours, or community events. If any are scheduled, attend and ask about HB 5798 during public comment.",
+        "xp": 100,
+        "difficulty": "hard"
+      },
+      {
+        "id": "w3d2-email-followup",
+        "type": "email",
+        "title": "Follow-up email to noncommittal offices",
+        "description": "Send a follow-up email to any office that was noncommittal. Reference your earlier call/visit.",
+        "xp": 30,
+        "difficulty": "easy",
+        "template": "Subject: Follow-up — HB 5798 / Digital Asset Tax Repeal\n\nDear [STAFFER NAME or Representative NAME],\n\nI called/visited your office on [DATE] regarding HB 5798 and the Digital Asset Tax (SB 3019). I wanted to follow up and ask whether the Representative has had a chance to review the bill.\n\nSince my last contact, I've spoken with [X] other constituents who share this concern. We are building a coalition across multiple districts.\n\nI would welcome the opportunity to meet with the Representative or a policy staffer to discuss this further. I'm available [DATES].\n\nThank you,\n[YOUR NAME]\n[YOUR CONTACT INFO]"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-23",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w3d3-recruit-testimony",
+        "type": "recruit",
+        "title": "Collect community testimony",
+        "description": "Reach out to 3+ people affected by the tax — OnionDAO attendees, local crypto meetup organizers, developers, educators. Ask them to write 2-3 sentences about how the tax affects them. Compile for future use.",
+        "xp": 100,
+        "difficulty": "medium"
+      },
+      {
+        "id": "w3d3-social-testimony",
+        "type": "social",
+        "title": "Share a community story",
+        "description": "Post someone's testimony (with permission) about how the DATA tax affects them.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "[PERSON'S FIRST NAME] organized free blockchain workshops for 50 people in [NEIGHBORHOOD]. No one paid anything. Everyone learned. Under SB 3019, that could be a taxable event. This is what we're fighting. Support HB 5798. #RepealDATA"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-24",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w3d4-recruit-business",
+        "type": "recruit",
+        "title": "Recruit a local business",
+        "description": "Find a Chicago-area business that benefited from crypto community events (restaurant that catered, venue that hosted, print shop that made merch). Ask them to write a one-paragraph statement of support.",
+        "xp": 100,
+        "difficulty": "hard"
+      },
+      {
+        "id": "w3d4-research-media",
+        "type": "research",
+        "title": "Pitch local media",
+        "description": "Email 2-3 local journalists who cover tech, crypto, or state politics. Offer yourself as a source on the community impact of SB 3019.",
+        "xp": 20,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-25",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w3d5-social-weekrecap",
+        "type": "social",
+        "title": "Week 3 recap — coalition growth",
+        "description": "Share the coalition's growth. Numbers matter — how many people are now engaged?",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "Week 3 update on the IL Digital Asset Tax repeal campaign: [X] people making calls, [Y] office visits completed, [Z] businesses engaged. The coalition is growing. Every voice matters — the legislature reconvenes in the fall. Join us. #RepealDATA"
+      },
+      {
+        "id": "w3d5-research-strategy",
+        "type": "research",
+        "title": "Strategy review",
+        "description": "Review your whip sheet. Which legislators moved? Which are still unknown? Adjust Week 4 priorities based on what you've learned.",
+        "xp": 20,
+        "difficulty": "easy"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-28",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w4d1-call-buckner-2",
+        "type": "call",
+        "title": "Second round call: Rep. Kam Buckner",
+        "description": "Follow-up call to Buckner's office. Reference your earlier contact. Ask if the Representative has taken a position.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 924-1755",
+        "legislator": "Kam Buckner",
+        "script": "Hi, my name is [NAME] from [CITY]. I called a few weeks ago about HB 5798 and the Digital Asset Tax. I'm following up to ask whether Representative Buckner has taken a position on this issue. I've spoken with [X] other constituents who share this concern, and several of us have visited district offices in person. We'd appreciate knowing where the Representative stands."
+      },
+      {
+        "id": "w4d1-call-croke-2",
+        "type": "call",
+        "title": "Second round call: Rep. Margaret Croke",
+        "description": "Follow-up call. Mention your growing coalition.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 348-8974",
+        "legislator": "Margaret Croke",
+        "script": "Hi, my name is [NAME] from [CITY]. I called a few weeks ago about HB 5798 and the Digital Asset Tax. I'm following up because our coalition has grown — [X] constituents across multiple districts are now engaged on this issue. Has Representative Croke had a chance to review the bill? We'd welcome a conversation."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-29",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w4d2-call-didech-2",
+        "type": "call",
+        "title": "Second round call: Rep. Daniel Didech",
+        "description": "Follow-up call. Reference coalition size and any media coverage.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(847) 478-9909",
+        "legislator": "Daniel Didech",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Our coalition has grown significantly — we now have constituents in [X] districts engaged on this issue. Has Representative Didech taken a position on repealing the Digital Asset Tax?"
+      },
+      {
+        "id": "w4d2-call-tarver-2",
+        "type": "call",
+        "title": "Second round call: Rep. Curtis Tarver",
+        "description": "Follow-up call with community impact data.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 363-8870",
+        "legislator": "Curtis Tarver",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Since we last spoke, I've collected testimony from community members who organized free educational events that would be affected by this tax. Has Representative Tarver had a chance to review the bill?"
+      },
+      {
+        "id": "w4d2-email-letters",
+        "type": "email",
+        "title": "Follow-up letters to all 13 offices",
+        "description": "Send a second round of emails to all 13 Democratic offices. This time, include coalition size, any media coverage, and collected testimony.",
+        "xp": 30,
+        "difficulty": "easy",
+        "template": "Subject: Follow-up — Growing Coalition Supports HB 5798\n\nDear Representative [NAME],\n\nI'm writing to follow up on my earlier correspondence about HB 5798 and the Digital Asset Tax (SB 3019).\n\nSince my last contact, our coalition has grown to [X] engaged constituents across [Y] districts. We have collected testimony from community builders, educators, and local businesses affected by this tax.\n\n[INCLUDE 1-2 TESTIMONY QUOTES]\n\nWe respectfully request a meeting with the Representative or policy staff to discuss this issue before the fall session. Multiple constituents are available to attend.\n\nThank you,\n[YOUR NAME]\n[YOUR CONTACT INFO]"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-30",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w4d3-call-slaughter-2",
+        "type": "call",
+        "title": "Second round call: Rep. Justin Slaughter",
+        "description": "Follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 445-9700",
+        "legislator": "Justin Slaughter",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. I visited your district office on [DATE] and wanted to check whether Representative Slaughter has taken a position on the Digital Asset Tax repeal."
+      },
+      {
+        "id": "w4d3-call-harper-2",
+        "type": "call",
+        "title": "Second round call: Rep. Sonya Harper",
+        "description": "Follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 925-6580",
+        "legislator": "Sonya Harper",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Our coalition includes local business owners who benefited from community crypto events in Representative Harper's district. Has she had a chance to review the bill?"
+      },
+      {
+        "id": "w4d3-call-andrade-2",
+        "type": "call",
+        "title": "Second round call: Rep. Jaime Andrade",
+        "description": "Follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 267-2880",
+        "legislator": "Jaime Andrade",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Has Representative Andrade taken a position on the Digital Asset Tax repeal? I'm happy to provide additional information about how this tax affects small operators and community builders in his district."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-31",
+    "track": "repeal",
+    "missions": [
+      {
+        "id": "w4d4-call-delgado-2",
+        "type": "call",
+        "title": "Second round call: Rep. Eva-Dina Delgado",
+        "description": "Follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 237-4558",
+        "legislator": "Eva-Dina Delgado",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Has Representative Delgado taken a position on the Digital Asset Tax repeal?"
+      },
+      {
+        "id": "w4d4-call-gonzalez-2",
+        "type": "call",
+        "title": "Second round call: Rep. Edgar González",
+        "description": "Follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(708) 295-9159",
+        "legislator": "Edgar González",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Has Representative González reviewed the bill? Working families in his district are concerned about this tax."
+      },
+      {
+        "id": "w4d4-call-guzzardi-2",
+        "type": "call",
+        "title": "Second round call: Rep. Will Guzzardi",
+        "description": "Follow-up call with progressive framing.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(773) 853-2570",
+        "legislator": "Will Guzzardi",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. I want to emphasize — the community events this tax threatens are exactly the kind of mutual aid and free education Representative Guzzardi supports in other contexts. Has he taken a position?"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-01",
+    "track": "both",
+    "missions": [
+      {
+        "id": "w4d5-call-hernandez-2",
+        "type": "call",
+        "title": "Second round call: Rep. Lisa Hernandez",
+        "description": "Final follow-up call of the month.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(708) 222-5240",
+        "legislator": "Lisa Hernandez",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. This is my second call — this issue is important to me and a growing number of constituents. Has Representative Hernandez taken a position?"
+      },
+      {
+        "id": "w4d5-call-mayfield-2",
+        "type": "call",
+        "title": "Second round call: Rep. Rita Mayfield",
+        "description": "Final follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(847) 599-2800",
+        "legislator": "Rita Mayfield",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Has Representative Mayfield taken a position on the Digital Asset Tax repeal?"
+      },
+      {
+        "id": "w4d5-call-avelar-2",
+        "type": "call",
+        "title": "Second round call: Rep. Dagmara Avelar",
+        "description": "Final follow-up call.",
+        "xp": 50,
+        "difficulty": "medium",
+        "phone": "(815) 372-0085",
+        "legislator": "Dagmara Avelar",
+        "script": "Hi, my name is [NAME] from [CITY]. I'm following up on my earlier call about HB 5798. Has Representative Avelar taken a position on the Digital Asset Tax repeal?"
+      },
+      {
+        "id": "w4d5-research-final",
+        "type": "research",
+        "title": "Month-end strategy assessment",
+        "description": "Final whip sheet update. Categorize all 13 legislators. Identify top targets for the fall session. Write a one-page strategy memo for the coalition.",
+        "xp": 20,
+        "difficulty": "medium"
+      },
+      {
+        "id": "w4d5-social-monthrecap",
+        "type": "social",
+        "title": "Month of Action complete",
+        "description": "Celebrate the month's work publicly. Show momentum.",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "One month of action on repealing Illinois' Digital Asset Tax. The numbers: [X] calls made, [Y] office visits, [Z] people in our coalition, [W] media contacts. SB 3019 takes effect Jan 1, 2027. We have 5 months. The fall session is our window. This is just the beginning. #RepealDATA"
+      }
+    ]
+  }
+]

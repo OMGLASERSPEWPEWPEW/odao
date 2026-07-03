@@ -1,0 +1,155 @@
+[
+  {
+    "date": "2026-07-03",
+    "dayNumber": 1,
+    "greeting": "Welcome to the campaign. Here's where we stand.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "Governor Pritzker signed SB 3019 seventeen days ago. The Digital Asset Tax takes effect January 1, 2027 — that gives us less than six months. Representative Joe Sosnowski has introduced HB 5798 to repeal it, but it needs Democratic support to move. We've identified 13 Democratic representatives who may be persuadable. That's our target list."
+      },
+      {
+        "type": "mission",
+        "text": "Today is setup day. Familiarize yourself with the dashboard, the target list, and the call scripts. Tomorrow is Independence Day — we'll kick off with a social media push connecting economic freedom to the crypto tax fight. Real calls start Monday."
+      },
+      {
+        "type": "tip",
+        "text": "The single most effective thing a constituent can do is call their representative's district office. Not email, not social media — a phone call. Staff log every constituent contact, and volume matters. Two minutes on the phone counts more than a hundred likes."
+      },
+      {
+        "type": "motivation",
+        "text": "You're early. Most people won't pay attention to this until it's too late. The fact that you're here now means you can shape what happens. Six months is a lot of time if we use it well."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-04",
+    "dayNumber": 2,
+    "greeting": "Happy Independence Day. Let's talk about economic freedom.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "No offices are open today — it's a federal holiday. But that makes it a perfect day for social media. The Independence Day connection writes itself: Illinois is imposing a tax on financial innovation while we celebrate freedom from unjust taxation."
+      },
+      {
+        "type": "mission",
+        "text": "Post something connecting July 4th to the crypto tax fight. It doesn't have to be a masterpiece — just get the issue in front of your network. Use #RepealDATA and mention HB 5798 so people can find it. The dashboard has pre-written copy if you want it."
+      },
+      {
+        "type": "tip",
+        "text": "Don't overthink social posts. The goal isn't to go viral — it's to normalize the conversation. When your legislator's staff sees the same issue from multiple angles, it registers. Every post is a data point."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-07",
+    "dayNumber": 3,
+    "greeting": "Monday. Offices are open. Time to make calls.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "The weekend is over and legislative district offices are open for business. Today you're calling two offices: Kam Buckner at (773) 924-1755 and Margaret Croke at (773) 348-8974. Buckner chairs the House Judiciary committee — he's influential. Croke represents a young, tech-literate district."
+      },
+      {
+        "type": "mission",
+        "text": "Make both calls. It'll take less than 5 minutes total. A staffer will answer, you'll read your script (or wing it), they'll take notes, and you're done. That's it. The dashboard has the full script — personalize it with your name, city, and a one-sentence reason this matters to you."
+      },
+      {
+        "type": "tip",
+        "text": "First-time callers: the person who answers is a staffer, not the representative. They're usually polite and neutral. Don't worry about being perfect — just be a constituent with a clear ask. 'I support HB 5798 to repeal the Digital Asset Tax.' That's the core message."
+      },
+      {
+        "type": "motivation",
+        "text": "Most legislative offices get fewer than 10 calls per week on any given issue. Your single call genuinely moves the needle. When you call, you're not one voice in a million — you're one of a handful. That's real leverage."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "dayNumber": 4,
+    "greeting": "Day 4. Two more calls and an email blast.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "Today's targets: Daniel Didech at (847) 478-9909 in the northern suburbs, and Curtis Tarver at (773) 363-8870 on the South Side. Different districts, different angles — Didech responds to business/innovation arguments, Tarver to community investment."
+      },
+      {
+        "type": "mission",
+        "text": "Make both calls, then send an email to all 13 Democratic offices on the target list. The email template is in your missions — customize the bracketed sections. The email is a supplement to the calls, not a replacement. Calls first, email second."
+      },
+      {
+        "type": "tip",
+        "text": "When you email, put your physical address in the signature. Staff filter constituent mail by district. If they can't verify you're in-district, the email gets deprioritized. Your address proves you're a voter who matters to their boss."
+      },
+      {
+        "type": "motivation",
+        "text": "You've already made two calls. Two more today means you've contacted four offices in two days. That's nearly a third of the target list. You're building a record of consistent constituent concern — and that's what moves legislators."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-09",
+    "dayNumber": 5,
+    "greeting": "Three calls today. You're hitting your stride.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "Today's offices: Justin Slaughter at (773) 445-9700, Sonya Harper at (773) 925-6580, and Jaime Andrade at (773) 267-2880. Three South Side/West Side reps. The community investment angle is strongest here — free events, free food, economic activity flowing into neighborhoods."
+      },
+      {
+        "type": "mission",
+        "text": "Three calls. Same structure as before — introduce yourself, state your ask (support HB 5798), give your personal reason, ask for the representative's position. If you get voicemail, leave a message. It still gets logged."
+      },
+      {
+        "type": "tip",
+        "text": "If a staffer asks follow-up questions, that's a good sign — it means they're engaging. Answer honestly, don't over-explain the technology, and always bring it back to the human impact. 'Real people in this district benefit from community crypto events' is more powerful than any technical argument."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-10",
+    "dayNumber": 6,
+    "greeting": "Day 6. Three more offices. You're past the halfway mark.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "Today: Eva-Dina Delgado at (773) 237-4558, Edgar González at (708) 295-9159, and Will Guzzardi at (773) 853-2570. Delgado and González represent working-class communities — frame this as protecting regular people from an unfair tax. Guzzardi is progressive — lean into the 'this punishes community builders, not Wall Street' angle."
+      },
+      {
+        "type": "mission",
+        "text": "Three calls. After today, you'll have contacted 10 of 13 target offices. You're in the final stretch of Week 1 calling. Take note of how each office responds — we'll use that intel to prioritize Week 2 visits."
+      },
+      {
+        "type": "tip",
+        "text": "Track your results. After each call, note: who answered, were they receptive/neutral/dismissive, did they mention the rep's position, did they ask for follow-up materials? This becomes your whip sheet — the intelligence that guides our strategy going forward."
+      },
+      {
+        "type": "motivation",
+        "text": "Ten offices in four days of calling. Most advocacy campaigns struggle to get people to make a single call. You're demonstrating exactly the kind of persistent, organized constituent pressure that legislative staff pay attention to."
+      }
+    ]
+  },
+  {
+    "date": "2026-07-11",
+    "dayNumber": 7,
+    "greeting": "Last day of Week 1 calls. Finish strong.",
+    "sections": [
+      {
+        "type": "update",
+        "text": "Final three Democratic offices: Lisa Hernandez at (708) 222-5240, Rita Mayfield at (847) 599-2800, and Dagmara Avelar at (815) 372-0085. Plus a coordination call to Joe Sosnowski's office at (815) 547-3436 — he's the Republican who introduced HB 5798. His office can tell us what they're hearing from Democrats."
+      },
+      {
+        "type": "mission",
+        "text": "Four calls today — three asks plus one coordination. Then post your Week 1 recap on social media. You've earned it. After today, every single target office will have heard from you. That's the baseline. Next week, we go in person."
+      },
+      {
+        "type": "tip",
+        "text": "The Sosnowski call is different — you're thanking an ally, not persuading an opponent. Ask his staff: 'What are you hearing from Democrats? Is anyone receptive? What should we emphasize in our outreach?' They may have intel we don't."
+      },
+      {
+        "type": "motivation",
+        "text": "You just completed a full round of calls to every target office. That puts you in the top 1% of constituent advocacy. Most people never call anyone. You called 13 offices in 5 days. Week 2 gets physical — office visits. But for today, recognize what you've done. This is real civic engagement, and it matters."
+      }
+    ]
+  }
+]

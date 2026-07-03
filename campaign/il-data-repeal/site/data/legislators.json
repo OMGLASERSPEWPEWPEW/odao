@@ -1,0 +1,336 @@
+[
+  {
+    "id": 1,
+    "name": "Curtis Tarver II",
+    "party": "D",
+    "district": 25,
+    "role": "Chair",
+    "chicago": true,
+    "area": "Hyde Park",
+    "swayability": "medium",
+    "leverage": "Controls committee agenda — must greenlight any repeal bill",
+    "priority": "high",
+    "contact": {
+      "springfield": "(217) 782-8121",
+      "district": "(773) 363-8870",
+      "address": "1303 E. 53rd St., Chicago, IL 60615"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Rita Mayfield",
+    "party": "D",
+    "district": 60,
+    "role": "Vice Chair",
+    "chicago": false,
+    "area": "Waukegan",
+    "swayability": "low",
+    "leverage": "Party loyalist, unlikely to break",
+    "priority": "low",
+    "contact": {
+      "springfield": "(217) 558-1012",
+      "district": "(847) 599-2800",
+      "address": "120 S. Genesee St., Waukegan, IL 60085"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Jaime Andrade Jr.",
+    "party": "D",
+    "district": 40,
+    "role": "Member",
+    "chicago": true,
+    "area": "NW Side",
+    "swayability": "medium",
+    "leverage": "Blue-collar district, anti-business-tax angle could work",
+    "priority": "medium",
+    "contact": {
+      "springfield": "(217) 782-8117",
+      "district": "(773) 267-2880",
+      "email": "info@staterep40.com",
+      "address": "4007 N. Sacramento Ave., Chicago, IL 60618"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Dagmara Avelar",
+    "party": "D",
+    "district": 85,
+    "role": "Member",
+    "chicago": false,
+    "area": "Romeoville",
+    "swayability": "medium",
+    "leverage": "Competitive district, business-friendly positioning",
+    "priority": "medium",
+    "contact": {
+      "springfield": "(217) 782-4179",
+      "district": "(815) 372-0085",
+      "email": "info@repdagmara.org",
+      "address": "1050 W. Romeo Rd., Romeoville, IL 60446"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Kam Buckner",
+    "party": "D",
+    "district": 26,
+    "role": "Member",
+    "chicago": true,
+    "area": "South Side",
+    "swayability": "high",
+    "leverage": "Young, tech-savvy, potential champion — highest priority target",
+    "priority": "critical",
+    "contact": {
+      "springfield": "(217) 782-2023",
+      "district": "(773) 924-1755",
+      "email": "Buckner@illinois26.com",
+      "address": "449 E. 35th Street, Chicago, IL 60616"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Margaret Croke",
+    "party": "D",
+    "district": 12,
+    "role": "Member",
+    "chicago": true,
+    "area": "Lakeview",
+    "swayability": "high",
+    "leverage": "Young professional district, tech-friendly. Running for IL Comptroller — wants pro-innovation image",
+    "priority": "critical",
+    "contact": {
+      "springfield": "(217) 782-8062",
+      "district": "(773) 348-8974",
+      "email": "info@repcroke.com",
+      "address": "3223 N. Sheffield Ave, Suite A, Chicago, IL 60657"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Eva-Dina Delgado",
+    "party": "D",
+    "district": 3,
+    "role": "Member",
+    "chicago": true,
+    "area": "NW Side",
+    "swayability": "medium",
+    "leverage": "Small business focus in district",
+    "priority": "medium",
+    "contact": {
+      "springfield": "(217) 782-0480",
+      "district": "(773) 237-4558",
+      "email": "Evadina@staterepdelgado.com",
+      "address": "6309 W. Belmont Ave., Chicago, IL 60634"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Daniel Didech",
+    "party": "D",
+    "district": 59,
+    "role": "Member",
+    "chicago": false,
+    "area": "Buffalo Grove",
+    "swayability": "high",
+    "leverage": "Known for tech policy interest, suburban swing district",
+    "priority": "critical",
+    "contact": {
+      "springfield": "(217) 782-0499",
+      "district": "(847) 478-9909",
+      "email": "Info@repdidech.com",
+      "address": "Vernon Township Admin Bldg, 3050 N. Main St., Buffalo Grove, IL 60089"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Edgar González Jr.",
+    "party": "D",
+    "district": 23,
+    "role": "Member",
+    "chicago": true,
+    "area": "SW Side",
+    "swayability": "low",
+    "leverage": "Solid D district, less pressure",
+    "priority": "low",
+    "contact": {
+      "springfield": "(217) 782-7752",
+      "district": "(708) 295-9159",
+      "email": "office@repedgargonzalez.com",
+      "address": "3202 W. 26th St., Chicago, IL 60623"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Will Guzzardi",
+    "party": "D",
+    "district": 39,
+    "role": "Member",
+    "chicago": true,
+    "area": "West Side",
+    "swayability": "low",
+    "leverage": "Progressive, likely supports revenue measures",
+    "priority": "low",
+    "contact": {
+      "springfield": "(217) 558-1032",
+      "district": "(773) 853-2570",
+      "email": "will@repguzzardi.com",
+      "address": "3001 N. Central Park Ave., Chicago, IL 60618"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Sonya Harper",
+    "party": "D",
+    "district": 6,
+    "role": "Member",
+    "chicago": true,
+    "area": "South Side",
+    "swayability": "medium",
+    "leverage": "Economic development focus could be leveraged",
+    "priority": "medium",
+    "contact": {
+      "springfield": "(217) 782-5971",
+      "district": "(773) 925-6580",
+      "email": "repsonyaharper@gmail.com",
+      "address": "2015 W. 63rd St., Chicago, IL 60636"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Lisa Hernandez",
+    "party": "D",
+    "district": 2,
+    "role": "Member",
+    "chicago": false,
+    "area": "Cicero",
+    "swayability": "low",
+    "leverage": "Party leadership aligned",
+    "priority": "low",
+    "contact": {
+      "springfield": "(217) 782-8173",
+      "district": "(708) 222-5240",
+      "email": "office@repehernandez.com",
+      "address": "6117 W. Cermak Road, Cicero, IL 60804"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Justin Slaughter",
+    "party": "D",
+    "district": 27,
+    "role": "Member",
+    "chicago": true,
+    "area": "South Side",
+    "swayability": "medium",
+    "leverage": "Community-focused, OnionDAO story could resonate",
+    "priority": "medium",
+    "contact": {
+      "springfield": "(217) 782-0010",
+      "district": "(773) 445-9700",
+      "email": "justin@repslaughter.com",
+      "address": "1234 W. 95th St., Chicago, IL 60643"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Joe Sosnowski",
+    "party": "R",
+    "district": 69,
+    "role": "Spox",
+    "chicago": false,
+    "area": "Machesney Park",
+    "swayability": "ally",
+    "leverage": "Republican Spokesperson — coordinate with, don't lobby",
+    "priority": "coordinate",
+    "contact": {
+      "springfield": "(217) 782-0548",
+      "district": "(815) 547-3436",
+      "email": "sosnowski@ilhousegop.org",
+      "address": "1700 Hutchins Road, Unit B, Machesney Park, IL 61115"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Amy Elik",
+    "party": "R",
+    "district": 111,
+    "role": "Member",
+    "chicago": false,
+    "swayability": "ally",
+    "leverage": "Business-friendly record",
+    "contact": {
+      "springfield": "(217) 782-8071",
+      "district": "(618) 307-9200"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Martin McLaughlin",
+    "party": "R",
+    "district": 52,
+    "role": "Member",
+    "chicago": false,
+    "swayability": "ally",
+    "leverage": "Suburban, tech-friendly",
+    "contact": {
+      "springfield": "(217) 782-0052",
+      "district": "(630) 326-5552"
+    }
+  },
+  {
+    "id": 17,
+    "name": "Kyle Moore",
+    "party": "R",
+    "district": 99,
+    "role": "Member",
+    "chicago": false,
+    "swayability": "ally",
+    "leverage": "Fiscal conservative",
+    "contact": {
+      "springfield": "(217) 782-1018",
+      "district": "(618) 997-9099"
+    }
+  },
+  {
+    "id": 18,
+    "name": "Steven Reick",
+    "party": "R",
+    "district": 63,
+    "role": "Member",
+    "chicago": false,
+    "swayability": "ally",
+    "leverage": "Anti-regulation stance",
+    "contact": {
+      "springfield": "(217) 782-1717",
+      "district": "(815) 880-5340"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Jennifer Sanalitro",
+    "party": "R",
+    "district": 48,
+    "role": "Member",
+    "chicago": false,
+    "swayability": "ally",
+    "leverage": "Suburban, business coalition",
+    "contact": {
+      "springfield": "(217) 782-4014",
+      "district": "(630) 543-6848"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Travis Weaver",
+    "party": "R",
+    "district": 93,
+    "role": "Member",
+    "chicago": false,
+    "swayability": "ally",
+    "leverage": "Strong anti-tax record",
+    "contact": {
+      "springfield": "(217) 782-5997",
+      "district": "(217) 876-1968"
+    }
+  }
+]

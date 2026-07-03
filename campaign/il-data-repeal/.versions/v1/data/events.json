@@ -1,0 +1,153 @@
+[
+  {
+    "id": 1,
+    "date": "2026-06-01",
+    "endDate": null,
+    "title": "SB 3019 passes IL General Assembly",
+    "description": "73-41 House, 36-19 Senate",
+    "prong": "federal",
+    "past": true,
+    "actions": [
+      "Review the final bill text",
+      "Document vote tallies for future reference",
+      "Identify which legislators voted yes/no"
+    ]
+  },
+  {
+    "id": 2,
+    "date": "2026-06-16",
+    "endDate": null,
+    "title": "Governor Pritzker signs into law",
+    "description": "SB 3019 becomes law as the Digital Asset Tax Act",
+    "prong": "lobby",
+    "past": true,
+    "actions": [
+      "Begin legal analysis of constitutional vulnerabilities",
+      "Draft press releases condemning the signing",
+      "Activate coalition partners"
+    ]
+  },
+  {
+    "id": 3,
+    "date": "2026-06-23",
+    "endDate": null,
+    "title": "Rep. Cabello files HB 5798 (repeal bill)",
+    "description": "First formal legislative repeal attempt",
+    "prong": "lobby",
+    "past": true,
+    "actions": [
+      "Rally co-sponsors for HB 5798",
+      "Begin committee outreach",
+      "Prepare testimony for potential hearings"
+    ]
+  },
+  {
+    "id": 4,
+    "date": "2026-07-01",
+    "endDate": null,
+    "title": "CFTC Chair Selig op-ed",
+    "description": "Calls it a \"sin tax on blockchain\"",
+    "prong": "federal",
+    "past": true,
+    "actions": [
+      "Amplify the op-ed through social media",
+      "Send copies to every IL legislator",
+      "Use as evidence in legal briefs"
+    ]
+  },
+  {
+    "id": 5,
+    "date": "2026-07-03",
+    "endDate": "2026-10-31",
+    "title": "Summer Recess — TOWN HALL SEASON",
+    "description": "Legislators are home in their districts. Show up, be heard.",
+    "prong": "grassroots",
+    "past": false,
+    "urgent": true,
+    "actions": [
+      "Find your legislator's town hall schedule at ilga.gov",
+      "Prepare a 2-minute personal testimony",
+      "Bring friends and allies — numbers matter",
+      "Record testimony (with permission) for social media",
+      "Follow up with district office after attending"
+    ]
+  },
+  {
+    "id": 6,
+    "date": "2026-11-03",
+    "endDate": null,
+    "title": "General Election",
+    "description": "Voters decide who stays. Make crypto a ballot issue.",
+    "prong": "grassroots",
+    "past": false,
+    "urgent": true,
+    "actions": [
+      "Check Stand With Crypto scorecards for candidates",
+      "Volunteer for pro-repeal candidates",
+      "Vote and bring others to the polls",
+      "Document candidate positions on SB 3019"
+    ]
+  },
+  {
+    "id": 7,
+    "date": "2026-11-12",
+    "endDate": "2026-11-14",
+    "title": "Fall Veto Session Week 1",
+    "description": "HB 5798 must be heard in committee this week.",
+    "prong": "lobby",
+    "past": false,
+    "urgent": true,
+    "actions": [
+      "Flood Revenue Committee members with calls",
+      "Arrange in-person witness testimony in Springfield",
+      "Coordinate coalition presence at the Capitol",
+      "Live-tweet committee proceedings"
+    ]
+  },
+  {
+    "id": 8,
+    "date": "2026-11-19",
+    "endDate": "2026-11-21",
+    "title": "Fall Veto Session Week 2",
+    "description": "Floor vote window for HB 5798.",
+    "prong": "lobby",
+    "past": false,
+    "urgent": true,
+    "actions": [
+      "Final push on undecided House members",
+      "Organize rally at the Capitol",
+      "Prepare Senate strategy if House passes",
+      "Media blitz during session"
+    ]
+  },
+  {
+    "id": 9,
+    "date": "2026-12-01",
+    "endDate": "2026-12-31",
+    "title": "Possible Lame-Duck Session",
+    "description": "Last chance before the new General Assembly convenes.",
+    "prong": "lobby",
+    "past": false,
+    "actions": [
+      "Target outgoing legislators with nothing to lose",
+      "Push for emergency floor vote",
+      "Prepare legal challenge if legislative path fails"
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2027-01-01",
+    "endDate": null,
+    "title": "TAX TAKES EFFECT — DEADLINE",
+    "description": "The 0.2% transaction tax becomes enforceable. Every second counts.",
+    "prong": "deadline",
+    "past": false,
+    "urgent": true,
+    "actions": [
+      "File for injunction if not already granted",
+      "Activate compliance guidance for affected businesses",
+      "Continue federal preemption efforts",
+      "Document economic impact for ongoing repeal push"
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "lastUpdated": "2026-07-03",
+  "entries": [
+    {
+      "date": "2026-07-03",
+      "source": "CFTC",
+      "headline": "Chairman Selig calls IL crypto tax a 'sin tax on blockchain'",
+      "summary": "CFTC Chair Michael Selig published an op-ed in the Washington Times calling the Illinois Digital Asset Tax Act a 'sin tax' that risks Chicago's financial legacy.",
+      "url": "https://www.washingtontimes.com/news/2026/jul/1/blockchain-tax-risks-illinois-legacy-financial-engine/",
+      "relevance": "high"
+    },
+    {
+      "date": "2026-06-23",
+      "source": "IL House",
+      "headline": "Rep. Cabello files HB 5798 to repeal the Digital Asset Tax",
+      "summary": "State Rep. John Cabello (R-Machesney Park) filed House Bill 5798 for immediate repeal of the 0.2% digital asset transaction tax.",
+      "url": "https://www.thecentersquare.com/illinois/article_e1e7b4f4-5213-4e01-9dc0-98090e87f6bf.html",
+      "relevance": "critical"
+    },
+    {
+      "date": "2026-06-17",
+      "source": "Industry",
+      "headline": "Coinbase CEO: 'remarkably bad — will kill jobs'",
+      "summary": "Brian Armstrong criticized the Illinois crypto tax, calling it 'remarkably bad' and warning it will push innovation out of the state.",
+      "url": "https://www.cryptotimes.io/2026/06/18/coinbase-ceo-illinois-crypto-tax-punishes-blockchain-will-kill-tech-jobs/",
+      "relevance": "high"
+    },
+    {
+      "date": "2026-06-16",
+      "source": "Governor",
+      "headline": "Pritzker signs SB 3019 — Digital Asset Tax Act becomes law",
+      "summary": "Governor JB Pritzker signed the omnibus budget bill including the 0.2% digital asset transaction tax, effective January 1, 2027.",
+      "url": "https://www.theblock.co/amp/post/405146/one-most-anti-crypto-laws-in-us-illinois-gov-pritzker-signs-0-2-crypto-tax",
+      "relevance": "critical"
+    }
+  ]
+}
