@@ -108,9 +108,33 @@ Organized by the three campaign prongs: **Lobby**, **Grassroots**, and **Federal
 
 ---
 
-## Quick Reference: The Three Killer Responses
+## Prong 4: Tax Revenue Engine (Cross-Prong — Use Everywhere)
 
-For any conversation, these three responses cover 90% of objections:
+### Key Messages
+
+1. **OnionDAO already generates more tax revenue for Chicago than the crypto tax would collect from community DAOs.** 30 days of catered meals (10.25% sales tax), restaurant buyouts (10.25%), hotel stays (19% — highest in the US), yacht charters (9% amusement tax), venue rentals (9% commercial lease tax). All paid. All taxed. All at risk.
+
+2. **Chicago is spending $40 million a year to attract exactly this kind of event — while Illinois taxes it away.** The city just created a Tourism Improvement District and raised hotel taxes to 19% specifically to fund Choose Chicago's convention attraction program. OnionDAO came for free. Now the state is driving it out.
+
+3. **OnionDAO could be Chicago's SXSW.** A month-long tech event that brings builders, learners, and spending from around the world. Austin doesn't tax the tech industry that makes SXSW possible. Miami doesn't tax the crypto industry that brings Consensus. Why is Illinois?
+
+4. **The city has a Convention Attraction Fund that literally pays events to come to Chicago.** OnionDAO came voluntarily, brought 400 people for a full month, and spent hundreds of thousands on local businesses. The state is now taxing away the reason they came.
+
+### Anticipated Objections & Responses
+
+**Objection: "OnionDAO is just one event."**
+
+> Response: It's one event that runs for 30 days, attracts 400+ people, and generates sustained daily spending across restaurants, hotels, venues, and local businesses. Per capita, the economic impact per attendee over a month likely exceeds any 3-day tech conference. And it's a signal — if OnionDAO leaves, every crypto event organizer considering Chicago sees the message: Illinois taxes the industry that funds you.
+
+**Objection: "The crypto tax applies to exchanges, not events."**
+
+> Response: It applies to anyone who exchanges, transfers, or stores digital assets on behalf of an Illinois customer. The organizer of OnionDAO operates in crypto. The DAO treasury that funds the event operates in crypto. The entire reason this community exists and spends money in Chicago is crypto. Tax the industry and you lose the spending. The mechanism doesn't matter — the economic effect does.
+
+---
+
+## Quick Reference: The Four Killer Responses
+
+For any conversation, these four responses cover 90% of objections:
 
 ### 1. The Bank Account Analogy (for "It's only 0.2%")
 > "Imagine if your bank charged you 0.2% every time you moved money — checking to savings, savings back to checking. Not on interest earned, on the total amount transferred. You'd lose hundreds of dollars a year just for managing your own money. That's exactly what this tax does to crypto."
@@ -120,3 +144,6 @@ For any conversation, these three responses cover 90% of objections:
 
 ### 3. The Discrimination Point (for "Just tax crypto like everything else")
 > "We agree. Tax crypto gains just like stock gains — Illinois already does that through income tax. What the Digital Asset Tax does is add an extra transaction tax that doesn't exist for stocks, bonds, or any other financial instrument. We're not asking for special treatment. We're asking for equal treatment."
+
+### 4. The Golden Goose (for legislators who care about economic development)
+> "Chicago just spent $40 million in new hotel tax revenue to attract conventions. OnionDAO came for free — 400 people, 30 days, restaurants bought out, hotels booked, concerts produced. The city is paying to attract what the state is taxing away. That's not revenue policy. That's friendly fire."

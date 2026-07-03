@@ -50,6 +50,12 @@ The projected revenue is roughly **$60 million/year** — a rounding error in Il
 - Amendment would still leave a discriminatory framework in place
 - Other states are actively recruiting the businesses and talent Illinois is pushing away
 
+## OnionDAO Already Generates Tax Revenue for Chicago
+
+The crypto community doesn't just take — it spends. OnionDAO alone: 30 days of catered meals (10.25% sales tax), restaurant buyouts, hotel stays for out-of-towners (19% — highest in the US), venue rentals (9% commercial lease tax), concerts (9% amusement tax). That's existing tax revenue at risk.
+
+Chicago just raised hotel taxes to 19% and created a $40M/year fund specifically to attract conventions and events. OnionDAO came for free and brought 400 people for a month. The state is now taxing away the industry that funds it.
+
 ## The Window
 
 The **fall veto session (est. November 12-21, 2026)** is our best opportunity. After that, the tax takes effect January 1 and becomes exponentially harder to undo.
