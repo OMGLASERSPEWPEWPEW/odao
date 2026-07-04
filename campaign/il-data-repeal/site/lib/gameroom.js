@@ -12,7 +12,7 @@ import { getDaysRemaining, getCampaignDay, generateAvatar } from '../app.js';
  * @param {Object} config - { trackName, trackColor, trackSlug, headerClass }
  */
 export async function renderGameRoom(container, config) {
-  const { trackName, trackColor, trackSlug, headerClass } = config;
+  const { trackName, trackColor, trackSlug, headerClass, elevatorPitch } = config;
 
   const allDays = await loadAllMissions();
   const today = new Date().toISOString().slice(0, 10);
@@ -56,6 +56,13 @@ export async function renderGameRoom(container, config) {
           <span class="gameroom-countdown">${getDaysRemaining()}d remaining</span>
         </div>
       </div>
+
+      ${elevatorPitch ? `
+      <div class="gameroom-pitch" style="border-left-color: ${trackColor}">
+        <div class="pitch-label">YOUR ELEVATOR PITCH</div>
+        <p class="pitch-text">${elevatorPitch}</p>
+      </div>
+      ` : ''}
 
       <div class="gameroom-grid">
         <!-- Top-left: Today's Missions -->

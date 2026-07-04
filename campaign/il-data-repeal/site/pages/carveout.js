@@ -25,6 +25,7 @@ export async function renderCarveout() {
     trackColor: '#22C55E',
     trackSlug: 'carveout',
     headerClass: 'carveout-header',
+    elevatorPitch: 'We\'re not asking to kill the tax. We\'re asking to protect community builders. OnionDAO brought 400 people to Chicago for free workshops, free food, and free education for a month. The organizer took no profit. We want an exemption for nonprofit community events — the same exemption Illinois already gives churches and universities.',
   });
 
   // Shared supporting sections

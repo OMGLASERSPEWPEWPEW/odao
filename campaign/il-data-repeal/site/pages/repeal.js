@@ -25,6 +25,7 @@ export async function renderRepeal() {
     trackColor: '#EF4444',
     trackSlug: 'repeal',
     headerClass: 'repeal-header',
+    elevatorPitch: 'Illinois passed a 0.2% tax on every crypto transaction — not on profits, on the total value, every time. No other state does this. No other asset class is taxed this way. We’re supporting HB 5798 to repeal it before it takes effect January 1st.',
   });
 
   // Shared supporting sections

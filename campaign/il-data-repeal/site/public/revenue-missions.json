@@ -6,10 +6,10 @@
       {
         "id": "rev-w1-research-spending",
         "type": "research",
-        "title": "Estimate OnionDAO's Chicago spending",
-        "description": "Calculate total economic impact: 30 days catering, restaurant buyouts, venue rental, hotel nights. Use the template in docs/economic-impact.md.",
+        "title": "Review OnionDAO spending estimate template",
+        "description": "We've pre-built the template. Chicago tax rates: 10.25% sales tax on food/bev, 19% hotel tax (highest in US), 9% amusement tax on concerts, 9% commercial lease tax on venues, $3/trip ground transportation tax. Open docs/economic-impact.md — the table is ready, you just need real dollar amounts from Dev to fill the [TBD] fields.",
         "xp": 20,
-        "difficulty": "medium"
+        "difficulty": "easy"
       },
       {
         "id": "rev-w1-contact-dev",
@@ -28,10 +28,10 @@
       {
         "id": "rev-w1-calculate-tax",
         "type": "research",
-        "title": "Calculate existing tax revenue from OnionDAO",
-        "description": "Apply Chicago tax rates to the spending estimates: 10.25% sales tax on food, 19% hotel tax, 9% amusement tax on concerts, 9% commercial lease tax on venue. Fill in the table in docs/economic-impact.md.",
+        "title": "Plug Dev's numbers into the tax revenue calculator",
+        "description": "Once you have real spending data from Dev, multiply: Food × 10.25%, Hotels × 19%, Concerts × 9%, Venue × 9%. Example: if catering was $50K over 30 days, that's $5,125 in sales tax alone. Hotel stays for 200 out-of-towners at $150/night × 19% = significant. The table in docs/economic-impact.md does the math — just fill in actuals.",
         "xp": 30,
-        "difficulty": "medium"
+        "difficulty": "easy"
       }
     ]
   },
@@ -42,8 +42,8 @@
       {
         "id": "rev-w1-choose-chicago",
         "type": "research",
-        "title": "Research Choose Chicago's incentive programs",
-        "description": "Visit choosechicago.com/meeting-planners. Document: what incentives they offer events, their Convention Attraction Fund, room night rebates. This proves the city PAYS to attract events like OnionDAO.",
+        "title": "Review Choose Chicago research (already done)",
+        "description": "ALREADY RESEARCHED: Choose Chicago spends ~$40M/year (from new 19% hotel tax TID) on marketing, bid fees, and incentives to attract conventions. They offer: Convention Attraction Fund grants, room night rebates ($5/night for 100+ room blocks), bid fee coverage (e.g. $1M for DNC bid). Competitors: Las Vegas $457M/yr, Orlando $116M, LA $62M, San Diego $57M. OnionDAO came FOR FREE. Read the full analysis in docs/economic-impact.md, then move on to the next mission.",
         "xp": 20,
         "difficulty": "easy"
       },
