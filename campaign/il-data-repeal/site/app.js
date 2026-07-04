@@ -6,7 +6,7 @@ import { initRouter } from './lib/router.js';
 import { updateStreak } from './lib/gamification.js';
 import { renderLanding } from './pages/landing.js';
 import { renderRepeal } from './pages/repeal.js';
-import { renderCarveout } from './pages/carveout.js';
+
 import { renderRevenue } from './pages/revenue.js';
 import { renderBriefing } from './pages/briefing.js';
 import { renderProfile } from './pages/profile.js';
@@ -82,10 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 'page-repeal',
       onEnter: () => renderRepeal()
     },
-    '/carveout': {
-      id: 'page-carveout',
-      onEnter: () => renderCarveout()
-    },
+
     '/revenue': {
       id: 'page-revenue',
       onEnter: () => renderRevenue()

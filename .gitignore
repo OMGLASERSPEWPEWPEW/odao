@@ -7,3 +7,5 @@ node_modules/
 
 # Vite build output
 workshop/dist/
+campaign/il-data-repeal/site/dist/
+campaign/il-data-repeal/site/.vercel/

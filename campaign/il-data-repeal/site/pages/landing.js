@@ -38,19 +38,6 @@ export async function renderLanding() {
             <span class="track-choice-cta">Enter Game Room &rarr;</span>
           </a>
 
-          <!-- Carve-Out Track -->
-          <a href="#/carveout" class="track-choice-card track-choice-carveout">
-            <div class="track-choice-accent" style="background: var(--green)"></div>
-            <div class="track-choice-icon track-choice-icon-carveout">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <h3 class="track-choice-name">Carve-Out</h3>
-            <p class="track-choice-desc">Protect community events. Secure an exemption for educational gatherings.</p>
-            <span class="track-choice-cta">Enter Game Room &rarr;</span>
-          </a>
-
           <!-- Revenue Track -->
           <a href="#/revenue" class="track-choice-card track-choice-revenue">
             <div class="track-choice-accent" style="background: var(--gold)"></div>
