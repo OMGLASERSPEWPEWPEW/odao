@@ -1,12 +1,12 @@
 /* ============================================================
-   Carve-Out Page — community event exemption track with Game Room
+   Revenue Track — Tax Revenue Engine game room
    ============================================================ */
 
 import { renderGameRoom } from '../lib/gameroom.js';
 import { renderSharedSections } from '../lib/shared-sections.js';
 
-export async function renderCarveout() {
-  const container = document.getElementById('page-carveout');
+export async function renderRevenue() {
+  const container = document.getElementById('page-revenue');
   if (!container) return;
 
   // Clear previous content (re-render on each navigation)
@@ -21,10 +21,10 @@ export async function renderCarveout() {
   container.appendChild(gameroomSection);
 
   await renderGameRoom(gameroomContainer, {
-    trackName: 'Carve-Out',
-    trackColor: '#22C55E',
-    trackSlug: 'carveout',
-    headerClass: 'carveout-header',
+    trackName: 'Tax Revenue Engine',
+    trackColor: '#FFD700',
+    trackSlug: 'revenue',
+    headerClass: 'revenue-header',
   });
 
   // Shared supporting sections

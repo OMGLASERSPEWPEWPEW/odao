@@ -1,0 +1,120 @@
+[
+  {
+    "date": "2026-07-07",
+    "track": "revenue",
+    "missions": [
+      {
+        "id": "rev-w1-research-spending",
+        "type": "research",
+        "title": "Estimate OnionDAO's Chicago spending",
+        "description": "Calculate total economic impact: 30 days catering, restaurant buyouts, venue rental, hotel nights. Use the template in docs/economic-impact.md.",
+        "xp": 20,
+        "difficulty": "medium"
+      },
+      {
+        "id": "rev-w1-contact-dev",
+        "type": "recruit",
+        "title": "Ask Dev for OnionDAO spending data",
+        "description": "Contact the OnionDAO organizer. Ask for: total venue costs, catering invoices, number of restaurant buyouts, estimated out-of-town attendees. We need real numbers for the economic impact report.",
+        "xp": 100,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-08",
+    "track": "revenue",
+    "missions": [
+      {
+        "id": "rev-w1-calculate-tax",
+        "type": "research",
+        "title": "Calculate existing tax revenue from OnionDAO",
+        "description": "Apply Chicago tax rates to the spending estimates: 10.25% sales tax on food, 19% hotel tax, 9% amusement tax on concerts, 9% commercial lease tax on venue. Fill in the table in docs/economic-impact.md.",
+        "xp": 30,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-09",
+    "track": "revenue",
+    "missions": [
+      {
+        "id": "rev-w1-choose-chicago",
+        "type": "research",
+        "title": "Research Choose Chicago's incentive programs",
+        "description": "Visit choosechicago.com/meeting-planners. Document: what incentives they offer events, their Convention Attraction Fund, room night rebates. This proves the city PAYS to attract events like OnionDAO.",
+        "xp": 20,
+        "difficulty": "easy"
+      },
+      {
+        "id": "rev-w1-social-irony",
+        "type": "social",
+        "title": "Post the Chicago irony angle",
+        "description": "Post: 'Chicago just raised hotel taxes to 19% — highest in the US — to fund $40M/year attracting conventions. Then Illinois passes a crypto tax driving those events away. The left hand is spending to attract what the right hand taxes out of existence. #RepealDATA'",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "Chicago just raised hotel taxes to 19% — highest in the US — to fund $40M/year attracting conventions. Then Illinois passes a crypto tax driving those events away. The left hand is spending to attract what the right hand taxes out of existence. #RepealDATA #SaveOnionDAO"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-14",
+    "track": "revenue",
+    "missions": [
+      {
+        "id": "rev-w2-contact-choose-chicago",
+        "type": "email",
+        "title": "Email Choose Chicago about OnionDAO",
+        "description": "Contact Choose Chicago's partnerships team. Introduce OnionDAO as a month-long tech event that brought 400+ people. Ask about their event support programs. Frame it as: 'We want to keep bringing this event to Chicago but state policy is making it difficult.'",
+        "xp": 30,
+        "difficulty": "medium"
+      },
+      {
+        "id": "rev-w2-media-pitch",
+        "type": "email",
+        "title": "Pitch Crain's Chicago Business on the irony angle",
+        "description": "Email Crain's business desk. Pitch: 'Chicago spending $40M to attract events while state taxes away the ones already here.' Attach the economic impact data. Crain's covers the intersection of Chicago business and policy.",
+        "xp": 30,
+        "difficulty": "medium"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-16",
+    "track": "revenue",
+    "missions": [
+      {
+        "id": "rev-w2-collect-testimonials",
+        "type": "recruit",
+        "title": "Get testimonials from Chicago businesses OnionDAO supported",
+        "description": "Contact 2-3 restaurants or venues that hosted OnionDAO events. Ask: 'How much revenue did OnionDAO bring you? Would you support keeping them in Chicago?' Written quotes are gold for the economic impact report.",
+        "xp": 100,
+        "difficulty": "hard"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-21",
+    "track": "revenue",
+    "missions": [
+      {
+        "id": "rev-w3-draft-report",
+        "type": "research",
+        "title": "Draft the economic impact one-pager",
+        "description": "Using real numbers from Dev + restaurant testimonials + tax calculations, create a polished one-page economic impact summary. This becomes the centerpiece document for meetings with legislators.",
+        "xp": 50,
+        "difficulty": "hard"
+      },
+      {
+        "id": "rev-w3-sxsw-comparison",
+        "type": "social",
+        "title": "Post the SXSW comparison",
+        "description": "Post: 'OnionDAO could be Chicago's SXSW — a month-long tech event with free workshops, free food, 400+ attendees. Austin doesn't tax the tech industry that makes SXSW possible. Why is Illinois? #RepealDATA'",
+        "xp": 25,
+        "difficulty": "easy",
+        "script": "OnionDAO could be Chicago's SXSW — a month-long tech event with free workshops, free food, 400+ attendees. Austin doesn't tax the tech industry that makes SXSW possible. Why is Illinois? #RepealDATA #SaveOnionDAO"
+      }
+    ]
+  }
+]

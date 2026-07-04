@@ -5,6 +5,7 @@
 const STORAGE_KEY = 'repeal-data-completed-missions';
 
 let missionsCache = null;
+let allMissionsCache = null;
 
 export async function loadMissions() {
   if (missionsCache) return missionsCache;
@@ -16,6 +17,31 @@ export async function loadMissions() {
     console.error('Failed to load missions:', err);
     return [];
   }
+}
+
+/**
+ * Load all missions from both missions.json and revenue-missions.json,
+ * merged into a single array of day entries.
+ */
+export async function loadAllMissions() {
+  if (allMissionsCache) return allMissionsCache;
+  const [general, revenue] = await Promise.all([
+    fetch('/missions.json').then(r => r.json()).catch(() => []),
+    fetch('/revenue-missions.json').then(r => r.json()).catch(() => []),
+  ]);
+  allMissionsCache = [...general, ...revenue];
+  return allMissionsCache;
+}
+
+/**
+ * Get missions for a specific track, filtered to today or most recent past day.
+ */
+export function getMissionsForTrack(allDays, trackSlug) {
+  const today = new Date().toISOString().slice(0, 10);
+  return allDays
+    .filter(d => d.track === trackSlug || d.track === 'both')
+    .filter(d => d.date <= today)
+    .sort((a, b) => b.date.localeCompare(a.date));
 }
 
 /**
