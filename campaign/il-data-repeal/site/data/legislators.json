@@ -10,6 +10,12 @@
     "swayability": "medium",
     "leverage": "Controls committee agenda — must greenlight any repeal bill",
     "priority": "high",
+    "zips": [
+      "60615",
+      "60637",
+      "60649",
+      "60619"
+    ],
     "contact": {
       "springfield": "(217) 782-8121",
       "district": "(773) 363-8870",
@@ -31,7 +37,12 @@
       "springfield": "(217) 558-1012",
       "district": "(847) 599-2800",
       "address": "120 S. Genesee St., Waukegan, IL 60085"
-    }
+    },
+    "zips": [
+      "60085",
+      "60087",
+      "60099"
+    ]
   },
   {
     "id": 3,
@@ -49,7 +60,12 @@
       "district": "(773) 267-2880",
       "email": "info@staterep40.com",
       "address": "4007 N. Sacramento Ave., Chicago, IL 60618"
-    }
+    },
+    "zips": [
+      "60618",
+      "60625",
+      "60641"
+    ]
   },
   {
     "id": 4,
@@ -67,7 +83,12 @@
       "district": "(815) 372-0085",
       "email": "info@repdagmara.org",
       "address": "1050 W. Romeo Rd., Romeoville, IL 60446"
-    }
+    },
+    "zips": [
+      "60446",
+      "60441",
+      "60440"
+    ]
   },
   {
     "id": 5,
@@ -85,7 +106,14 @@
       "district": "(773) 924-1755",
       "email": "Buckner@illinois26.com",
       "address": "449 E. 35th Street, Chicago, IL 60616"
-    }
+    },
+    "zips": [
+      "60616",
+      "60605",
+      "60653",
+      "60615",
+      "60637"
+    ]
   },
   {
     "id": 6,
@@ -103,7 +131,13 @@
       "district": "(773) 348-8974",
       "email": "info@repcroke.com",
       "address": "3223 N. Sheffield Ave, Suite A, Chicago, IL 60657"
-    }
+    },
+    "zips": [
+      "60657",
+      "60614",
+      "60613",
+      "60640"
+    ]
   },
   {
     "id": 7,
@@ -121,7 +155,12 @@
       "district": "(773) 237-4558",
       "email": "Evadina@staterepdelgado.com",
       "address": "6309 W. Belmont Ave., Chicago, IL 60634"
-    }
+    },
+    "zips": [
+      "60634",
+      "60639",
+      "60641"
+    ]
   },
   {
     "id": 8,
@@ -139,7 +178,13 @@
       "district": "(847) 478-9909",
       "email": "Info@repdidech.com",
       "address": "Vernon Township Admin Bldg, 3050 N. Main St., Buffalo Grove, IL 60089"
-    }
+    },
+    "zips": [
+      "60089",
+      "60090",
+      "60061",
+      "60060"
+    ]
   },
   {
     "id": 9,
@@ -157,7 +202,12 @@
       "district": "(708) 295-9159",
       "email": "office@repedgargonzalez.com",
       "address": "3202 W. 26th St., Chicago, IL 60623"
-    }
+    },
+    "zips": [
+      "60623",
+      "60608",
+      "60632"
+    ]
   },
   {
     "id": 10,
@@ -175,7 +225,12 @@
       "district": "(773) 853-2570",
       "email": "will@repguzzardi.com",
       "address": "3001 N. Central Park Ave., Chicago, IL 60618"
-    }
+    },
+    "zips": [
+      "60618",
+      "60647",
+      "60622"
+    ]
   },
   {
     "id": 11,
@@ -193,7 +248,13 @@
       "district": "(773) 925-6580",
       "email": "repsonyaharper@gmail.com",
       "address": "2015 W. 63rd St., Chicago, IL 60636"
-    }
+    },
+    "zips": [
+      "60636",
+      "60621",
+      "60609",
+      "60620"
+    ]
   },
   {
     "id": 12,
@@ -211,7 +272,12 @@
       "district": "(708) 222-5240",
       "email": "office@repehernandez.com",
       "address": "6117 W. Cermak Road, Cicero, IL 60804"
-    }
+    },
+    "zips": [
+      "60804",
+      "60546",
+      "60402"
+    ]
   },
   {
     "id": 13,
@@ -229,7 +295,13 @@
       "district": "(773) 445-9700",
       "email": "justin@repslaughter.com",
       "address": "1234 W. 95th St., Chicago, IL 60643"
-    }
+    },
+    "zips": [
+      "60643",
+      "60655",
+      "60628",
+      "60617"
+    ]
   },
   {
     "id": 14,
@@ -247,7 +319,12 @@
       "district": "(815) 547-3436",
       "email": "sosnowski@ilhousegop.org",
       "address": "1700 Hutchins Road, Unit B, Machesney Park, IL 61115"
-    }
+    },
+    "zips": [
+      "61115",
+      "61102",
+      "61101"
+    ]
   },
   {
     "id": 15,
@@ -261,7 +338,12 @@
     "contact": {
       "springfield": "(217) 782-8071",
       "district": "(618) 307-9200"
-    }
+    },
+    "zips": [
+      "62034",
+      "62025",
+      "62040"
+    ]
   },
   {
     "id": 16,
@@ -275,7 +357,12 @@
     "contact": {
       "springfield": "(217) 782-0052",
       "district": "(630) 326-5552"
-    }
+    },
+    "zips": [
+      "60010",
+      "60067",
+      "60004"
+    ]
   },
   {
     "id": 17,
@@ -289,7 +376,12 @@
     "contact": {
       "springfield": "(217) 782-1018",
       "district": "(618) 997-9099"
-    }
+    },
+    "zips": [
+      "62959",
+      "62966",
+      "62901"
+    ]
   },
   {
     "id": 18,
@@ -303,7 +395,12 @@
     "contact": {
       "springfield": "(217) 782-1717",
       "district": "(815) 880-5340"
-    }
+    },
+    "zips": [
+      "60014",
+      "60098",
+      "60012"
+    ]
   },
   {
     "id": 19,
@@ -317,7 +414,12 @@
     "contact": {
       "springfield": "(217) 782-4014",
       "district": "(630) 543-6848"
-    }
+    },
+    "zips": [
+      "60148",
+      "60101",
+      "60181"
+    ]
   },
   {
     "id": 20,
@@ -331,6 +433,11 @@
     "contact": {
       "springfield": "(217) 782-5997",
       "district": "(217) 876-1968"
-    }
+    },
+    "zips": [
+      "62521",
+      "62526",
+      "62568"
+    ]
   }
 ]

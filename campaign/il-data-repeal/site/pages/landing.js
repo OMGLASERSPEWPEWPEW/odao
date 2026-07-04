@@ -4,6 +4,7 @@
 
 import { getProfile, getLevel } from '../lib/gamification.js';
 import { getDaysRemaining, getCampaignDay } from '../app.js';
+import { renderSharedSections } from '../lib/shared-sections.js';
 
 export async function renderLanding() {
   const container = document.getElementById('page-landing');
@@ -67,6 +68,20 @@ export async function renderLanding() {
       </div>
     </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="zip-lookup">
+          <h3 class="zip-lookup-title">Find Your Representative</h3>
+          <div class="zip-lookup-form">
+            <input type="text" id="zip-input" class="zip-input" placeholder="Enter IL zip code" maxlength="5" pattern="[0-9]*" inputmode="numeric" />
+            <button id="zip-lookup-btn" class="zip-lookup-btn">Look up</button>
+          </div>
+          <div id="zip-result" class="zip-result"></div>
+          <p class="zip-fallback">Or <a href="https://ilga.gov/house/default.asp" target="_blank" rel="noopener">search by address at ilga.gov</a></p>
+        </div>
+      </div>
+    </section>
+
     <footer class="landing-footer">
       <div class="container landing-footer-inner">
         <span class="landing-footer-stat">LVL ${level}</span>
@@ -77,4 +92,63 @@ export async function renderLanding() {
       </div>
     </footer>
   `;
+
+  // Render shared sections (strategy, calendar, legislators, act now, vote math)
+  await renderSharedSections(container);
+
+  // Zip code lookup
+  initZipLookup();
+}
+
+async function initZipLookup() {
+  const btn = document.getElementById('zip-lookup-btn');
+  const input = document.getElementById('zip-input');
+  const result = document.getElementById('zip-result');
+  if (!btn || !input || !result) return;
+
+  let legislators = [];
+  try {
+    const res = await fetch('/legislators.json');
+    legislators = await res.json();
+  } catch (e) { return; }
+
+  const lookup = () => {
+    const zip = input.value.trim();
+    if (zip.length !== 5) {
+      result.innerHTML = '<p class="zip-error">Enter a 5-digit Illinois zip code.</p>';
+      return;
+    }
+
+    const matches = legislators.filter(l => {
+      const zips = l.zips || [];
+      return zips.includes(zip);
+    });
+
+    if (matches.length > 0) {
+      result.innerHTML = matches.map(l => `
+        <div class="zip-match">
+          <div class="zip-match-header">
+            <strong>${l.name}</strong>
+            <span class="party-badge ${l.party === 'D' ? 'dem' : 'rep'}">${l.party === 'D' ? 'DEM' : 'GOP'}</span>
+            <span>District ${l.district}</span>
+            ${l.role !== 'Member' ? `<span class="role-badge">${l.role}</span>` : ''}
+          </div>
+          <p class="zip-match-leverage">${l.leverage}</p>
+          ${l.contact?.address ? `<p class="zip-match-contact"><a href="https://maps.google.com/?q=${encodeURIComponent(l.contact.address)}" target="_blank" rel="noopener">${l.contact.address}</a></p>` : ''}
+          ${l.contact?.district ? `<p class="zip-match-contact"><a href="tel:${l.contact.district}">${l.contact.district}</a></p>` : ''}
+          <p class="zip-match-note">This representative is on the <strong>Revenue &amp; Finance Committee</strong> — a key target.</p>
+        </div>
+      `).join('');
+    } else {
+      result.innerHTML = `
+        <div class="zip-no-match">
+          <p>Your zip code doesn't match a Revenue Committee member's district — but you can still help.</p>
+          <p>Call your own representative and ask them to support HB 5798. <a href="https://ilga.gov/house/default.asp" target="_blank" rel="noopener">Find your rep at ilga.gov &rarr;</a></p>
+        </div>
+      `;
+    }
+  };
+
+  btn.addEventListener('click', lookup);
+  input.addEventListener('keypress', (e) => { if (e.key === 'Enter') lookup(); });
 }
