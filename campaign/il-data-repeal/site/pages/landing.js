@@ -47,7 +47,7 @@ export async function renderLanding() {
               </svg>
             </div>
             <h3 class="track-choice-name">Tax Revenue Engine</h3>
-            <p class="track-choice-desc">Prove crypto events generate more tax revenue than the DATA tax ever will.</p>
+            <p class="track-choice-desc">Show that this tax kills an economic engine for Chicago before it reaches its potential.</p>
             <span class="track-choice-cta">Enter Game Room &rarr;</span>
           </a>
 

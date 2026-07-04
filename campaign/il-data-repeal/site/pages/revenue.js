@@ -22,6 +22,6 @@ export async function renderRevenue() {
     trackColor: '#FFD700',
     trackSlug: 'revenue',
     headerClass: 'revenue-header',
-    elevatorPitch: 'OnionDAO already generates more tax revenue for Chicago than this crypto tax would collect from community DAOs. Thirty days of catered meals, restaurant buyouts, hotel stays — all taxed at Chicago\'s rates. The city is spending $40 million a year to attract events like this. The state is taxing away the reason they come.',
+    elevatorPitch: 'OnionDAO brought 400 people to Chicago for a month. Catered meals, restaurant buyouts, hotel stays — all generating sales tax, hotel tax, amusement tax through existing mechanisms. Year two and growing. This tax kills that growth curve before it becomes what SXSW is to Austin. Chicago is spending $40 million a year to attract events like this. The state is taxing away the reason they come.',
   });
 }
