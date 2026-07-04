@@ -449,13 +449,10 @@ function initCalendarTimeline(wrapper, events) {
     item.dataset.eventId = event.id;
 
     item.innerHTML = `
-      <div class="timeline-dot"></div>
       <div class="timeline-card">
-        <div class="timeline-date">${dateStr}</div>
+        <div class="timeline-date"><span class="timeline-dot"></span>${dateStr}</div>
         <div class="timeline-title">${event.title}</div>
-        <div class="timeline-desc">${event.description}</div>
         ${badge}
-        <div class="timeline-click-hint">Click for action items</div>
       </div>
     `;
 
