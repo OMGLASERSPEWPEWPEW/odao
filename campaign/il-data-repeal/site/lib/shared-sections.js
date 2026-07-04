@@ -491,66 +491,69 @@ function renderLegislatorCards(wrapper, legislators) {
     return;
   }
 
-  grid.innerHTML = filtered.map(leg => {
-    const partyClass = leg.party === 'D' ? 'dem' : 'rep';
-    const partyLabel = leg.party === 'D' ? 'DEM' : 'GOP';
-    const swayClass = `sway-${leg.swayability}`;
-    const swayLabel = leg.swayability === 'ally' ? 'ALLY' : leg.swayability.toUpperCase();
-    const area = leg.chicago ? 'Chicago' + (leg.area ? ` (${leg.area})` : '') : (leg.area || '');
+  grid.innerHTML = filtered.map(leg => buildLegislatorCardHTML(leg)).join('');
+}
 
-    const photoSlug = leg.name.toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, '-');
-    const avatarFallback = generateAvatar(leg.name, leg.party);
+export function buildLegislatorCardHTML(leg, { expanded = false } = {}) {
+  const partyClass = leg.party === 'D' ? 'dem' : 'rep';
+  const partyLabel = leg.party === 'D' ? 'DEM' : 'GOP';
+  const swayClass = `sway-${leg.swayability}`;
+  const swayLabel = leg.swayability === 'ally' ? 'ALLY' : leg.swayability.toUpperCase();
+  const area = leg.chicago ? 'Chicago' + (leg.area ? ` (${leg.area})` : '') : (leg.area || '');
 
-    const priorityBadge = leg.priority === 'critical' ? '<span class="priority-badge critical">PRIORITY</span>' :
-                          leg.priority === 'coordinate' ? '<span class="priority-badge coordinate">COORDINATE</span>' : '';
+  const photoSlug = leg.name.toLowerCase().replace(/[^a-z ]/g, '').replace(/\s+/g, '-');
+  const avatarFallback = generateAvatar(leg.name, leg.party);
 
-    const contactHtml = leg.contact ? `
-      <button class="legislator-expand" onclick="toggleContact(this)">
-        <span class="arrow">&#9654;</span> Contact Info & Office Address
-      </button>
-      <div class="legislator-contact">
-        ${leg.contact.address ? `<div class="contact-row address-row"><span>District Office:</span><a href="https://maps.google.com/?q=${encodeURIComponent(leg.contact.address)}" target="_blank" rel="noopener">${leg.contact.address}</a></div>` : ''}
-        ${leg.contact.district ? `<div class="contact-row"><span>District Phone:</span><a href="tel:${leg.contact.district}">${leg.contact.district}</a></div>` : ''}
-        ${leg.contact.springfield ? `<div class="contact-row"><span>Springfield:</span><a href="tel:${leg.contact.springfield}">${leg.contact.springfield}</a></div>` : ''}
-        ${leg.contact.email ? `<div class="contact-row"><span>Email:</span><a href="mailto:${leg.contact.email}">${leg.contact.email}</a></div>` : ''}
-      </div>
-    ` : '';
+  const priorityBadge = leg.priority === 'critical' ? '<span class="priority-badge critical">PRIORITY</span>' :
+                        leg.priority === 'coordinate' ? '<span class="priority-badge coordinate">COORDINATE</span>' : '';
 
-    return `
-      <div class="legislator-card">
-        <div class="legislator-top">
-          <div class="legislator-top-left">
-            <div class="legislator-avatar">
-              <img src="/photos/legislators/${photoSlug}.jpg" width="48" height="48" alt="${leg.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-              <span class="avatar-fallback" style="display:none">${avatarFallback}</span>
-            </div>
-            <div>
-              <div class="legislator-name">${leg.name}</div>
-              <div class="legislator-meta">
-                <span class="party-badge ${partyClass}">${partyLabel}</span>
-                ${leg.role !== 'Member' ? `<span class="role-badge">${leg.role}</span>` : ''}
-                ${leg.chicago ? '<span class="chicago-badge">Chicago</span>' : ''}
-                ${priorityBadge}
-              </div>
-            </div>
+  const openClass = expanded ? ' open' : '';
+  const contactHtml = leg.contact ? `
+    <button class="legislator-expand${openClass}" onclick="toggleContact(this)">
+      <span class="arrow">&#9654;</span> Contact Info & Office Address
+    </button>
+    <div class="legislator-contact${openClass}">
+      ${leg.contact.address ? `<div class="contact-row address-row"><span>District Office:</span><a href="https://maps.google.com/?q=${encodeURIComponent(leg.contact.address)}" target="_blank" rel="noopener">${leg.contact.address}</a></div>` : ''}
+      ${leg.contact.district ? `<div class="contact-row"><span>District Phone:</span><a href="tel:${leg.contact.district}">${leg.contact.district}</a></div>` : ''}
+      ${leg.contact.springfield ? `<div class="contact-row"><span>Springfield:</span><a href="tel:${leg.contact.springfield}">${leg.contact.springfield}</a></div>` : ''}
+      ${leg.contact.email ? `<div class="contact-row"><span>Email:</span><a href="mailto:${leg.contact.email}">${leg.contact.email}</a></div>` : ''}
+    </div>
+  ` : '';
+
+  return `
+    <div class="legislator-card">
+      <div class="legislator-top">
+        <div class="legislator-top-left">
+          <div class="legislator-avatar">
+            <img src="/photos/legislators/${photoSlug}.jpg" width="48" height="48" alt="${leg.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+            <span class="avatar-fallback" style="display:none">${avatarFallback}</span>
           </div>
-          <div class="district-label">D-${leg.district}</div>
-        </div>
-        ${area ? `<div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:8px;">${area}</div>` : ''}
-        <div class="sway-meter">
-          <div class="sway-label">
-            <span>Swayability</span>
-            <span class="sway-value ${swayClass}">${swayLabel}</span>
-          </div>
-          <div class="sway-bar-track">
-            <div class="sway-bar-fill ${swayClass}"></div>
+          <div>
+            <div class="legislator-name">${leg.name}</div>
+            <div class="legislator-meta">
+              <span class="party-badge ${partyClass}">${partyLabel}</span>
+              ${leg.role !== 'Member' ? `<span class="role-badge">${leg.role}</span>` : ''}
+              ${leg.chicago ? '<span class="chicago-badge">Chicago</span>' : ''}
+              ${priorityBadge}
+            </div>
           </div>
         </div>
-        <div class="legislator-leverage">${leg.leverage}</div>
-        ${contactHtml}
+        <div class="district-label">D-${leg.district}</div>
       </div>
-    `;
-  }).join('');
+      ${area ? `<div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:8px;">${area}</div>` : ''}
+      <div class="sway-meter">
+        <div class="sway-label">
+          <span>Swayability</span>
+          <span class="sway-value ${swayClass}">${swayLabel}</span>
+        </div>
+        <div class="sway-bar-track">
+          <div class="sway-bar-fill ${swayClass}"></div>
+        </div>
+      </div>
+      <div class="legislator-leverage">${leg.leverage}</div>
+      ${contactHtml}
+    </div>
+  `;
 }
 
 

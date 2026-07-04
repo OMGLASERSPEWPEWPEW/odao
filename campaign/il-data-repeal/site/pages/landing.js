@@ -4,7 +4,7 @@
 
 import { getProfile, getLevel } from '../lib/gamification.js';
 import { getDaysRemaining, getCampaignDay } from '../app.js';
-import { renderSharedSections } from '../lib/shared-sections.js';
+import { renderSharedSections, buildLegislatorCardHTML } from '../lib/shared-sections.js';
 
 export async function renderLanding() {
   const container = document.getElementById('page-landing');
@@ -124,32 +124,13 @@ async function initZipLookup() {
       return zips.includes(zip);
     });
 
-    // Clear previous highlights
-    document.querySelectorAll('.legislator-card').forEach(c => c.classList.remove('zip-highlighted'));
-
     if (matches.length > 0) {
-      const names = matches.map(l => l.name).join(', ');
-      result.innerHTML = `<p class="zip-match-inline">${names} represents your area. Scrolling to their card below.</p>`;
-
-      // Find and highlight matching cards, scroll to first one
-      let scrolled = false;
-      document.querySelectorAll('.legislator-card').forEach(card => {
-        const cardName = card.querySelector('.legislator-name')?.textContent;
-        if (cardName && matches.some(m => m.name === cardName)) {
-          card.classList.add('zip-highlighted');
-          // Expand contact info
-          const expandBtn = card.querySelector('.legislator-expand');
-          const contactDiv = card.querySelector('.legislator-contact');
-          if (expandBtn && contactDiv && !contactDiv.classList.contains('open')) {
-            expandBtn.classList.add('open');
-            contactDiv.classList.add('open');
-          }
-          if (!scrolled) {
-            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            scrolled = true;
-          }
-        }
-      });
+      result.innerHTML = `
+        <p class="zip-match-inline">Your area is represented by a Revenue Committee member:</p>
+        <div class="zip-result-cards">
+          ${matches.map(l => buildLegislatorCardHTML(l, { expanded: true })).join('')}
+        </div>
+      `;
     } else {
       result.innerHTML = `
         <div class="zip-no-match">
