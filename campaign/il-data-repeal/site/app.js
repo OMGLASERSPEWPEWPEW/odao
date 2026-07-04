@@ -36,6 +36,8 @@ window.generateAvatar = generateAvatar;
 function initNavCountdown() {
   const el = document.getElementById('nav-countdown');
   if (el) el.textContent = `${getDaysRemaining()}d`;
+  const versionEl = document.getElementById('version-stamp');
+  if (versionEl) versionEl.textContent = `v${__APP_VERSION__}`;
 }
 
 
