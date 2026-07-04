@@ -258,6 +258,20 @@ a:hover {
   color: var(--red);
   font-size: 0.85rem;
 }
+.zip-match-inline {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.legislator-card.zip-highlighted {
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3), 0 4px 20px rgba(34, 197, 94, 0.15);
+  animation: zipPulse 1s ease-out;
+}
+@keyframes zipPulse {
+  0% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.5); }
+  100% { box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3), 0 4px 20px rgba(34, 197, 94, 0.15); }
+}
 
 .nav-links {
   list-style: none;

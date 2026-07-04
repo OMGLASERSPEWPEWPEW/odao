@@ -124,21 +124,32 @@ async function initZipLookup() {
       return zips.includes(zip);
     });
 
+    // Clear previous highlights
+    document.querySelectorAll('.legislator-card').forEach(c => c.classList.remove('zip-highlighted'));
+
     if (matches.length > 0) {
-      result.innerHTML = matches.map(l => `
-        <div class="zip-match">
-          <div class="zip-match-header">
-            <strong>${l.name}</strong>
-            <span class="party-badge ${l.party === 'D' ? 'dem' : 'rep'}">${l.party === 'D' ? 'DEM' : 'GOP'}</span>
-            <span>District ${l.district}</span>
-            ${l.role !== 'Member' ? `<span class="role-badge">${l.role}</span>` : ''}
-          </div>
-          <p class="zip-match-leverage">${l.leverage}</p>
-          ${l.contact?.address ? `<p class="zip-match-contact"><a href="https://maps.google.com/?q=${encodeURIComponent(l.contact.address)}" target="_blank" rel="noopener">${l.contact.address}</a></p>` : ''}
-          ${l.contact?.district ? `<p class="zip-match-contact"><a href="tel:${l.contact.district}">${l.contact.district}</a></p>` : ''}
-          <p class="zip-match-note">This representative is on the <strong>Revenue &amp; Finance Committee</strong> — a key target.</p>
-        </div>
-      `).join('');
+      const names = matches.map(l => l.name).join(', ');
+      result.innerHTML = `<p class="zip-match-inline">${names} represents your area. Scrolling to their card below.</p>`;
+
+      // Find and highlight matching cards, scroll to first one
+      let scrolled = false;
+      document.querySelectorAll('.legislator-card').forEach(card => {
+        const cardName = card.querySelector('.legislator-name')?.textContent;
+        if (cardName && matches.some(m => m.name === cardName)) {
+          card.classList.add('zip-highlighted');
+          // Expand contact info
+          const expandBtn = card.querySelector('.legislator-expand');
+          const contactDiv = card.querySelector('.legislator-contact');
+          if (expandBtn && contactDiv && !contactDiv.classList.contains('open')) {
+            expandBtn.classList.add('open');
+            contactDiv.classList.add('open');
+          }
+          if (!scrolled) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            scrolled = true;
+          }
+        }
+      });
     } else {
       result.innerHTML = `
         <div class="zip-no-match">
