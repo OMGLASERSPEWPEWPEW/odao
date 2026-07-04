@@ -153,6 +153,14 @@ a:hover {
   color: var(--text-muted);
 }
 
+.landing-bill-explainer {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
 .nav-links {
   list-style: none;
   display: flex;

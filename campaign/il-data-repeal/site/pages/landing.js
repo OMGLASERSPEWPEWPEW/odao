@@ -16,6 +16,7 @@ export async function renderLanding() {
         <h1 class="landing-bill-title">SB 3019</h1>
         <p class="landing-bill-subtitle">Illinois Digital Asset Tax Act</p>
         <p class="landing-day-counter">Day ${getCampaignDay()} &middot; ${getDaysRemaining()} days remaining</p>
+        <p class="landing-bill-explainer">SB 3019 is the tax. HB 5798 is the repeal. Pick a track to fight back.</p>
       </div>
     </header>
 
