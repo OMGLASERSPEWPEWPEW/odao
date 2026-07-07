@@ -304,24 +304,53 @@ async function initBillStatusTracker(wrapper) {
       </div>
     ` : '';
 
+    const isAssigned = status.includes('COMMITTEE') || status.includes('PASSED') || status.includes('READING') || status.includes('SENATE');
+    const answerClass = isAssigned ? 'tracker-answer-yes' : 'tracker-answer-no';
+    const answerText = isAssigned ? 'YES' : 'NOT YET';
+    const answerSub = isAssigned
+      ? 'File your Witness Slip NOW at <a href="https://my.ilga.gov/WitnessSlip" target="_blank" rel="noopener">my.ilga.gov/WitnessSlip</a>'
+      : 'We check <a href="' + (data.ilga_url || 'https://ilga.gov') + '" target="_blank" rel="noopener">ilga.gov</a> every day. You\'ll know when it moves.';
+
     tracker.innerHTML = `
       <div class="tracker-radar"><span class="radar-ping"></span><span class="radar-dot"></span></div>
+      <button class="tracker-help-btn" onclick="document.getElementById('trackerHelpModal').classList.add('open')" aria-label="How does this work?">?</button>
       <div class="tracker-title">Ann Marie's Super Duper<br/><span class="tracker-title-highlight">"Assigned to Committee"</span> Tracker</div>
-      <div class="tracker-status-row">
-        <span class="tracker-status-badge ${statusClass}">${status}</span>
+      <div class="tracker-question">Has HB 5798 been assigned to a committee?</div>
+      <div class="tracker-answer ${answerClass}">${answerText}</div>
+      <div class="tracker-answer-sub">${answerSub}</div>
+      <div class="tracker-detail-row">
         <span class="tracker-bill-id">HB 5798</span>
+        <span class="tracker-status-badge ${statusClass}">${status}</span>
       </div>
       <div class="bill-status-summary">${firstSentence}</div>
-      <div class="tracker-method-bar">
-        <span class="tracker-method-step"><span class="tracker-method-icon">1</span> Scraped <a href="${data.ilga_url || 'https://ilga.gov'}" target="_blank" rel="noopener">ilga.gov</a></span>
-        <span class="tracker-method-arrow">&rarr;</span>
-        <span class="tracker-method-step"><span class="tracker-method-icon">2</span> Claude Haiku</span>
-        <span class="tracker-method-arrow">&rarr;</span>
-        <span class="tracker-method-step"><span class="tracker-method-icon">3</span> Result</span>
-      </div>
       <div class="tracker-checked">Last checked: ${checkedAt}</div>
       ${sourcesHtml}
       ${renderCheckLog(data.history || [])}
+
+      <div class="tracker-help-modal" id="trackerHelpModal">
+        <div class="tracker-help-content">
+          <button class="tracker-help-close" onclick="document.getElementById('trackerHelpModal').classList.remove('open')">&times;</button>
+          <h3>How does this tracker work?</h3>
+          <div class="tracker-help-steps">
+            <div class="tracker-help-step">
+              <span class="tracker-method-icon">1</span>
+              <div><strong>Every day at 9 AM CT</strong>, a bot scrapes the official <a href="${data.ilga_url || 'https://ilga.gov'}" target="_blank" rel="noopener">ILGA bill status page</a> for HB 5798.</div>
+            </div>
+            <div class="tracker-help-step">
+              <span class="tracker-method-icon">2</span>
+              <div><strong>Claude Haiku</strong> (a fast AI model) reads the HTML and extracts the current status and actions.</div>
+            </div>
+            <div class="tracker-help-step">
+              <span class="tracker-method-icon">3</span>
+              <div>If the status changes to <strong>"Assigned to Committee"</strong>, that means it's time to <strong>file Witness Slips</strong>.</div>
+            </div>
+          </div>
+          <h4>What's a Witness Slip?</h4>
+          <p>It's a 2-minute form on <a href="https://my.ilga.gov/WitnessSlip" target="_blank" rel="noopener">my.ilga.gov</a> where you say you <strong>support</strong> HB 5798. Each person files their own. The committee sees the total count &mdash; 500 slips makes a real statement.</p>
+          <h4>Why does this matter?</h4>
+          <p>HB 5798 repeals the 0.2% tax on every crypto transaction in Illinois. Until it's assigned to a committee, nothing can happen. Once it is, we need to flood it with support.</p>
+        </div>
+      </div>
     `;
   } catch {
     tracker.innerHTML = '<div class="bill-status-empty">Bill status tracker unavailable.</div>';
