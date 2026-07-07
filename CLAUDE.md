@@ -69,6 +69,14 @@ idf.py build && idf.py -p /dev/cu.usbserial-110 flash monitor
 
 Use the `esp-idf` MCP server tools: `set_target`, `build`, `flash`, `monitor`, `list_ports`.
 
+## Campaign Site
+
+The IL DATA Repeal campaign site lives at `campaign/il-data-repeal/site/`.
+
+- **Deploys:** push-to-main via Vercel
+- **Version:** `package.json` version → Vite `__APP_VERSION__` → nav stamp + PWA cache rotation
+- **Rule:** Bump patch version before committing campaign changes. `/cap` handles this automatically.
+
 ## Agent Orchestration — MANDATORY
 
 **Zephyr-First Protocol: NO EXCEPTIONS.**

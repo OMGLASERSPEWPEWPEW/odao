@@ -70,6 +70,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 | `gateway` | `gateway.ts`, `supabase/functions/*` |
 | `infra` | `.claude/agents/*`, `.claude/hooks/*`, `.claude/skills/*`, `CLAUDE.md` |
 | `build` | `vite.config.ts`, `tsconfig.json`, `package.json`, `package-lock.json` |
+| `campaign` | `campaign/il-data-repeal/site/**` |
 
 ### Agent grep patterns this enables
 
@@ -165,6 +166,20 @@ Proceed? [yes / edit N / skip N / abort]
 - `edit N` — revise commit N's message or file grouping
 - `skip N` — exclude commit N (leaves files unstaged)
 - `abort` — do nothing, leave working tree untouched
+
+### Phase 3.5: VERSION BUMP (campaign site)
+
+If ANY confirmed commit group includes files under `campaign/il-data-repeal/site/`
+(excluding changelog-only edits to `data/changelog.js`):
+
+1. Run from the campaign site directory:
+   ```bash
+   (cd campaign/il-data-repeal/site && npm version patch --no-git-tag-version)
+   ```
+2. Include the bumped `package.json` (and `package-lock.json` if changed) in the campaign commit group
+3. Append the new version to the commit summary, e.g.: `feat(campaign): add quest filtering (v0.1.6)`
+
+Skip the bump if the campaign changes are changelog-only or docs-only.
 
 ### Phase 4: EXECUTE COMMITS
 
