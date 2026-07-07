@@ -4515,69 +4515,67 @@ textarea.form-input {
 }
 
 /* Quest proof upload */
-.proof-upload-section {
+/* Quest notes input */
+.quest-notes-section {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid var(--border);
 }
-.proof-label {
+.quest-notes-label {
   display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-.proof-file-input {
-  font-size: 0.8rem;
-  color: var(--text);
-}
-.proof-status {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--blue);
-  margin-top: 4px;
-}
-
-/* Quest proof gallery */
-.quest-proofs {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-}
-.quest-proofs-label {
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--green);
-  display: block;
   margin-bottom: 6px;
 }
-.quest-proofs-list {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.quest-proof-thumb {
-  display: block;
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-.quest-proof-thumb img {
+.quest-notes-input {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.quest-proof-link {
-  font-size: 0.7rem;
-  color: var(--blue);
-  padding: 4px 8px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg);
   border: 1px solid var(--border);
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 80px;
+}
+.quest-notes-input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+/* Quest notes display */
+.quest-notes-display {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.quest-note-entry {
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.03);
   border-radius: 4px;
-  display: inline-block;
+  border-left: 2px solid var(--green);
+}
+.quest-note-author {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-right: 6px;
+}
+.quest-note-date {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
+.quest-note-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+  line-height: 1.4;
+  white-space: pre-wrap;
 }
 .claim-share {
   display: inline-flex;

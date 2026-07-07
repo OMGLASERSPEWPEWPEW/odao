@@ -104,23 +104,24 @@ export async function renderBounty() {
   const allBounties = [...legBounties, ...specialRes];
   const types = [...new Set(allBounties.map(b => b.type))];
 
-  // Fetch existing proofs from Supabase
-  let proofsByQuest = {};
+  // Fetch existing notes from Supabase
+  let notesByQuest = {};
   try {
     const { data } = await supabase
       .from('campaign_activity')
       .select('data, created_at')
       .eq('type', 'bounty_claimed')
-      .not('data->proof_path', 'is', null);
+      .not('data->notes', 'is', null);
     if (data) {
       data.forEach(r => {
         const qid = r.data?.id;
-        if (!qid) return;
-        if (!proofsByQuest[qid]) proofsByQuest[qid] = [];
-        proofsByQuest[qid].push({
-          path: r.data.proof_path,
+        if (!qid || !r.data.notes) return;
+        if (!notesByQuest[qid]) notesByQuest[qid] = [];
+        notesByQuest[qid].push({
+          notes: r.data.notes,
           claimedAt: r.created_at,
           bounty: r.data.bounty,
+          volunteer: r.data.volunteer,
         });
       });
     }
@@ -149,7 +150,7 @@ export async function renderBounty() {
         </div>
 
         <div class="bounty-grid" id="bountyGrid">
-          ${allBounties.map(b => renderBountyCard(b, loggedIn, proofsByQuest[b.id] || [])).join('')}
+          ${allBounties.map(b => renderBountyCard(b, loggedIn, notesByQuest[b.id] || [])).join('')}
         </div>
       </div>
     </section>
@@ -181,13 +182,12 @@ export async function renderBounty() {
       }
 
       const card = btn.closest('.bounty-card');
-      const proofSection = card.querySelector('.proof-upload-section');
+      const notesSection = card.querySelector('.quest-notes-section');
 
-      // If proof section isn't showing yet, show it
-      if (proofSection && !proofSection.classList.contains('open')) {
-        proofSection.classList.add('open');
-        proofSection.style.display = 'block';
-        btn.textContent = 'Confirm claim';
+      if (notesSection && !notesSection.classList.contains('open')) {
+        notesSection.classList.add('open');
+        notesSection.style.display = 'block';
+        btn.textContent = 'Save & Claim';
         return;
       }
 
@@ -195,37 +195,30 @@ export async function renderBounty() {
       const xp = parseInt(btn.dataset.xp, 10);
       const title = btn.dataset.title;
 
-      // Handle proof upload if file selected
-      let proofPath = null;
-      const fileInput = card.querySelector('.proof-file-input');
-      if (fileInput?.files?.length > 0) {
-        const file = fileInput.files[0];
-        const user = await getUser();
-        const ext = file.name.split('.').pop();
-        const path = `proofs/${user.id}/${id}/${Date.now()}.${ext}`;
-
-        const statusEl = card.querySelector('.proof-status');
-        if (statusEl) statusEl.textContent = 'Uploading proof...';
-
-        try {
-          const { error } = await supabase.storage
-            .from('campaign-proofs')
-            .upload(path, file, { cacheControl: '3600', upsert: false });
-          if (!error) proofPath = path;
-        } catch { /* upload failed, claim without proof */ }
-      }
+      const textarea = card.querySelector('.quest-notes-input');
+      const notes = textarea?.value?.trim() || null;
+      const user = await getUser();
 
       claimBounty(id);
       const updated = addXP(xp);
       checkBadges(updated, getCompletedCount());
-      logActivity('bounty_claimed', { id, xp, bounty: title, proof_path: proofPath });
+      logActivity('bounty_claimed', { id, xp, bounty: title, notes, volunteer: user?.username });
 
       card.classList.add('claimed');
       btn.innerHTML = `Claimed! +${xp} XP`;
       btn.disabled = true;
-      if (proofSection) proofSection.style.display = 'none';
+      if (notesSection) notesSection.style.display = 'none';
 
-      // Show copy link button
+      // Show the saved note inline
+      if (notes) {
+        const notesDisplay = card.querySelector('.quest-notes-display');
+        if (notesDisplay) {
+          const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          notesDisplay.innerHTML += `<div class="quest-note-entry"><span class="quest-note-date">${date}</span><p class="quest-note-text">${notes.replace(/</g, '&lt;')}</p></div>`;
+          notesDisplay.style.display = 'block';
+        }
+      }
+
       const shareArea = card.querySelector('.claim-share');
       if (shareArea) {
         const shareUrl = SITE_BASE + '/#/bounty';
@@ -236,23 +229,19 @@ export async function renderBounty() {
   });
 }
 
-function renderBountyCard(b, loggedIn, proofs) {
+function renderBountyCard(b, loggedIn, notes) {
   const claimed = isClaimed(b.id);
 
-  const proofHtml = proofs.length > 0 ? `
-    <div class="quest-proofs">
-      <span class="quest-proofs-label">Proof (${proofs.length})</span>
-      <div class="quest-proofs-list">
-        ${proofs.map(p => {
-          const { data: { publicUrl } } = supabase.storage.from('campaign-proofs').getPublicUrl(p.path);
-          const isImage = /\.(jpg|jpeg|png|gif|webp)$/i.test(p.path);
-          return isImage
-            ? `<a href="${publicUrl}" target="_blank" class="quest-proof-thumb"><img src="${publicUrl}" alt="Proof" /></a>`
-            : `<a href="${publicUrl}" target="_blank" class="quest-proof-link">View proof</a>`;
-        }).join('')}
-      </div>
+  const notesHtml = notes.length > 0 ? `
+    <div class="quest-notes-display" style="display:block">
+      <span class="quest-notes-label">Notes (${notes.length})</span>
+      ${notes.map(n => {
+        const date = new Date(n.claimedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const who = n.volunteer ? `<span class="quest-note-author">${n.volunteer}</span>` : '';
+        return `<div class="quest-note-entry">${who}<span class="quest-note-date">${date}</span><p class="quest-note-text">${n.notes.replace(/</g, '&lt;')}</p></div>`;
+      }).join('')}
     </div>
-  ` : '';
+  ` : '<div class="quest-notes-display" style="display:none"></div>';
 
   return `
     <div class="bounty-card ${claimed ? 'claimed' : ''}" data-type="${b.type}">
@@ -267,7 +256,7 @@ function renderBountyCard(b, loggedIn, proofs) {
       ${b.phone ? `<div class="bounty-meta"><a href="tel:${b.phone}">${b.phone}</a></div>` : ''}
       ${b.email ? `<div class="bounty-meta"><a href="mailto:${b.email}">${b.email}</a></div>` : ''}
       ${b.address ? `<div class="bounty-meta">${b.address}</div>` : ''}
-      ${proofHtml}
+      ${notesHtml}
       <div class="bounty-footer">
         <span class="bounty-xp">${b.xp} XP</span>
         ${b.repeatable ? '<span class="bounty-repeatable">Repeatable</span>' : ''}
@@ -275,10 +264,9 @@ function renderBountyCard(b, loggedIn, proofs) {
         <button class="bounty-claim-btn ${claimed ? 'claimed' : ''}" data-id="${b.id}" data-xp="${b.xp}" data-title="${b.title}" ${claimed ? 'disabled' : ''}>${claimed ? `Claimed! +${b.xp} XP` : (loggedIn ? 'Claim' : 'Log in to claim')}</button>
       </div>
       ${!claimed && loggedIn ? `
-        <div class="proof-upload-section" style="display:none">
-          <label class="proof-label">Add proof (optional)</label>
-          <input type="file" class="proof-file-input" accept="image/*,.pdf,.doc,.docx" />
-          <span class="proof-status"></span>
+        <div class="quest-notes-section" style="display:none">
+          <label class="quest-notes-label">Meeting / call notes</label>
+          <textarea class="quest-notes-input" rows="4" placeholder="What happened? Key takeaways, next steps..."></textarea>
         </div>
       ` : ''}
     </div>
