@@ -1204,3 +1204,62 @@ Proposed commits (3):
 
 ---
 
+## 2026-07-07_13-14-07 (session c5a2129a)
+
+**assistant**: Proposed commits (2):
+
+1. **`feat(campaign): add username stamp on claimed cards + activity feed (v0.1.8)`**
+
+   Why: Claimed quest cards now show the claimer's username at an angle. Landing
+        page has a new activity feed showing recent claims with expandable notes.
+   Files: `bounty.js`, `landing.js`, `style.css`, `package.json`
+
+2. **`chore(infra): update memory heaps and daily journal`**
+
+   Files: `.claude/memory/daily/2026-07-07.md`, `.claude/memory/heaps/*.md`
+
+Proceed? [yes / edit N...
+
+**user**: yes
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_13-21-30 (session c5a2129a)
+
+**assistant**: [tool: Edit]
+
+**assistant**: Let me verify the build.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build error — let me see what it is.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: It's a cwd issue — I'm in the wrong directory (the `cd` from the supabase CLI earlier reset it).
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build passes. Here's what changed:
+
+1. **No login required to claim** — removed the auth gate. Unauthenticated users get a "Your name" text input instead.
+2. **Username stamp always shows** — uses entered name or logged-in username.
+3. **`logActivity` no longer bails on anonymous users** — inserts with `volunteer_id: null`.
+4. **RLS policy documented** — added `campaign_activity_anon_insert` policy to the SQL file.
+
+**One manual step you need to do:** Run this SQL in the Supabase dashboard (SQL ...
+
+---
+

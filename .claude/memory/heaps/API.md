@@ -1546,3 +1546,53 @@ The quickest fix without changing your setup: add an ignore build step so Vercel
 
 ---
 
+## 2026-07-07_13-16-28 (session c5a2129a)
+
+**assistant**: The issue is the Supabase query is filtering for rows where `data->notes` is not null, but the activity feed should show ALL claims, not just ones with notes. Let me check — actually the activity feed query doesn't have that filter, but let me look at what's actually in the database.
+
+**assistant**: [tool: Read]
+
+**assistant**: The query looks right — no notes filter. The problem is likely that the claim you made went through `logActivity` which requires being logged in, and the data is in the database. Let me check if the Supabase connection is working and if there's data.
+
+**assistant**: [tool: Bash]
+
+**user**: [Request interrupted by user]
+
+**user**: sorry continue
+
+**assistant**: Let me query Supabase directly to see what's in the database.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Empty array — no `bounty_claimed` rows in the database at all. The claim was likely saved only to localStorage (the `claimBounty()` function), not to Supabase. This happens when `logActivity` silently fails — probably because the user wasn't authenticated via Supabase auth when claiming.
+
+Let me check what auth state you'd have on the production site.
+
+**assistant**: [tool: Read]
+
+---
+
+## 2026-07-07_13-24-14 (session c5a2129a)
+
+**assistant**: Let me revert the four files cleanly using git checkout for the
+
+**user**: [Request interrupted by user]
+
+**user**: Dont seed into supabase wtf do it right
+
+**assistant**: You're right, sorry. The code should just work — claims go through auth, `logActivity` inserts to Supabase, the activity feed reads it. The issue is `logActivity` silently swallows errors. Let me revert everything and fix the actual bug.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Reverted. The real bug is that `logActivity` silently swallows insert errors — no `console.error`, nothing. So when you claimed as darklight, the insert likely failed (maybe RLS, maybe FK issue) and you never knew.
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: ExitPlanMode]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+---
+

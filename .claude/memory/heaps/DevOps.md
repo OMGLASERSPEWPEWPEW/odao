@@ -2485,3 +2485,104 @@ The quickest fix without changing your setup: add an ignore build step so Vercel
 
 ---
 
+## 2026-07-07_13-16-28 (session c5a2129a)
+
+**assistant**: The issue is the Supabase query is filtering for rows where `data->notes` is not null, but the activity feed should show ALL claims, not just ones with notes. Let me check — actually the activity feed query doesn't have that filter, but let me look at what's actually in the database.
+
+**assistant**: [tool: Read]
+
+**assistant**: The query looks right — no notes filter. The problem is likely that the claim you made went through `logActivity` which requires being logged in, and the data is in the database. Let me check if the Supabase connection is working and if there's data.
+
+**assistant**: [tool: Bash]
+
+**user**: [Request interrupted by user]
+
+**user**: sorry continue
+
+**assistant**: Let me query Supabase directly to see what's in the database.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Empty array — no `bounty_claimed` rows in the database at all. The claim was likely saved only to localStorage (the `claimBounty()` function), not to Supabase. This happens when `logActivity` silently fails — probably because the user wasn't authenticated via Supabase auth when claiming.
+
+Let me check what auth state you'd have on the production site.
+
+**assistant**: [tool: Read]
+
+---
+
+## 2026-07-07_13-21-30 (session c5a2129a)
+
+**assistant**: [tool: Edit]
+
+**assistant**: Let me verify the build.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build error — let me see what it is.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: It's a cwd issue — I'm in the wrong directory (the `cd` from the supabase CLI earlier reset it).
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build passes. Here's what changed:
+
+1. **No login required to claim** — removed the auth gate. Unauthenticated users get a "Your name" text input instead.
+2. **Username stamp always shows** — uses entered name or logged-in username.
+3. **`logActivity` no longer bails on anonymous users** — inserts with `volunteer_id: null`.
+4. **RLS policy documented** — added `campaign_activity_anon_insert` policy to the SQL file.
+
+**One manual step you need to do:** Run this SQL in the Supabase dashboard (SQL ...
+
+---
+
+## 2026-07-07_13-24-50 (session c5a2129a)
+
+**assistant**: Build passes. One line changed — `logActivity` now logs errors to the console instead of silently swallowing them.
+
+After you deploy, log in as darklight on the site, open the browser console, and re-claim Andrade's visit. If the insert fails, you'll see the exact error (RLS, FK, etc.) in the console and we can fix the actual cause.
+
+---
+[timestamp] 2026-07-07 17:18 PST
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Campaign file changed — version bump.
+
+**assistant**: [tool: Bash]
+
+---
+
