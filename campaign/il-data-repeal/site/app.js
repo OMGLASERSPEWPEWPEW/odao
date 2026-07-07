@@ -173,21 +173,8 @@ function initNav() {
 }
 
 
-// ---- Service Worker + Update Banner ----
-const updateSW = registerSW({
-  onNeedRefresh() {
-    const banner = document.createElement('div');
-    banner.className = 'update-banner';
-    banner.innerHTML = `
-      <span>New version available</span>
-      <button id="updateReloadBtn">Reload</button>
-      <button id="updateDismissBtn">&times;</button>
-    `;
-    document.body.appendChild(banner);
-    document.getElementById('updateReloadBtn').addEventListener('click', () => updateSW(true));
-    document.getElementById('updateDismissBtn').addEventListener('click', () => banner.remove());
-  },
-});
+// ---- Service Worker (auto-update, no prompt) ----
+registerSW();
 
 
 // Global function for inline onclick (used by legislator cards)
