@@ -9,7 +9,7 @@
           },
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/ghostty-title.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/terminal-title.sh"
           },
           {
             "type": "command",
@@ -18,6 +18,10 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/zephyr-init.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/voice-session-init.sh"
           }
         ]
       }
@@ -36,7 +40,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/ghostty-working.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/terminal-working.sh"
           }
         ]
       }
@@ -90,7 +94,7 @@
           },
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/ghostty-done.sh"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/terminal-done.sh"
           },
           {
             "type": "command",
@@ -119,6 +123,14 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/sync-todo.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/voice-summary.sh"
+          },
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/voice-input.sh"
           }
         ]
       }
