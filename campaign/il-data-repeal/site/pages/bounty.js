@@ -237,7 +237,8 @@ export async function renderBounty() {
 
 function renderBountyCard(b, loggedIn, notes) {
   const claimed = isClaimed(b.id);
-  const claimedBy = notes.length > 0 ? notes[0].volunteer : null;
+  const canClaim = !claimed || b.repeatable;
+  const claimedBy = notes.length > 0 ? notes[notes.length - 1].volunteer : null;
 
   const notesHtml = notes.length > 0 ? `
     <div class="quest-notes-display" style="display:block">
@@ -250,8 +251,10 @@ function renderBountyCard(b, loggedIn, notes) {
     </div>
   ` : '<div class="quest-notes-display" style="display:none"></div>';
 
+  const claimLabel = !loggedIn ? 'Log in to claim' : (claimed && b.repeatable ? 'Claim again' : (claimed ? `Claimed! +${b.xp} XP` : 'Claim'));
+
   return `
-    <div class="bounty-card ${claimed ? 'claimed' : ''}" data-type="${b.type}">
+    <div class="bounty-card ${claimed && !b.repeatable ? 'claimed' : ''}" data-type="${b.type}">
       ${claimed && claimedBy ? `<div class="claimed-stamp">${claimedBy}</div>` : ''}
       <div class="bounty-card-header">
         <span class="bounty-type-icon" style="color: ${getDifficultyColor(b.difficulty)}">${getTypeIcon(b.type)}</span>
@@ -269,9 +272,9 @@ function renderBountyCard(b, loggedIn, notes) {
         <span class="bounty-xp">${b.xp} XP</span>
         ${b.repeatable ? '<span class="bounty-repeatable">Repeatable</span>' : ''}
         <span class="claim-share"></span>
-        <button class="bounty-claim-btn ${claimed ? 'claimed' : ''}" data-id="${b.id}" data-xp="${b.xp}" data-title="${b.title}" ${claimed ? 'disabled' : ''}>${claimed ? `Claimed! +${b.xp} XP` : (loggedIn ? 'Claim' : 'Log in to claim')}</button>
+        <button class="bounty-claim-btn ${claimed && !b.repeatable ? 'claimed' : ''}" data-id="${b.id}" data-xp="${b.xp}" data-title="${b.title}" ${!canClaim ? 'disabled' : ''}>${claimLabel}</button>
       </div>
-      ${!claimed && loggedIn ? `
+      ${canClaim && loggedIn ? `
         <div class="quest-notes-section" style="display:none">
           <label class="quest-notes-label">Meeting / call notes</label>
           <textarea class="quest-notes-input" rows="4" placeholder="What happened? Key takeaways, next steps..."></textarea>

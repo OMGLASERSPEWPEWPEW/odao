@@ -7,7 +7,6 @@ import { updateStreak } from './lib/gamification.js';
 import { getUser, logout } from './lib/supabase.js';
 import { renderLanding } from './pages/landing.js';
 import { renderRepeal } from './pages/repeal.js';
-import { renderProfile } from './pages/profile.js';
 import { renderBounty } from './pages/bounty.js';
 import { renderActivity } from './pages/activity.js';
 import { renderLeaderboard } from './pages/leaderboard.js';
@@ -192,7 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initRouter({
     '/': { id: 'page-landing', onEnter: () => renderLanding() },
     '/repeal': { id: 'page-repeal', onEnter: () => renderRepeal() },
-    '/profile': { id: 'page-profile', onEnter: () => renderProfile() },
     '/bounty': { id: 'page-bounty', onEnter: () => renderBounty() },
     '/activity': { id: 'page-activity', onEnter: () => renderActivity() },
     '/leaderboard': { id: 'page-leaderboard', onEnter: () => renderLeaderboard() },
