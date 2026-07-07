@@ -117,9 +117,10 @@ async function logLoginAttempt(username, success) {
 export async function logActivity(type, data = {}) {
   const user = await getUser();
   if (!user) return;
-  await supabase.from('campaign_activity').insert({
+  const { error } = await supabase.from('campaign_activity').insert({
     volunteer_id: user.id,
     type,
     data,
   });
+  if (error) console.error('[logActivity]', error.message);
 }
