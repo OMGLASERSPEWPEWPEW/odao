@@ -4775,3 +4775,28 @@ textarea.form-input {
   text-overflow: ellipsis;
 }
 .bill-status-sources-list a:hover { text-decoration: underline; }
+
+.bill-action-row {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding: 2px 0;
+}
+.bill-action-date {
+  color: var(--text-dim);
+  margin-right: 8px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.65rem;
+}
+
+.check-log-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 0;
+}
+.check-log-ts {
+  font-size: 0.65rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  color: var(--text-dim);
+  min-width: 110px;
+}

@@ -256,6 +256,21 @@ function renderBillStatusTracker() {
   `;
 }
 
+function renderCheckLog(history) {
+  if (!history || history.length < 2) return '';
+  const rows = history.map(h => {
+    const d = new Date(h.checked_at);
+    const ts = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    return `<div class="check-log-row"><span class="check-log-ts">${ts}</span><span class="bill-status-badge bill-status-normal" style="font-size:0.6rem;padding:1px 6px;">${h.extracted_status}</span></div>`;
+  }).join('');
+  return `
+    <button class="bill-status-sources-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.classList.toggle('open')">
+      <span class="arrow">&#9654;</span> Check log (${history.length} checks)
+    </button>
+    <div class="bill-status-sources-list">${rows}</div>
+  `;
+}
+
 async function initBillStatusTracker(wrapper) {
   const tracker = wrapper.querySelector('#billStatusTracker');
   if (!tracker) return;
@@ -278,28 +293,26 @@ async function initBillStatusTracker(wrapper) {
     const firstSentence = rawSummary.split(/(?<=[.!?])\s/)[0] || rawSummary;
     const isUrgent = status.includes('COMMITTEE') || status.includes('HEARING');
     const statusClass = isUrgent ? 'bill-status-urgent' : 'bill-status-normal';
-    const citations = Array.isArray(data.citations) ? data.citations : [];
+    const actions = Array.isArray(data.actions) ? data.actions : [];
 
-    const sourcesHtml = citations.length > 0 ? `
+    const sourcesHtml = actions.length > 0 ? `
       <button class="bill-status-sources-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.classList.toggle('open')">
-        <span class="arrow">&#9654;</span> ${citations.length} sources checked
+        <span class="arrow">&#9654;</span> ${actions.length} ILGA actions on record
       </button>
       <div class="bill-status-sources-list">
-        ${citations.map(url => {
-          const domain = url.replace(/^https?:\/\//, '').split('/')[0];
-          return `<a href="${url}" target="_blank" rel="noopener">${domain}</a>`;
-        }).join('')}
+        ${actions.map(a => `<div class="bill-action-row"><span class="bill-action-date">${a.date}</span> ${a.action}</div>`).join('')}
       </div>
     ` : '';
 
     tracker.innerHTML = `
       <div class="bill-status-header">
-        <span class="bill-status-label">HB 5798 STATUS</span>
+        <span class="bill-status-label">Ann Marie's Super Duper "Assigned to Committee" Tracker</span>
         <span class="bill-status-badge ${statusClass}">${status}</span>
       </div>
       <div class="bill-status-summary">${firstSentence}</div>
-      <div class="bill-status-method">Queried via <strong>Perplexity Sonar</strong> (AI web search) &middot; ${checkedAt}</div>
+      <div class="bill-status-method">Scraped from <a href="${data.ilga_url || 'https://ilga.gov'}" target="_blank" rel="noopener"><strong>ilga.gov</strong></a> &rarr; analyzed by <strong>Claude Haiku</strong> &middot; ${checkedAt}</div>
       ${sourcesHtml}
+      ${renderCheckLog(data.history || [])}
     `;
   } catch {
     tracker.innerHTML = '<div class="bill-status-empty">Bill status tracker unavailable.</div>';
