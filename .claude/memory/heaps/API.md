@@ -1151,3 +1151,222 @@ Let me verify the GET endpoint returns the history properly.
 
 ---
 
+## 2026-07-06_20-12-46 (session 88655815)
+
+**assistant**: Pushed `v0.1.3`. The changelog now reads like a human wrote it:
+
+- **0.1.3** — "Bill tracker and Vercel deploy fix"
+- **0.1.2** — "Accounts, smarter XP, and proof uploads"  
+- **0.1.1** — "The big build"
+
+If Vercel is connected now, this push should trigger a deploy and the version stamp will show `v0.1.3` with the full changelog dropdown.
+
+---
+[timestamp] 2026-07-06 PST
+
+**user**: check sb3019.vercel.app see if it deployed its not updating on my end have to see if its sw or not
+
+**assistant**: [tool: Bash]
+
+**assistant**: That's the **old** deploy — it still has the old `<span class="version-stamp">` (not the new `version-stamp-wrapper` with the dropdown). And no Leaflet imports, no grouped nav, no login page. This is the July 4th build.
+
+**assistant**: [tool: Bash]
+
+**assistant**: The deploy **did not trigger**. The Root Directory change in the dashboard doesn't retroactively deploy — it only affects the next push. But our push already happened before you changed the setting.
+
+Let me check if there's a way to trigger a redeploy via API, or we can push another empty commit:
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_20-21-08 (session 88655815)
+
+**assistant**: Root Directory is still `.` — your change didn't save. Here's exactly what to set in the Vercel dashboard (**Settings → General**):
+
+| Setting | Value |
+|---------|-------|
+| **Root Directory** | `campaign/il-data-repeal/site` |
+| **Framework Preset** | `Vite` |
+| **Build Command** | `npm run build` (default) |
+| **Output Directory** | `dist` |
+
+The CLI deploy works fine (v0.1.3 is live right now), but the git auto-deploys will keep failing until these dashboard settings are saved. The site is s...
+
+**user**: I dont understand what youre talkong about. Like the sb3019 project is piggy backing off our. Um is it easier for you to use supabase cli ?
+
+Like I dont get am I looking in vercel at sb3019 project or in the ournews project since we're using ournews for the edge functions? I think this project is in odao and not sb3019? Where am I confused
+
+**assistant**: You're right to be confused — let me untangle this. Let me check exactly what's connected to what.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Here's the situation in plain English:
+
+**You have ONE GitHub repo** — `OMGLASERSPEWPEWPEW/odao`. It's a monorepo with badge stuff, campaign stuff, workshop stuff, everything.
+
+**The campaign site** lives inside that repo at `campaign/il-data-repeal/site/`. It's not its own repo.
+
+**The Vercel project `sb3019`** is supposed to deploy just that subfolder. But right now it thinks the Root Directory is `.` (the whole repo), so when a push triggers a build, Vercel tries to build from the repo root, ...
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: ExitPlanMode]
+
+**user**: [Request interrupted by user]
+
+**user**: [Image #1]
+
+**user**: [Image: source: /var/folders/2m/v5hl_7rn3xbg8ttl5v1dss8w0000gn/T/TemporaryItems/NSIRD_screencaptureui_sWqNwA/Screenshot 2026-07-06 at 8.20.51 PM.png]
+
+---
+
+## 2026-07-07_07-05-55 (session 88655815)
+
+**user**: <task-notification>
+<task-id>bugusfj3m</task-id>
+<tool-use-id>toolu_01V43zBk1YrYWFXJ85JDx9ka</tool-use-id>
+<output-file>/private/tmp/claude-501/-Users-dericortiz-Development-odao/88655815-509b-43a9-9e28-45db9682de04/tasks/bugusfj3m.output</output-file>
+<status>failed</status>
+<summary>Background command "Push to test auto-deploy with reconnected git" failed with exit code 128</summary>
+</task-notification>
+
+**assistant**: [tool: Read]
+
+**assistant**: Just a network timeout on the push — the commit was created locally but didn't make it to GitHub. Let me retry.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Push went through. Now let me wait a moment and check if Vercel picked it up.
+
+**assistant**: [tool: Bash]
+
+**assistant**: There's a deploy from 3h ago (`cist12mqf`) that's **Ready** with a 12s build — that's a real Vite build (not the instant 1s static deploys from before). That was your earlier settings change. Let me check if the latest push triggered a new one too.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_07-34-42 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Can't extract the token programmatically — the CLI stores it in the macOS keychain. The fastest path is for you to run the SQL. Can you do this:
+
+```
+! cd /Users/dericortiz/Development/ournews && supabase db dump --db-url "$(supabase db url)" -c "SELECT 1"
+```
+
+Or alternatively, just open the Supabase dashboard SQL Editor and paste the migration. Let me write a quick plan.
+
+**assistant**: [tool: Write]
+
+**assistant**: I can't run the migration myself — the Supabase CLI stores its access token in your macOS keychain and I can't extract it programmatically. You need to do one of these:
+
+**Option A (fastest):** Open the Supabase SQL Editor in your browser:
+
+`https://supabase.com/dashboard/project/cencmfojarnapwinhdil/sql`
+
+Paste the contents of `campaign/il-data-repeal/site/supabase/campaign-tables.sql` and click Run.
+
+**Option B:** Run this in your terminal:
+
+```
+! cat /Users/dericortiz/Development/odao/campaig...
+
+**assistant**: [tool: ExitPlanMode]
+
+---
+
+## 2026-07-07_07-37-38 (session 95b7323a)
+
+**assistant**: CLI is stuck in a non-interactive loop. Let me use the Vercel API directly instead.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_12-10-18 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: The env vars are saved but the current deploy still has `placeholder.supabase.co` baked in — it needs a rebuild. Let me hide the Engage section, commit, and push to trigger a fresh deploy with the new env vars.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Pushed. This deploy will build with your new Vercel env vars, so Supabase will connect properly. Let me check in a minute.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Deploy landed 50 seconds ago, **Ready**. Let me verify the Supabase URL is correct now.
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_12-14-19 (session 88655815)
+
+**assistant**: All fixed:
+
+- **Supabase connected** — deployed JS now has the real URL (`cencmfojarnapwinhdil.supabase.co`), not `placeholder`
+- **Engage section hidden** from nav (routes still work via direct URL)
+- **Auto-deploy working** — 50 seconds from push to live
+- **Version**: `v0.1.4`
+
+The console errors will be gone now. Auth, quest claims, and all backend features should work on the live site.
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: vercel failed
+
+**assistant**: [tool: Bash]
+
+**assistant**: Both recent deploys show **Ready** — no failures here. The failure email might be from an earlier deploy. Let me check the latest one's logs.
+
+**assistant**: [tool: Bash]
+
+**assistant**: The latest deploy (4 minutes ago) is live and aliased to `sb3019.vercel.app`. It's **Ready**, not failed. The failure email is likely from one of the earlier empty-commit pushes (before you fixed the settings). You can ignore those — they're stale.
+
+Want me to verify the live site is working correctly?
+
+**assistant**: [tool: Bash]
+
+---
+

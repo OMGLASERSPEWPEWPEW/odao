@@ -525,3 +525,81 @@ Let me check the project settings.
 
 ---
 
+## 2026-07-06_20-10-20 (session 88655815)
+
+**assistant**: Pushed an empty commit to trigger the auto-deploy. If you set the Root Directory to `campaign/il-data-repeal/site` in the Vercel dashboard, it should pick up this push and build v0.1.2 now. Check the Vercel dashboard for the deploy status.
+
+---
+[timestamp] 2026-07-06 PST
+
+**user**: ok sorry now I think it's connected. Can we update the changelog like look at our git history what are the features we added or are trying to add right now. Keep it eli5
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Read]
+
+**assistant**: I see — there's also a bill tracker feature (`acad1f1`, `1675244`) that landed after the version bump but isn't in the changelog. Let me also bump to `0.1.3` and rewrite the changelog in plain language.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_20-12-46 (session 88655815)
+
+**assistant**: Pushed `v0.1.3`. The changelog now reads like a human wrote it:
+
+- **0.1.3** — "Bill tracker and Vercel deploy fix"
+- **0.1.2** — "Accounts, smarter XP, and proof uploads"  
+- **0.1.1** — "The big build"
+
+If Vercel is connected now, this push should trigger a deploy and the version stamp will show `v0.1.3` with the full changelog dropdown.
+
+---
+[timestamp] 2026-07-06 PST
+
+**user**: check sb3019.vercel.app see if it deployed its not updating on my end have to see if its sw or not
+
+**assistant**: [tool: Bash]
+
+**assistant**: That's the **old** deploy — it still has the old `<span class="version-stamp">` (not the new `version-stamp-wrapper` with the dropdown). And no Leaflet imports, no grouped nav, no login page. This is the July 4th build.
+
+**assistant**: [tool: Bash]
+
+**assistant**: The deploy **did not trigger**. The Root Directory change in the dashboard doesn't retroactively deploy — it only affects the next push. But our push already happened before you changed the setting.
+
+Let me check if there's a way to trigger a redeploy via API, or we can push another empty commit:
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_12-16-39 (session 88655815)
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: ExitPlanMode]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

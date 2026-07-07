@@ -1317,3 +1317,156 @@ The root cause: Vercel auto-deploys probably aren't triggered because the git in
 
 ---
 
+## 2026-07-06_20-06-38 (session 95b7323a)
+
+**assistant**: We do — the push went through earlier:
+
+```
+To https://github.com/OMGLASERSPEWPEWPEW/odao.git
+   48d7e52..bb8ca2c  main -> main
+```
+
+Want me to `/cap` these latest changes (the flashy tracker redesign + help modal)?
+
+---
+[timestamp] 2026-07-06 20:12 PST
+
+**user**: ok I changed vercel can we try again
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_20-23-26 (session 88655815)
+
+**assistant**: I see the Settings page. You need to scroll down — the Root Directory setting is further below on this same page, past the Vercel Toolbar section. It's under **Build and Deployment** in the left sidebar, or just scroll down on this General page.
+
+Click **"Build and Deployment"** in the left sidebar — that's where Root Directory, Framework Preset, Build Command, and Output Directory live. Set them to:
+
+| Setting | Value |
+|---------|-------|
+| **Root Directory** | `campaign/il-data-repeal/site` |...
+
+**user**: its not there[Image #2] [Image #3]
+
+**user**: [Image: source: /var/folders/2m/v5hl_7rn3xbg8ttl5v1dss8w0000gn/T/TemporaryItems/NSIRD_screencaptureui_4HkNGi/Screenshot 2026-07-06 at 8.22.42 PM.png] [Image: source: /var/folders/2m/v5hl_7rn3xbg8ttl5v1dss8w0000gn/T/TemporaryItems/NSIRD_screencaptureui_y9Jurj/Screenshot 2026-07-06 at 8.23.02 PM.png]
+
+**assistant**: Actually it IS there — I can see it in your screenshots. Everything looks correct:
+
+- **Framework Preset**: Vite ✓
+- **Root Directory**: `campaign/il-data-repeal/site` ✓
+- **Output Directory**: `dist` (greyed out = using Vite default, which is `dist`) ✓
+
+Hit **Save** on the Framework Settings section (the first Save button). Then let me push a commit to test.
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_07-05-55 (session 88655815)
+
+**user**: <task-notification>
+<task-id>bugusfj3m</task-id>
+<tool-use-id>toolu_01V43zBk1YrYWFXJ85JDx9ka</tool-use-id>
+<output-file>/private/tmp/claude-501/-Users-dericortiz-Development-odao/88655815-509b-43a9-9e28-45db9682de04/tasks/bugusfj3m.output</output-file>
+<status>failed</status>
+<summary>Background command "Push to test auto-deploy with reconnected git" failed with exit code 128</summary>
+</task-notification>
+
+**assistant**: [tool: Read]
+
+**assistant**: Just a network timeout on the push — the commit was created locally but didn't make it to GitHub. Let me retry.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Push went through. Now let me wait a moment and check if Vercel picked it up.
+
+**assistant**: [tool: Bash]
+
+**assistant**: There's a deploy from 3h ago (`cist12mqf`) that's **Ready** with a 12s build — that's a real Vite build (not the instant 1s static deploys from before). That was your earlier settings change. Let me check if the latest push triggered a new one too.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_07-34-42 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Can't extract the token programmatically — the CLI stores it in the macOS keychain. The fastest path is for you to run the SQL. Can you do this:
+
+```
+! cd /Users/dericortiz/Development/ournews && supabase db dump --db-url "$(supabase db url)" -c "SELECT 1"
+```
+
+Or alternatively, just open the Supabase dashboard SQL Editor and paste the migration. Let me write a quick plan.
+
+**assistant**: [tool: Write]
+
+**assistant**: I can't run the migration myself — the Supabase CLI stores its access token in your macOS keychain and I can't extract it programmatically. You need to do one of these:
+
+**Option A (fastest):** Open the Supabase SQL Editor in your browser:
+
+`https://supabase.com/dashboard/project/cencmfojarnapwinhdil/sql`
+
+Paste the contents of `campaign/il-data-repeal/site/supabase/campaign-tables.sql` and click Run.
+
+**Option B:** Run this in your terminal:
+
+```
+! cat /Users/dericortiz/Development/odao/campaig...
+
+**assistant**: [tool: ExitPlanMode]
+
+---
+
+## 2026-07-07_12-14-19 (session 88655815)
+
+**assistant**: All fixed:
+
+- **Supabase connected** — deployed JS now has the real URL (`cencmfojarnapwinhdil.supabase.co`), not `placeholder`
+- **Engage section hidden** from nav (routes still work via direct URL)
+- **Auto-deploy working** — 50 seconds from push to live
+- **Version**: `v0.1.4`
+
+The console errors will be gone now. Auth, quest claims, and all backend features should work on the live site.
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: vercel failed
+
+**assistant**: [tool: Bash]
+
+**assistant**: Both recent deploys show **Ready** — no failures here. The failure email might be from an earlier deploy. Let me check the latest one's logs.
+
+**assistant**: [tool: Bash]
+
+**assistant**: The latest deploy (4 minutes ago) is live and aliased to `sb3019.vercel.app`. It's **Ready**, not failed. The failure email is likely from one of the earlier empty-commit pushes (before you fixed the settings). You can ignore those — they're stale.
+
+Want me to verify the live site is working correctly?
+
+**assistant**: [tool: Bash]
+
+---
+

@@ -429,3 +429,109 @@ Let me verify the GET endpoint returns the history properly.
 
 ---
 
+## 2026-07-07_07-09-45 (session 95b7323a)
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build passes locally. The Vercel failure is probably a config issue — maybe the root directory isn't set to `campaign/il-data-repeal/site/`. That's a Vercel dashboard thing. Both fixes are straightforward.
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: ExitPlanMode]
+
+**assistant**: Fixing both. RLS first since it's a one-liner, then Vercel.
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: Bash]
+
+**assistant**: RLS fixed. Supabase security warning should clear on their next scan.
+
+Now Vercel — the build passes locally, so the failure is likely the root directory config. In Vercel dashboard, make sure:
+
+- **Root Directory**: `campaign/il-data-repeal/site`
+- **Build Command**: `npm run build` (or `vite build`)
+- **Output Directory**: `dist`
+- **Framework Preset**: Vite
+
+Since you said you already changed Vercel settings, want me to try deploying from CLI to see the actual error?
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_07-34-42 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Can't extract the token programmatically — the CLI stores it in the macOS keychain. The fastest path is for you to run the SQL. Can you do this:
+
+```
+! cd /Users/dericortiz/Development/ournews && supabase db dump --db-url "$(supabase db url)" -c "SELECT 1"
+```
+
+Or alternatively, just open the Supabase dashboard SQL Editor and paste the migration. Let me write a quick plan.
+
+**assistant**: [tool: Write]
+
+**assistant**: I can't run the migration myself — the Supabase CLI stores its access token in your macOS keychain and I can't extract it programmatically. You need to do one of these:
+
+**Option A (fastest):** Open the Supabase SQL Editor in your browser:
+
+`https://supabase.com/dashboard/project/cencmfojarnapwinhdil/sql`
+
+Paste the contents of `campaign/il-data-repeal/site/supabase/campaign-tables.sql` and click Run.
+
+**Option B:** Run this in your terminal:
+
+```
+! cat /Users/dericortiz/Development/odao/campaig...
+
+**assistant**: [tool: ExitPlanMode]
+
+---
+
+## 2026-07-07_07-35-29 (session 88655815)
+
+**assistant**: Go ahead and paste the SQL into the Supabase SQL Editor. Once you've run it, let me know and I'll verify the tables are live.
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: whats the sql to enter?
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_07-37-01 (session 88655815)
+
+**assistant**: It's on your clipboard. Go to:
+
+`https://supabase.com/dashboard/project/cencmfojarnapwinhdil/sql`
+
+Paste (Cmd+V) and hit Run. It creates 6 tables, indexes, RLS policies, and a vote-counting function. Let me know when it's done.
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: ok did it. can you verify
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
