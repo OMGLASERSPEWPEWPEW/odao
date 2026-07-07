@@ -1263,3 +1263,29 @@ Proceed? [yes / edit N...
 
 ---
 
+## 2026-07-07_13-34-09 (session c5a2129a)
+
+**assistant**: [tool: TaskUpdate]
+
+**assistant**: Now for repeatable quests. The issue: `isClaimed()` permanently blocks re-claiming. For repeatable quests, the card should allow claiming again.
+
+**assistant**: [tool: Read]
+
+**assistant**: For repeatable quests: don't grey out or disable the button — show a "Claim again" button instead. The card should show past claims (notes) but remain claimable.
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: TaskUpdate]
+
+**assistant**: [tool: TaskUpdate]
+
+**assistant**: Task 3 is actually already handled — the `notesHtml` section renders notes from Supabase on every card regardless of claimed state, and with the repeatable fix above, claimed cards no longer hide the notes section. Notes display is always visible when notes exist (`style="display:block"`).
+
+The real problem was that notes never made it to Supabase in the first place (the logActivity bug). Once the user re-claims with the error logging fix deployed, notes will persist and show up.
+
+**assistant**: [tool: TaskUpdate]
+
+**assistant**: [tool: Bash]
+
+---
+

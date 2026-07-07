@@ -1767,3 +1767,48 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 ---
 
+## 2026-07-07_13-34-57 (session c5a2129a)
+
+**assistant**: Build passes. All 3 tasks done:
+
+1. **Profile page removed** — nav link, route, page div, and import gone
+2. **Repeatable quests re-claimable** — repeatable cards stay active with "Claim again" button instead of greying out permanently
+3. **Notes visible on claimed cards** — notes section stays visible on claimed cards (was already working, but repeatable cards were incorrectly greyed out hiding everything)
+
+Now log in as darklight on the deployed site and re-claim the Andrade visit. The console...
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Campaign files changed — version bump.
+
+**assistant**: [tool: Bash]
+
+---
+
