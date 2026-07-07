@@ -78,8 +78,8 @@ function renderActionPlan() {
   return `
     <section class="section" id="action-plan">
       <div class="container">
-        <h2 class="section-title">Three-Prong Attack Plan</h2>
-        <p class="section-subtitle">Simultaneous pressure from every angle. No single point of failure.</p>
+        <h2 class="section-title">The Campaign</h2>
+        <p class="section-subtitle">Coordinated lobby and grassroots pressure.</p>
         <div class="prongs-grid">
 
           <!-- Lobby Prong -->
@@ -176,45 +176,6 @@ function renderActionPlan() {
             </div>
           </div>
 
-          <!-- Federal/Legal Prong -->
-          <div class="prong-column prong-federal">
-            <div class="prong-header">
-              <div class="prong-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3>Federal / Legal</h3>
-            </div>
-            <div class="prong-items">
-              <div class="action-card" data-status="in-progress">
-                <div class="action-status"></div>
-                <div class="action-content">
-                  <h4>CLARITY Act Preemption</h4>
-                  <p>Federal legislation to override state crypto taxes</p>
-                </div>
-              </div>
-              <div class="action-card" data-status="not-started">
-                <div class="action-status"></div>
-                <div class="action-content">
-                  <h4>CFTC Formal Guidance</h4>
-                  <p>Request official position on state transaction taxes</p>
-                </div>
-              </div>
-              <div class="action-card" data-status="in-progress">
-                <div class="action-status"></div>
-                <div class="action-content">
-                  <h4>Constitutional Litigation</h4>
-                  <p>Commerce Clause challenge in federal court</p>
-                </div>
-              </div>
-              <div class="action-card" data-status="not-started">
-                <div class="action-status"></div>
-                <div class="action-content">
-                  <h4>Injunction Before Jan 1</h4>
-                  <p>Emergency relief to block enforcement</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>
@@ -338,7 +299,7 @@ async function initBillStatusTracker(wrapper) {
             </div>
             <div class="tracker-help-step">
               <span class="tracker-method-icon">2</span>
-              <div><strong>Claude Haiku</strong> (a fast AI model) reads the HTML and extracts the current status and actions.</div>
+              <div><strong>DeepSeek</strong> (an AI model) reads the HTML and extracts the current status and actions.</div>
             </div>
             <div class="tracker-help-step">
               <span class="tracker-method-icon">3</span>
