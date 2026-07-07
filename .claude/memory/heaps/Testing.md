@@ -1293,3 +1293,27 @@ Here's what changed:
 
 ---
 
+## 2026-07-06_20-01-16 (session 88655815)
+
+**assistant**: The CLI needs interactive mode for linking. You'll need to run this yourself:
+
+```
+! cd campaign/il-data-repeal/site && vercel link --scope darklights-projects-d191684f
+```
+
+Then select the existing `sb3019` project. After that:
+
+```
+! vercel deploy --prod
+```
+
+The root cause: Vercel auto-deploys probably aren't triggered because the git integration is either watching a different repo path or not connected. The last deploy was July 4th — everything since then (the entire ops platform) hasn't dep...
+
+**user**: okay can we force a redeploy with this specific version? Or what should be the new repo path and where can you set repo paths
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

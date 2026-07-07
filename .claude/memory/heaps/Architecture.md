@@ -1803,3 +1803,31 @@ Here's what changed:
 
 ---
 
+## 2026-07-06_20-00-12 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: The Vercel project (`sb3019`) is linked to the `campaign/il-data-repeal/site/` subdirectory, but there's no `vercel.json` with build settings. The issue is likely that Vercel is configured to deploy from the **repo root** (`/`) rather than the subdirectory `campaign/il-data-repeal/site/`. So it's either building the wrong thing or using a cached deploy.
+
+Let me check via the CLI.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: There it is — the last deploy was **July 4th, 2 days ago**. Your git pushes today aren't triggering auto-deploys. Vercel's `rootDirectory` is probably set wrong in the dashboard, or auto-deploy is watching a different branch/path.
+
+Let me check the project settings.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

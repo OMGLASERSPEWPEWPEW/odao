@@ -473,3 +473,55 @@ Meanwhile, let me also download the CCI vet...
 
 ---
 
+## 2026-07-06_19-55-55 (session 88655815)
+
+**assistant**: You're right — I didn't bump the version. The whole point of the Glyffiti pattern is `npm version patch --no-git-tag-version` before each commit. Let me check what it's at and bump it.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Still at `0.1.1` — never bumped across multiple commits. Let me bump it now and add a changelog entry for the SW update, then commit and push.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Read]
+
+**user**: [Request interrupted by user]
+
+**user**: we also need to update the changelog
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now commit the version bump + changelog and push.
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_20-00-12 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: The Vercel project (`sb3019`) is linked to the `campaign/il-data-repeal/site/` subdirectory, but there's no `vercel.json` with build settings. The issue is likely that Vercel is configured to deploy from the **repo root** (`/`) rather than the subdirectory `campaign/il-data-repeal/site/`. So it's either building the wrong thing or using a cached deploy.
+
+Let me check via the CLI.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: There it is — the last deploy was **July 4th, 2 days ago**. Your git pushes today aren't triggering auto-deploys. Vercel's `rootDirectory` is probably set wrong in the dashboard, or auto-deploy is watching a different branch/path.
+
+Let me check the project settings.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

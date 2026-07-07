@@ -1654,3 +1654,163 @@ Proceed?
 
 ---
 
+## 2026-07-06_19-53-55 (session 88655815)
+
+**assistant**: Working. The site now has:
+
+- **`sw.js`** — Workbox service worker that precaches all 42 assets (JS, CSS, HTML, JSON, images)
+- **`manifest.webmanifest`** — PWA manifest so it can be installed as an app
+- **Auto-update detection** — when you deploy a new version, the SW detects the changed assets and triggers `onNeedRefresh()`
+- **Update banner** — fixed bar at the bottom: "New version available" + **Reload** button + dismiss X. Clicking Reload activates the new SW and refreshes the page.
+
+The f...
+
+**user**: okay do we need to /cap again?
+
+**assistant**: [tool: Bash]
+
+**assistant**: Yes — 6 campaign site files changed (SW + update banner) plus some memory heap updates. Two commits:
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_19-55-55 (session 88655815)
+
+**assistant**: You're right — I didn't bump the version. The whole point of the Glyffiti pattern is `npm version patch --no-git-tag-version` before each commit. Let me check what it's at and bump it.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Still at `0.1.1` — never bumped across multiple commits. Let me bump it now and add a changelog entry for the SW update, then commit and push.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Read]
+
+**user**: [Request interrupted by user]
+
+**user**: we also need to update the changelog
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now commit the version bump + changelog and push.
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_20-00-12 (session 88655815)
+
+**assistant**: [tool: Bash]
+
+**assistant**: The Vercel project (`sb3019`) is linked to the `campaign/il-data-repeal/site/` subdirectory, but there's no `vercel.json` with build settings. The issue is likely that Vercel is configured to deploy from the **repo root** (`/`) rather than the subdirectory `campaign/il-data-repeal/site/`. So it's either building the wrong thing or using a cached deploy.
+
+Let me check via the CLI.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: There it is — the last deploy was **July 4th, 2 days ago**. Your git pushes today aren't triggering auto-deploys. Vercel's `rootDirectory` is probably set wrong in the dashboard, or auto-deploy is watching a different branch/path.
+
+Let me check the project settings.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_20-00-33 (session 95b7323a)
+
+**assistant**: Clean slate. One check, accurate, grounded in ILGA. Tomorrow at 9 AM CT the cron adds row two.
+
+---
+[timestamp] 2026-07-06 20:05 PST
+
+**user**: Ann Marie's Super Duper
+"Assigned to Committee" Tracker
+FILED
+HB 5798
+Bill filed with House Clerk on 6/22/2026, sponsors added through 7/06/2026.
+1
+Scraped
+ilga.gov
+→
+2
+Claude Haiku
+→
+3
+Result
+Last checked: Jul 6, 2026 at 7:40 PM
+▶ 3 ILGA actions on record   ▶ Check log (3 checks)
+
+This doesn't make sense though it hasn't bee ssigned though? Like we have to make it easy.  And we should have a question mark modal of how it works.
+
+**user**: Ann Marie's Super Duper
+"Assigned to Committee" Tracker
+FILED
+HB 5798
+Bill filed with House Clerk on 6/22/2026, sponsors added through 7/06/2026.
+1
+Scraped
+ilga.gov
+→
+2
+Claude Haiku
+→
+3
+Result
+Last checked: Jul 6, 2026 at 7:40 PM
+▶ 3 ILGA actions on record   ▶ Check log (3 checks)
+
+This doesn't make sense though it hasn't bee ssigned though? Like we have to make it easy.  And we should have a question mark modal of how it works. Concise explanation of how it works
+
+**assistant**: You're right — the tracker says "Assigned to Committee Tracker" but then shows "FILED" and the user has to figure out what that means. It should be dead simple: **has it been assigned yet? YES or NO.** And a little `?` icon that explains the whole thing.
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now the CSS for the new answer display and help modal.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+---
+
+## 2026-07-06_20-01-16 (session 88655815)
+
+**assistant**: The CLI needs interactive mode for linking. You'll need to run this yourself:
+
+```
+! cd campaign/il-data-repeal/site && vercel link --scope darklights-projects-d191684f
+```
+
+Then select the existing `sb3019` project. After that:
+
+```
+! vercel deploy --prod
+```
+
+The root cause: Vercel auto-deploys probably aren't triggered because the git integration is either watching a different repo path or not connected. The last deploy was July 4th — everything since then (the entire ops platform) hasn't dep...
+
+**user**: okay can we force a redeploy with this specific version? Or what should be the new repo path and where can you set repo paths
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

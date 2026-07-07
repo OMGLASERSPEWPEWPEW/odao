@@ -1127,3 +1127,27 @@ Let me verify the GET endpoint returns the history properly.
 
 ---
 
+## 2026-07-06_19-55-55 (session 88655815)
+
+**assistant**: You're right — I didn't bump the version. The whole point of the Glyffiti pattern is `npm version patch --no-git-tag-version` before each commit. Let me check what it's at and bump it.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Still at `0.1.1` — never bumped across multiple commits. Let me bump it now and add a changelog entry for the SW update, then commit and push.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Read]
+
+**user**: [Request interrupted by user]
+
+**user**: we also need to update the changelog
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now commit the version bump + changelog and push.
+
+**assistant**: [tool: Bash]
+
+---
+
