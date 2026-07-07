@@ -1150,3 +1150,33 @@ Let me verify the final state of the key files.
 
 ---
 
+## 2026-07-07_12-46-04 (session c5a2129a)
+
+**assistant**: Version bumped to **v0.1.6**. Now the proposal:
+
+Proposed commits (3):
+
+1. **`feat(campaign): replace file upload with notes on quest claim (v0.1.6)`**
+
+   Why: Quest claims now capture meeting/call notes instead of file uploads,
+        persisted to Supabase for later retrieval across all users.
+   Files: `campaign/il-data-repeal/site/pages/bounty.js`, `campaign/il-data-repeal/site/style.css`, `campaign/il-data-repeal/site/package.json`
+
+2. **`chore(infra): add campaign scope and version bump t...
+
+**user**: yes
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: All 3 committed. Pushing.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+

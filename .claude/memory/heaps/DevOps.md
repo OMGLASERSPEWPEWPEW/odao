@@ -2431,3 +2431,33 @@ Let me verify the final state of the key files.
 
 ---
 
+## 2026-07-07_12-58-34 (session c5a2129a)
+
+**assistant**: The issue is that the `ournews` project is connected to Vercel for auto-deploy, but it's mostly Supabase edge functions — not a web app — so Vercel builds fail.
+
+The quickest fix without changing your setup: add an ignore build step so Vercel skips deploys when only Supabase files change. But if ournews has *nothing* that should deploy to Vercel, the cleanest option is just disabling auto-deploys entirely.
+
+**assistant**: [tool: AskUserQuestion]
+
+**assistant**: Right — two separate things here:
+
+1. **Vercel deploys for ournews** — you can disable auto-deploys in the Vercel dashboard (Project Settings → Git → Auto Deploy = off) and still deploy manually when you need to. The Supabase edge functions deploy via `supabase functions deploy`, not Vercel, so disabling Vercel auto-deploy won't affect them at all.
+
+2. **Pushing ournews changes** — when `/cap` edits the edge function in the ournews directory, those changes are in a *different git repo* than odao...
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: ExitPlanMode]
+
+**assistant**: Let me run `/cap` for the odao changes.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Campaign files changed — version bump time (Phase 3.5).
+
+**assistant**: [tool: Bash]
+
+---
+
