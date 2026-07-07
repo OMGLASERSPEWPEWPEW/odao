@@ -7,16 +7,12 @@ import { updateStreak } from './lib/gamification.js';
 import { getUser, logout } from './lib/supabase.js';
 import { renderLanding } from './pages/landing.js';
 import { renderRepeal } from './pages/repeal.js';
-import { renderRevenue } from './pages/revenue.js';
-import { renderBriefing } from './pages/briefing.js';
 import { renderProfile } from './pages/profile.js';
 import { renderBounty } from './pages/bounty.js';
 import { renderActivity } from './pages/activity.js';
 import { renderLeaderboard } from './pages/leaderboard.js';
 import { renderIdeas } from './pages/ideas.js';
-import { renderDocs } from './pages/docs.js';
 import { renderSharedDocs } from './pages/shared-docs.js';
-import { renderVideoJournal } from './pages/video-journal.js';
 import { renderLogin } from './pages/login.js';
 import { registerSW } from 'virtual:pwa-register';
 import { CHANGELOG } from './data/changelog.js';
@@ -196,16 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initRouter({
     '/': { id: 'page-landing', onEnter: () => renderLanding() },
     '/repeal': { id: 'page-repeal', onEnter: () => renderRepeal() },
-    '/revenue': { id: 'page-revenue', onEnter: () => renderRevenue() },
-    '/briefing': { id: 'page-briefing', onEnter: () => renderBriefing() },
     '/profile': { id: 'page-profile', onEnter: () => renderProfile() },
     '/bounty': { id: 'page-bounty', onEnter: () => renderBounty() },
     '/activity': { id: 'page-activity', onEnter: () => renderActivity() },
     '/leaderboard': { id: 'page-leaderboard', onEnter: () => renderLeaderboard() },
     '/ideas': { id: 'page-ideas', onEnter: () => renderIdeas() },
-    '/docs': { id: 'page-docs', onEnter: () => renderDocs() },
     '/shared-docs': { id: 'page-shared-docs', onEnter: () => renderSharedDocs() },
-    '/video-journal': { id: 'page-video-journal', onEnter: () => renderVideoJournal() },
     '/login': { id: 'page-login', onEnter: () => renderLogin() },
   });
 });
