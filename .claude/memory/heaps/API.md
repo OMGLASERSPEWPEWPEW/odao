@@ -1667,3 +1667,27 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 ---
 
+## 2026-07-07_13-45-27 (session c5a2129a)
+
+**assistant**: [tool: AskUserQuestion]
+
+**assistant**: OK the site shows you as logged in, but the Supabase API rejects the password I tested. That means your session is cached in the browser but might have an expired JWT. The Supabase client reads the cached session for `getUser()` (shows logged in) but when the insert happens, the expired token gets rejected by RLS.
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: ExitPlanMode]
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build passes. Also need to clean up the test row I inserted earlier.
+
+**assistant**: [tool: Bash]
+
+---
+

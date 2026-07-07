@@ -2657,3 +2657,27 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 ---
 
+## 2026-07-07_13-38-34 (session c5a2129a)
+
+**assistant**: Pushed:
+
+```
+c6bd8be fix(campaign): remove profile page, allow repeatable quest re-claims (v0.1.10)
+fb9797e chore(infra): update memory heaps and daily journal
+```
+
+To clear the Andrade claim so you can re-test: open the browser console on the deployed site and run:
+
+```js
+localStorage.removeItem('repeal-data-claimed-bounties')
+```
+
+Then refresh and re-claim. The console should show `[logActivity]` errors if the Supabase insert fails, or the activity feed will populate if it works.
+
+---
+[timesta...
+
+**user**: are we not storing the claims on supabase?
+
+---
+

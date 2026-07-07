@@ -672,3 +672,29 @@ Let me check what auth state you'd have on the production site.
 
 ---
 
+## 2026-07-07_13-37-24 (session c5a2129a)
+
+**assistant**: Proposed commits (2):
+
+1. **`fix(campaign): remove profile page, allow repeatable quest re-claims (v0.1.10)`**
+
+   Why: Profile page removed to simplify nav. Repeatable quests (calls, visits)
+        no longer permanently grey out — users can claim again with new notes.
+   Files: `app.js`, `index.html`, `bounty.js`, `package.json`
+
+2. **`chore(infra): update memory heaps and daily journal`**
+
+   Files: `.claude/memory/daily/2026-07-07.md`, `.claude/memory/heaps/*.md`
+
+Proceed? [yes / edit N / sk...
+
+**user**: yes
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
