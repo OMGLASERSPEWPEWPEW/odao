@@ -305,12 +305,21 @@ async function initBillStatusTracker(wrapper) {
     ` : '';
 
     tracker.innerHTML = `
-      <div class="bill-status-header">
-        <span class="bill-status-label">Ann Marie's Super Duper "Assigned to Committee" Tracker</span>
-        <span class="bill-status-badge ${statusClass}">${status}</span>
+      <div class="tracker-radar"><span class="radar-ping"></span><span class="radar-dot"></span></div>
+      <div class="tracker-title">Ann Marie's Super Duper<br/><span class="tracker-title-highlight">"Assigned to Committee"</span> Tracker</div>
+      <div class="tracker-status-row">
+        <span class="tracker-status-badge ${statusClass}">${status}</span>
+        <span class="tracker-bill-id">HB 5798</span>
       </div>
       <div class="bill-status-summary">${firstSentence}</div>
-      <div class="bill-status-method">Scraped from <a href="${data.ilga_url || 'https://ilga.gov'}" target="_blank" rel="noopener"><strong>ilga.gov</strong></a> &rarr; analyzed by <strong>Claude Haiku</strong> &middot; ${checkedAt}</div>
+      <div class="tracker-method-bar">
+        <span class="tracker-method-step"><span class="tracker-method-icon">1</span> Scraped <a href="${data.ilga_url || 'https://ilga.gov'}" target="_blank" rel="noopener">ilga.gov</a></span>
+        <span class="tracker-method-arrow">&rarr;</span>
+        <span class="tracker-method-step"><span class="tracker-method-icon">2</span> Claude Haiku</span>
+        <span class="tracker-method-arrow">&rarr;</span>
+        <span class="tracker-method-step"><span class="tracker-method-icon">3</span> Result</span>
+      </div>
+      <div class="tracker-checked">Last checked: ${checkedAt}</div>
       ${sourcesHtml}
       ${renderCheckLog(data.history || [])}
     `;

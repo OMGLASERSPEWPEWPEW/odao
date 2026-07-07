@@ -18,6 +18,7 @@ import { renderDocs } from './pages/docs.js';
 import { renderSharedDocs } from './pages/shared-docs.js';
 import { renderVideoJournal } from './pages/video-journal.js';
 import { renderLogin } from './pages/login.js';
+import { registerSW } from 'virtual:pwa-register';
 import { CHANGELOG } from './data/changelog.js';
 
 export const DEADLINE = new Date('2027-01-01T00:00:00-06:00');
@@ -170,6 +171,23 @@ function initNav() {
     });
   });
 }
+
+
+// ---- Service Worker + Update Banner ----
+const updateSW = registerSW({
+  onNeedRefresh() {
+    const banner = document.createElement('div');
+    banner.className = 'update-banner';
+    banner.innerHTML = `
+      <span>New version available</span>
+      <button id="updateReloadBtn">Reload</button>
+      <button id="updateDismissBtn">&times;</button>
+    `;
+    document.body.appendChild(banner);
+    document.getElementById('updateReloadBtn').addEventListener('click', () => updateSW(true));
+    document.getElementById('updateDismissBtn').addEventListener('click', () => banner.remove());
+  },
+});
 
 
 // Global function for inline onclick (used by legislator cards)
