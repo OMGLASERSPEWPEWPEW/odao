@@ -1522,3 +1522,27 @@ The quickest fix without changing your setup: add an ignore build step so Vercel
 
 ---
 
+## 2026-07-07_13-03-57 (session c5a2129a)
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Read]
+
+**assistant**: Clear picture — the "Tax Revenue Engine" is a track choice card on the landing page that links to `#/revenue` (which we already removed the route for). Let me also check if there's anything else clickable.
+
+**assistant**: [tool: Bash]
+
+**assistant**: Good — the route was already removed earlier. Just need to remove the card from the landing page. This is simple enough to skip the Plan agent.
+
+**assistant**: [tool: Write]
+
+**assistant**: [tool: ExitPlanMode]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+---
+

@@ -2242,3 +2242,76 @@ The quickest fix without changing your setup: add an ignore build step so Vercel
 
 ---
 
+## 2026-07-07_13-13-00 (session c5a2129a)
+
+**assistant**: Now add the activity feed section after the track choice section, and wire up the data fetching.
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now add the data fetching and rendering logic. I'll add it after `renderSharedSections` and `initZipLookup`:
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now add the `loadActivityFeed` function before `initZipLookup`:
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now add the activity feed CSS:
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_13-13-30 (session c5a2129a)
+
+**assistant**: Build passes. Here's what was done:
+
+**Username stamp on claimed cards:**
+- Claimed quest cards now show the claimer's username overlaid at -18deg in large green uppercase text
+- Works both on page load (from Supabase data) and immediately after claiming
+
+**Activity feed on landing page:**
+- New "Activity" section on the home page between the track card and zip lookup
+- Fetches the 20 most recent `bounty_claimed` entries from Supabase
+- Each row shows: date/time, username, quest title
+- Rows wit...
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Campaign files changed — version bump first.
+
+**assistant**: [tool: Bash]
+
+---
+
