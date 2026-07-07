@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Tax Policy One-Pager",
+    "category": "campaign",
+    "description": "The case against SB 3019 — delivered to Rep. Andrade's office July 6, 2026",
+    "url": "/docs/one-pager-tax-policy.html",
+    "type": "html"
+  },
+  {
+    "title": "Community One-Pager",
+    "category": "campaign",
+    "description": "Onion DAO: Building Illinois' grassroots tech future — delivered to Rep. Andrade's office",
+    "url": "/docs/one-pager-community.html",
+    "type": "html"
+  },
+  {
+    "title": "SB 3019 — Full Bill Text",
+    "category": "legislation",
+    "description": "Public Act 104-0468, the Illinois Digital Asset Tax Act as signed into law",
+    "url": "https://www.ilga.gov/legislation/publicacts/104/PDF/104-0468.pdf",
+    "type": "pdf"
+  },
+  {
+    "title": "HB 5798 — Repeal Bill",
+    "category": "legislation",
+    "description": "Rep. Cabello's bill for immediate repeal of the digital asset transaction tax",
+    "url": "https://www.ilga.gov/legislation/BillStatus.asp?DocNum=5798&GESSION_ID=114&GA=104&DocTypeID=HB&LegID=&SessionID=114",
+    "type": "link"
+  },
+  {
+    "title": "CFTC Chairman Selig Op-Ed",
+    "category": "press",
+    "description": "'A sin tax on blockchain' — Washington Times, July 1 2026",
+    "url": "https://www.washingtontimes.com/news/2026/jul/1/blockchain-tax-risks-illinois-legacy-financial-engine/",
+    "type": "link"
+  },
+  {
+    "title": "Coinbase CEO Statement",
+    "category": "press",
+    "description": "Brian Armstrong calls the tax 'remarkably bad — will kill jobs'",
+    "url": "https://www.cryptotimes.io/2026/06/18/coinbase-ceo-illinois-crypto-tax-punishes-blockchain-will-kill-tech-jobs/",
+    "type": "link"
+  },
+  {
+    "title": "Revenue Committee Calendar",
+    "category": "reference",
+    "description": "IL House Revenue & Finance Committee meeting schedule",
+    "url": "https://www.ilga.gov/house/committees/members.asp?CommitteeID=2782",
+    "type": "link"
+  }
+]

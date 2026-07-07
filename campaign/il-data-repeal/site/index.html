@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SB 3019 — IL Digital Asset Tax Campaign</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -13,42 +15,71 @@
     <div class="nav-inner">
       <a href="#/" class="nav-brand">SB 3019</a>
       <span class="nav-countdown" id="nav-countdown">---d</span>
-      <span class="version-stamp" id="version-stamp">v---</span>
+      <div class="version-stamp-wrapper" id="versionStampWrapper">
+        <button class="version-stamp-btn" id="versionStampBtn" aria-label="Version. Click for changelog.">
+          <span class="version-stamp-star" id="versionStar" style="display:none">
+            <svg viewBox="0 0 24 24" width="10" height="10"><path d="M12 1.8 C13.1 8.2 15.8 10.9 22.2 12 C15.8 13.1 13.1 15.8 12 22.2 C10.9 15.8 8.2 13.1 1.8 12 C8.2 10.9 10.9 8.2 12 1.8 Z" fill="var(--gold)"/></svg>
+          </span>
+          <span class="version-stamp-text" id="versionStampText">v---</span>
+        </button>
+        <div class="version-dropdown" id="versionDropdown" style="display:none" role="dialog" aria-label="Changelog">
+          <div class="version-dropdown-header">
+            <span class="version-dropdown-title">Changelog</span>
+            <span class="version-dropdown-count" id="versionDropdownCount"></span>
+          </div>
+          <div class="version-dropdown-entries" id="versionDropdownEntries"></div>
+        </div>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#/">Home</a></li>
-        <li><a href="#/repeal">Repeal</a></li>
-
-        <li><a href="#/revenue">Revenue</a></li>
-        <li><a href="#/briefing">Briefing</a></li>
+        <li class="nav-group">
+          <button class="nav-dropdown-trigger">Tracks <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown">
+            <li><a href="#/repeal">Repeal</a></li>
+            <li><a href="#/revenue">Revenue</a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <button class="nav-dropdown-trigger">Engage <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown">
+            <li><a href="#/bounty">Quest Board</a></li>
+            <li><a href="#/activity">Activity Feed</a></li>
+            <li><a href="#/leaderboard">Leaderboard</a></li>
+            <li><a href="#/ideas">Idea Zone</a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <button class="nav-dropdown-trigger">Intel <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown">
+            <li><a href="#/briefing">Briefing</a></li>
+            <li><a href="#/docs">Documentation</a></li>
+            <li><a href="#/video-journal">Video Journal</a></li>
+            <li><a href="#/shared-docs">Shared Docs</a></li>
+          </ul>
+        </li>
         <li><a href="#/profile" class="nav-profile-link">Profile</a></li>
+        <li class="nav-auth-item" id="navAuthItem"><a href="#/login" class="nav-login-link">Log in</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Pages -->
-  <div id="page-landing" class="page active">
-    <!-- Rendered by pages/landing.js -->
-  </div>
-
-  <div id="page-repeal" class="page">
-    <!-- Rendered by pages/repeal.js -->
-  </div>
-
-
-  <div id="page-revenue" class="page">
-    <!-- Rendered by pages/revenue.js -->
-  </div>
-
-  <div id="page-briefing" class="page">
-    <!-- Rendered by pages/briefing.js -->
-  </div>
-
-  <div id="page-profile" class="page">
-    <!-- Rendered by pages/profile.js -->
-  </div>
+  <div id="page-landing" class="page active"></div>
+  <div id="page-repeal" class="page"></div>
+  <div id="page-revenue" class="page"></div>
+  <div id="page-briefing" class="page"></div>
+  <div id="page-profile" class="page"></div>
+  <div id="page-bounty" class="page"></div>
+  <div id="page-activity" class="page"></div>
+  <div id="page-leaderboard" class="page"></div>
+  <div id="page-ideas" class="page"></div>
+  <div id="page-docs" class="page"></div>
+  <div id="page-shared-docs" class="page"></div>
+  <div id="page-video-journal" class="page"></div>
+  <div id="page-login" class="page"></div>
 
   <!-- Event Detail Modal (global, used by all tracks) -->
   <div class="modal-overlay" id="eventModal">

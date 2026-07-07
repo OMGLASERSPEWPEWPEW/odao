@@ -1,0 +1,74 @@
+[
+  {
+    "id": "b-social-repealdata",
+    "type": "social",
+    "title": "Post with #RepealDATA on X/Twitter",
+    "description": "Share why the crypto tax hurts Illinois. Tag your state rep.",
+    "xp": 10,
+    "difficulty": "easy",
+    "repeatable": true
+  },
+  {
+    "id": "b-recruit-friend",
+    "type": "recruit",
+    "title": "Recruit a friend to the campaign",
+    "description": "Share the dashboard link with someone who cares about crypto or civil liberties.",
+    "xp": 15,
+    "difficulty": "easy",
+    "repeatable": true
+  },
+  {
+    "id": "b-research-townhalls",
+    "type": "research",
+    "title": "Find upcoming town halls in your district",
+    "description": "Search your rep's website and social media for scheduled town halls or office hours.",
+    "xp": 30,
+    "difficulty": "medium",
+    "repeatable": false
+  },
+  {
+    "id": "b-social-thread",
+    "type": "social",
+    "title": "Write a thread explaining SB 3019",
+    "description": "Explain the 0.2% tax, why it's a sin tax, and what people can do. 5+ posts.",
+    "xp": 40,
+    "difficulty": "medium",
+    "repeatable": false
+  },
+  {
+    "id": "b-letter-editor",
+    "type": "email",
+    "title": "Submit a letter to the editor",
+    "description": "Use the op-ed template. Target your local newspaper or the Chicago Tribune/Sun-Times.",
+    "xp": 75,
+    "difficulty": "hard",
+    "repeatable": false
+  },
+  {
+    "id": "b-email-committee",
+    "type": "email",
+    "title": "Email all 20 Revenue Committee members",
+    "description": "Use the testimony template. Personalize the first line for each rep's district.",
+    "xp": 150,
+    "difficulty": "hard",
+    "repeatable": false
+  },
+  {
+    "id": "b-attend-hearing",
+    "type": "visit",
+    "title": "Attend a Revenue Committee hearing",
+    "description": "Show up in person at the Capitol. Sign up to testify if public comment is open.",
+    "xp": 300,
+    "difficulty": "hard",
+    "repeatable": true
+  },
+  {
+    "id": "b-testify-hearing",
+    "type": "visit",
+    "title": "Testify at a committee hearing",
+    "description": "Deliver public testimony on the record. The highest-impact action a volunteer can take.",
+    "xp": 500,
+    "difficulty": "hard",
+    "repeatable": true
+  }
+]

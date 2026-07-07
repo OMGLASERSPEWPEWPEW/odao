@@ -4,6 +4,7 @@
    ============================================================ */
 
 import { generateAvatar } from '../app.js';
+import { initLegislatorMap } from './legislator-map.js';
 
 let cachedEvents = null;
 let cachedLegislators = null;
@@ -46,6 +47,7 @@ export async function renderSharedSections(container) {
 
   // Build the HTML
   const sectionsHTML = `
+    ${renderBillStatusTracker()}
     ${renderActionPlan()}
     ${renderCalendar()}
     ${renderLegislatorsSection()}
@@ -61,10 +63,12 @@ export async function renderSharedSections(container) {
 
   // Initialize interactivity
   initCalendarTimeline(wrapper, events);
+  initLegislatorMap(wrapper, legislators);
   initLegislatorGrid(wrapper, legislators);
   initFilterButtons(wrapper, legislators);
   initCopyButtons(wrapper);
   initModal();
+  initBillStatusTracker(wrapper);
 }
 
 
@@ -236,6 +240,73 @@ function renderCalendar() {
 }
 
 
+// ---- Bill Status Tracker ----
+
+const BILL_STATUS_URL = 'https://cencmfojarnapwinhdil.supabase.co/functions/v1/bill-status-check';
+
+function renderBillStatusTracker() {
+  return `
+    <section class="section bill-status-section" id="billStatus">
+      <div class="container">
+        <div class="bill-status-tracker" id="billStatusTracker">
+          <div class="bill-status-loading">Checking HB 5798 status...</div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+async function initBillStatusTracker(wrapper) {
+  const tracker = wrapper.querySelector('#billStatusTracker');
+  if (!tracker) return;
+
+  try {
+    const res = await fetch(BILL_STATUS_URL);
+    if (!res.ok) throw new Error('Fetch failed');
+    const data = await res.json();
+
+    if (data.status === 'NO_DATA') {
+      tracker.innerHTML = '<div class="bill-status-empty">No bill status checks recorded yet.</div>';
+      return;
+    }
+
+    const status = data.extracted_status || 'UNKNOWN';
+    const checkedAt = data.checked_at
+      ? new Date(data.checked_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' })
+      : 'Unknown';
+    const rawSummary = (data.summary || '').replace(/\*\*/g, '');
+    const firstSentence = rawSummary.split(/(?<=[.!?])\s/)[0] || rawSummary;
+    const isUrgent = status.includes('COMMITTEE') || status.includes('HEARING');
+    const statusClass = isUrgent ? 'bill-status-urgent' : 'bill-status-normal';
+    const citations = Array.isArray(data.citations) ? data.citations : [];
+
+    const sourcesHtml = citations.length > 0 ? `
+      <button class="bill-status-sources-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.classList.toggle('open')">
+        <span class="arrow">&#9654;</span> ${citations.length} sources checked
+      </button>
+      <div class="bill-status-sources-list">
+        ${citations.map(url => {
+          const domain = url.replace(/^https?:\/\//, '').split('/')[0];
+          return `<a href="${url}" target="_blank" rel="noopener">${domain}</a>`;
+        }).join('')}
+      </div>
+    ` : '';
+
+    tracker.innerHTML = `
+      <div class="bill-status-header">
+        <span class="bill-status-label">HB 5798 STATUS</span>
+        <span class="bill-status-badge ${statusClass}">${status}</span>
+      </div>
+      <div class="bill-status-summary">${firstSentence}</div>
+      <div class="bill-status-method">Queried via <strong>Perplexity Sonar</strong> (AI web search) &middot; ${checkedAt}</div>
+      ${sourcesHtml}
+    `;
+  } catch {
+    tracker.innerHTML = '<div class="bill-status-empty">Bill status tracker unavailable.</div>';
+  }
+}
+
+
 // ---- Legislators HTML ----
 
 function renderLegislatorsSection() {
@@ -244,6 +315,9 @@ function renderLegislatorsSection() {
       <div class="container">
         <h2 class="section-title">People to Sway</h2>
         <p class="section-subtitle">Revenue Committee members who hold the fate of HB 5798.</p>
+
+        <!-- Interactive Map -->
+        <div id="legislatorsMap" class="legislators-map" role="region" aria-label="Interactive map of Illinois legislators"></div>
 
         <!-- Filters -->
         <div class="filters">

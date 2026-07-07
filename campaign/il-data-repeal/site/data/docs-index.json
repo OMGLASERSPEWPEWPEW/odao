@@ -1,0 +1,15 @@
+[
+  { "slug": "one-pager", "title": "One-Pager", "category": "overview", "description": "Quick summary of SB 3019, its impact, and the repeal case" },
+  { "slug": "talking-points", "title": "Talking Points", "category": "overview", "description": "Key arguments for conversations with legislators and media" },
+  { "slug": "legal-brief", "title": "Legal Brief", "category": "legal", "description": "Constitutional and regulatory analysis of the digital asset tax" },
+  { "slug": "letter-to-governor", "title": "Letter to Governor", "category": "legal", "description": "Template letter to Governor Pritzker requesting repeal" },
+  { "slug": "daily-playbook", "title": "Daily Playbook", "category": "strategy", "description": "Day-by-day campaign calendar with scripts and action items" },
+  { "slug": "timeline", "title": "Campaign Timeline", "category": "strategy", "description": "Key dates and milestones from bill passage to target repeal" },
+  { "slug": "vote-whip-sheet", "title": "Vote Whip Sheet", "category": "strategy", "description": "Legislator-by-legislator vote tracking and persuasion status" },
+  { "slug": "town-hall-tracker", "title": "Town Hall Tracker", "category": "strategy", "description": "Upcoming town halls, office hours, and public meeting opportunities" },
+  { "slug": "op-ed-draft", "title": "Op-Ed Draft", "category": "media", "description": "Ready-to-submit opinion piece for local newspapers" },
+  { "slug": "social-media-kit", "title": "Social Media Kit", "category": "media", "description": "Graphics, hashtags, and post templates for social campaigns" },
+  { "slug": "testimony-template", "title": "Testimony Template", "category": "media", "description": "Template for public testimony at committee hearings" },
+  { "slug": "coalition-contacts", "title": "Coalition Contacts", "category": "coalition", "description": "Partner organizations, industry groups, and ally contacts" },
+  { "slug": "economic-impact", "title": "Economic Impact", "category": "coalition", "description": "Data on jobs, revenue, and economic effects of the crypto tax" }
+]
