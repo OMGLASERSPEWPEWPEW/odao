@@ -1101,3 +1101,29 @@ Two tracks: Repeal and Tax Revenue Engine. Dev's principle holds — this is a b
 
 ---
 
+## 2026-07-06_19-41-09 (session 95b7323a)
+
+**assistant**: Add CSS for the action rows and check log.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now deploy the updated function and push the migration.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Deployed. Now trigger a fresh check with the new ILGA scrape approach.
+
+**assistant**: [tool: Bash]
+
+**assistant**: **Now it's correct.** Status: **FILED** (not "ASSIGNED TO COMMITTEE"). Three actions exactly matching the ILGA page. No hallucination — grounded in the actual HTML.
+
+Let me verify the GET endpoint returns the history properly.
+
+**assistant**: [tool: Bash]
+
+---
+

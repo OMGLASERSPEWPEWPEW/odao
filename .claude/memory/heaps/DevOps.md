@@ -1539,3 +1539,59 @@ Here's what changed:
 
 ---
 
+## 2026-07-06_19-32-10 (session 95b7323a)
+
+**assistant**: Hold on — I need to verify that "ASSIGNED TO COMMITTEE" finding before anyone acts on it. The Perplexity citations include WA state bills and old IL sessions (99th, 102nd GA) — that's suspicious. Let me check the actual ILGA page.
+
+**assistant**: [tool: ToolSearch]
+
+**assistant**: [tool: WebFetch]
+
+**assistant**: [tool: WebFetch]
+
+**assistant**: [tool: WebFetch]
+
+**assistant**: ILGA blocks automated fetches. Let me try other sources.
+
+**assistant**: [tool: WebFetch]
+
+**assistant**: [tool: WebFetch]
+
+**assistant**: **Important: The "ASSIGNED TO COMMITTEE" finding is almost certainly wrong.** Perplexity hallucinated — its citations point to wrong bills (WA state HB 5798, old IL sessions from the 99th and 102nd GA). Looking at the screenshot you shared earlier from ILGA, as of today HB 5798 shows:
+
+- 6/22: Filed with the Clerk by Rep. Cabello
+- 6/29: Added Chief Co-Sponsor Rep. Hauter
+- 7/06: Added Co-Sponsor Rep. Travis Weaver
+
+**It has NOT been assigned to a committee yet.** That's exactly why Ann Marie is...
+
+**assistant**: [tool: Edit]
+
+---
+
+## 2026-07-06_19-41-09 (session 95b7323a)
+
+**assistant**: Add CSS for the action rows and check log.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now deploy the updated function and push the migration.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Deployed. Now trigger a fresh check with the new ILGA scrape approach.
+
+**assistant**: [tool: Bash]
+
+**assistant**: **Now it's correct.** Status: **FILED** (not "ASSIGNED TO COMMITTEE"). Three actions exactly matching the ILGA page. No hallucination — grounded in the actual HTML.
+
+Let me verify the GET endpoint returns the history properly.
+
+**assistant**: [tool: Bash]
+
+---
+
