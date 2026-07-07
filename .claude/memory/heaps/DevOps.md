@@ -2251,3 +2251,129 @@ Want me to verify the live site is working correctly?
 
 ---
 
+## 2026-07-07_12-18-48 (session 88655815)
+
+**assistant**: Done. No more reload banner — the SW now auto-updates silently like Glyffiti. Version `v0.1.5` deploying now.
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Small batch — just memory updates and a Supabase temp file. Nothing unpushed.
+
+**Proposed commits (1):**
+
+**1. `chore(infra): update memory heaps and daily journals`**
+
+> Files: memory/heaps/, memory/daily/
+
+**Skipping:**
+- `campaign/il-data-repeal/site/supabase/.temp/cli-latest` — temp file, shouldn't be committed
+
+Proceed? [yes / skip / abort]
+
+**assistant**: [tool: AskUserQuestion]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_12-20-59 (session 88655815)
+
+**assistant**: Done. One commit pushed, working tree clean (just the supabase temp file left, which should go in `.gitignore`).
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: add supabase .temp to gitignore also got a failed vercel production again can you check
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Read]
+
+**assistant**: All three recent deploys show **Ready** — no failures. The fail email is from one of the earlier broken deploys (before settings were fixed). Vercel sends those with a delay sometimes.
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_12-24-50 (session c5a2129a)
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now update the HTML — remove the nav groups and page divs:
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now remove the page divs for the removed pages:
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now let me verify the build works and check if there are any other references I missed.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build succeeds. The `gameroom.js` reference to `renderBriefing` is a different, internal function — not the page-level one. That's fine.
+
+Let me verify the final state of the key files.
+
+**assistant**: [tool: Read]
+
+---
+
+## 2026-07-07_12-26-45 (session c5a2129a)
+
+**assistant**: [tool: Bash]
+
+**assistant**: I can see `voice-summary.sh` and `voice-input.sh` in the Stop hooks — those are producing the garbled voice transcription output. Let me remove them.
+
+**assistant**: [tool: Read]
+
+**assistant**: I'll remove the three voice hooks — `voice-session-init.sh` from SessionStart, and `voice-summary.sh` + `voice-input.sh` from Stop.
+
+**assistant**: [tool: Edit]
+
+**assistant**: Need to remove the entries properly with the surrounding JSON structure. Let me do a clean edit removing all three voice hooks.
+
+**assistant**: [tool: Edit]
+
+**assistant**: [tool: Edit]
+
+**assistant**: The trailing comma issue — I need to include the previous entry to fix the comma. Let me include the preceding hook entry in the match.
+
+**assistant**: [tool: Edit]
+
+---
+

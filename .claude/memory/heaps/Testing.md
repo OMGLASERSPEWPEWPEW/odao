@@ -1470,3 +1470,58 @@ Want me to verify the live site is working correctly?
 
 ---
 
+## 2026-07-07_12-18-48 (session 88655815)
+
+**assistant**: Done. No more reload banner — the SW now auto-updates silently like Glyffiti. Version `v0.1.5` deploying now.
+
+---
+[timestamp] 2026-07-07 PST
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Small batch — just memory updates and a Supabase temp file. Nothing unpushed.
+
+**Proposed commits (1):**
+
+**1. `chore(infra): update memory heaps and daily journals`**
+
+> Files: memory/heaps/, memory/daily/
+
+**Skipping:**
+- `campaign/il-data-repeal/site/supabase/.temp/cli-latest` — temp file, shouldn't be committed
+
+Proceed? [yes / skip / abort]
+
+**assistant**: [tool: AskUserQuestion]
+
+**assistant**: [tool: Bash]
+
+---
+

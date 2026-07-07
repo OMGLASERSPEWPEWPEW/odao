@@ -1100,3 +1100,29 @@ Proceed?
 
 ---
 
+## 2026-07-07_12-24-50 (session c5a2129a)
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now update the HTML — remove the nav groups and page divs:
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now remove the page divs for the removed pages:
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now let me verify the build works and check if there are any other references I missed.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Build succeeds. The `gameroom.js` reference to `renderBriefing` is a different, internal function — not the page-level one. That's fine.
+
+Let me verify the final state of the key files.
+
+**assistant**: [tool: Read]
+
+---
+
