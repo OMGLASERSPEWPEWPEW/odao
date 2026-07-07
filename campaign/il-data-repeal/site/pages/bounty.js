@@ -205,6 +205,12 @@ export async function renderBounty() {
       logActivity('bounty_claimed', { id, xp, bounty: title, notes, volunteer: user?.username });
 
       card.classList.add('claimed');
+      if (user?.username) {
+        const stamp = document.createElement('div');
+        stamp.className = 'claimed-stamp';
+        stamp.textContent = user.username;
+        card.prepend(stamp);
+      }
       btn.innerHTML = `Claimed! +${xp} XP`;
       btn.disabled = true;
       if (notesSection) notesSection.style.display = 'none';
@@ -231,6 +237,7 @@ export async function renderBounty() {
 
 function renderBountyCard(b, loggedIn, notes) {
   const claimed = isClaimed(b.id);
+  const claimedBy = notes.length > 0 ? notes[0].volunteer : null;
 
   const notesHtml = notes.length > 0 ? `
     <div class="quest-notes-display" style="display:block">
@@ -245,6 +252,7 @@ function renderBountyCard(b, loggedIn, notes) {
 
   return `
     <div class="bounty-card ${claimed ? 'claimed' : ''}" data-type="${b.type}">
+      ${claimed && claimedBy ? `<div class="claimed-stamp">${claimedBy}</div>` : ''}
       <div class="bounty-card-header">
         <span class="bounty-type-icon" style="color: ${getDifficultyColor(b.difficulty)}">${getTypeIcon(b.type)}</span>
         <span class="bounty-type-label">${b.type.toUpperCase()}</span>

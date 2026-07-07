@@ -3723,8 +3723,27 @@ textarea.form-input {
 .bounty-card:hover {
   border-color: var(--text-dim);
 }
+.bounty-card {
+  position: relative;
+  overflow: hidden;
+}
 .bounty-card.claimed {
-  opacity: 0.5;
+  opacity: 0.6;
+}
+.claimed-stamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--green);
+  opacity: 0.35;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
 }
 .bounty-card-header {
   display: flex;
@@ -4579,6 +4598,80 @@ textarea.form-input {
 }
 .claim-share {
   display: inline-flex;
+}
+
+/* Activity Feed */
+.activity-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.activity-feed-loading,
+.activity-feed-empty {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.activity-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.activity-item-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+}
+.activity-date {
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+.activity-user {
+  font-weight: 700;
+  color: var(--blue);
+  flex-shrink: 0;
+}
+.activity-quest {
+  color: var(--text-muted);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.activity-expand-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  width: 24px;
+  height: 24px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.activity-expand-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+.activity-notes {
+  display: none;
+  padding: 0 12px 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  border-top: 1px solid var(--border);
+}
+.activity-item.open .activity-notes {
+  display: block;
 }
 
 

@@ -5,6 +5,7 @@
 import { getProfile, getLevel } from '../lib/gamification.js';
 import { getDaysRemaining, getCampaignDay } from '../app.js';
 import { renderSharedSections, buildLegislatorCardHTML } from '../lib/shared-sections.js';
+import { supabase } from '../lib/supabase.js';
 
 export async function renderLanding() {
   const container = document.getElementById('page-landing');
@@ -38,19 +39,16 @@ export async function renderLanding() {
             <span class="track-choice-cta">Enter Game Room &rarr;</span>
           </a>
 
-          <!-- Revenue Track -->
-          <a href="#/revenue" class="track-choice-card track-choice-revenue">
-            <div class="track-choice-accent" style="background: var(--gold)"></div>
-            <div class="track-choice-icon track-choice-icon-revenue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-              </svg>
-            </div>
-            <h3 class="track-choice-name">Tax Revenue Engine</h3>
-            <p class="track-choice-desc">Show that this tax kills an economic engine for Chicago before it reaches its potential.</p>
-            <span class="track-choice-cta">Enter Game Room &rarr;</span>
-          </a>
 
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Activity</h2>
+        <div id="activity-feed" class="activity-feed">
+          <p class="activity-feed-loading">Loading activity...</p>
         </div>
       </div>
     </section>
@@ -83,8 +81,63 @@ export async function renderLanding() {
   // Render shared sections (strategy, calendar, legislators, act now, vote math)
   await renderSharedSections(container);
 
+  // Activity feed
+  loadActivityFeed(container);
+
   // Zip code lookup
   initZipLookup();
+}
+
+async function loadActivityFeed(container) {
+  const feed = container.querySelector('#activity-feed');
+  if (!feed) return;
+
+  try {
+    const { data } = await supabase
+      .from('campaign_activity')
+      .select('data, created_at')
+      .eq('type', 'bounty_claimed')
+      .order('created_at', { ascending: false })
+      .limit(20);
+
+    if (!data || data.length === 0) {
+      feed.innerHTML = '<p class="activity-feed-empty">No activity yet. Claim a quest to get started.</p>';
+      return;
+    }
+
+    feed.innerHTML = data.map(row => {
+      const d = row.data || {};
+      const date = new Date(row.created_at);
+      const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      const timeStr = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      const who = d.volunteer || 'anonymous';
+      const quest = d.bounty || 'Unknown quest';
+      const notes = d.notes ? d.notes.replace(/</g, '&lt;') : null;
+      const hasNotes = !!notes;
+
+      return `
+        <div class="activity-item ${hasNotes ? 'has-notes' : ''}">
+          <div class="activity-item-row">
+            <span class="activity-date">${dateStr} ${timeStr}</span>
+            <span class="activity-user">${who}</span>
+            <span class="activity-quest">${quest}</span>
+            ${hasNotes ? '<button class="activity-expand-btn" aria-label="Show notes">+</button>' : ''}
+          </div>
+          ${hasNotes ? `<div class="activity-notes">${notes}</div>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    feed.querySelectorAll('.activity-expand-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.activity-item');
+        const open = item.classList.toggle('open');
+        btn.textContent = open ? '−' : '+';
+      });
+    });
+  } catch {
+    feed.innerHTML = '<p class="activity-feed-empty">Could not load activity.</p>';
+  }
 }
 
 async function initZipLookup() {
