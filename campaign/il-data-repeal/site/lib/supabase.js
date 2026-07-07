@@ -31,11 +31,11 @@ function toUsername(email) {
 }
 
 export async function getUser() {
-  const { data: { session } } = await supabase.auth.getSession();
-  if (!session) return null;
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) return null;
   return {
-    id: session.user.id,
-    username: toUsername(session.user.email),
+    id: user.id,
+    username: toUsername(user.email),
   };
 }
 
@@ -115,10 +115,13 @@ async function logLoginAttempt(username, success) {
 }
 
 export async function logActivity(type, data = {}) {
-  const user = await getUser();
-  if (!user) return;
+  const { data: { session }, error: sessionErr } = await supabase.auth.refreshSession();
+  if (sessionErr || !session) {
+    console.error('[logActivity] no valid session:', sessionErr?.message);
+    return;
+  }
   const { error } = await supabase.from('campaign_activity').insert({
-    volunteer_id: user.id,
+    volunteer_id: session.user.id,
     type,
     data,
   });
