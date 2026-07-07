@@ -2377,3 +2377,57 @@ Let me verify the final state of the key files.
 
 ---
 
+## 2026-07-07_12-29-21 (session c5a2129a)
+
+**assistant**: Proposed commits (3):
+
+1. **`refactor(campaign): simplify nav — remove Revenue, Briefing, Docs, Video Journal`**
+   - Why: Reducing site complexity to focus on core pages; dropdown nav groups replaced with flat links.
+   - Files: `campaign/il-data-repeal/site/app.js`, `campaign/il-data-repeal/site/index.html`
+
+2. **`chore(infra): remove voice hooks from settings`**
+   - Files: `.claude/settings.json`
+
+3. **`chore(infra): update memory heaps and daily journal`**
+   - Files: `.claude/memory/daily/...
+
+**user**: yes
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: All 3 commits landed. Pushing now.
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-07_12-35-21 (session c5a2129a)
+
+**assistant**: Let me implement both changes now.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now add the Phase 3.5 version bump section.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+**assistant**: Now add the Campaign Site section to CLAUDE.md.
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Read]
+
+**assistant**: [tool: Edit]
+
+---
+

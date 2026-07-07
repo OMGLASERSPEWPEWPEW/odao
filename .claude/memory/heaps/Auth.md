@@ -1510,3 +1510,56 @@ Proceed? [yes / skip / abort]
 
 ---
 
+## 2026-07-07_12-42-40 (session c5a2129a)
+
+**assistant**: Everything looks clean. Here's what changed:
+
+**Quest Board claim flow now:**
+1. Click "Claim" → notes section slides open with a textarea ("Meeting / call notes")
+2. Button changes to "Save & Claim"
+3. Write notes about the meeting/call, click "Save & Claim"
+4. Notes + date + username saved to `campaign_activity` table in Supabase (JSONB `data` column with `notes` and `volunteer` fields)
+5. Note appears inline on the card immediately
+6. On next page load, all saved notes are fetched from Supaba...
+
+**user**: <command-message>cap</command-message>
+<command-name>/cap</command-name>
+
+**user**: Base directory for this skill: /Users/dericortiz/Development/odao/.claude/skills/cap
+
+# /c&p — Commit and Push
+
+Group changes into logical commits with machine-readable messages, then push.
+
+## Commit Convention
+
+### Message format
+
+```
+type(scope): imperative summary (72 chars max)
+
+Why: one or two sentences explaining reasoning, not the diff
+Files: key-file-1.ts, key-file-2.ts, key-file-3.ts
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Rules:**
+- Summary: imperative mood ("Add", "Fix...
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Campaign files changed — Phase 3.5 applies. Let me bump the version first, then propose.
+
+**assistant**: [tool: Bash]
+
+---
+
