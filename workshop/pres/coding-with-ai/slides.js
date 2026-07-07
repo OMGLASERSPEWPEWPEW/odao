@@ -5,8 +5,8 @@ export const slides = [
 // ═══════════════════════════════════════════════════════
 `<div class="center">
   <div class="part-label">Workshop</div>
-  <h1>867 Commits<br>in <span class="accent">92 Days</span><span class="cursor"></span></h1>
-  <p class="subtitle">The development loop — how we build with AI</p>
+  <h1>AI Loops<span class="cursor"></span></h1>
+  <p class="subtitle">An iterative approach to feature development</p>
   <div class="stat-grid mt-3" style="max-width: 700px; margin-left: auto; margin-right: auto;">
     <div class="stat">
       <div class="stat-value">4</div>
@@ -24,7 +24,20 @@ export const slides = [
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 1 — The Loop
+// SLIDE 1 — The Prompt That Started It All
+// ═══════════════════════════════════════════════════════
+`<div class="section-divider">
+  <div class="part-label">June 1, 2026</div>
+  <div class="card" style="border-color: var(--amber); border-style: solid; max-width: 780px; text-align: left;">
+    <p style="color: var(--ink); font-size: clamp(0.88rem, 1.3vw, 1.05rem); line-height: 1.85; font-style: italic;">
+      "We use solana right now exclusively to pull and cache stories — now we want to create a system where online users can pass textblocks to other users of a story. How do we get there. What do we have in place, what do we need to build?"
+    </p>
+  </div>
+  <p class="dim mt-2" style="font-size: 0.9rem;">PRD, architecture, and first implementation shipped <span class="bold" style="color: var(--ink);">same session</span>. Full feature by day 3.</p>
+</div>`,
+
+// ═══════════════════════════════════════════════════════
+// SLIDE 2 — The Loop
 // ═══════════════════════════════════════════════════════
 `<div class="center">
   <h2>The Development <span class="accent">Loop</span></h2>
@@ -81,7 +94,7 @@ export const slides = [
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 2 — The Loop in Data (Stacked Chart)
+// SLIDE 3 — The Loop in Data (Stacked Chart)
 // ═══════════════════════════════════════════════════════
 `<div>
   <h2>The Loop in <span class="accent">Data</span></h2>
@@ -193,106 +206,76 @@ export const slides = [
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 3 — Document Phase
+// SLIDE 4 — Document Phase
 // ═══════════════════════════════════════════════════════
 `<div>
   <h2><span class="accent" style="color: #FFBE55;">Document</span> — Phase 1</h2>
-  <p class="dim mb-2">Spec before you ship. Every feature starts with a PRD.</p>
-  <div class="two-col">
-    <div>
-      <h3 style="color: #FFBE55;">/new-feature Workflow</h3>
-      <ul class="insight-list">
-        <li><span class="bold">PRD first</span> — product requirements, architecture, constraints documented before the first line of code</li>
-        <li><span class="bold">ADRs</span> — architectural decision records for non-obvious choices (why CBOR? why 4 tiers?)</li>
-        <li><span class="bold">Living notes</span> — human priorities and decisions logged where AI can read them at session start</li>
-        <li><span class="bold">Task planning</span> — define scope and constraints before implementation begins</li>
-      </ul>
+  <p class="subtitle mb-2" style="font-size: clamp(0.95rem, 1.4vw, 1.15rem);"><code>/new-feature</code> explores the codebase, web searches, and derives comprehensive documentation.</p>
+  <div class="tier-stack" style="max-width: 680px;">
+    <div class="tier" style="border-color: #FFBE55;">
+      <div class="tier-num" style="background: #FFBE55;">PRD</div>
+      <div>
+        <div class="tier-label">Product Requirements Doc</div>
+        <div class="tier-desc">Problem, user stories, acceptance criteria, rollout plan</div>
+      </div>
     </div>
-    <div>
-      <h3>P2P Example</h3>
-      <pre><code><span class="cm">// June 1, 2026 — 16:36:43</span>
-<span class="fn">docs</span>(<span class="type">content</span>): <span class="str">PRD + architecture
-  + TODO for P2P content exchange</span>
-
-<span class="cm">// 1,598 lines added</span>
-<span class="cm">// .claude/docs/prd/</span>
-<span class="cm">// .claude/docs/architecture/</span>
-
-<span class="cm">// 5 seconds later — 16:36:38</span>
-<span class="fn">feat</span>(<span class="type">content</span>): <span class="str">Phase C.1 — types,
-  errors, availability index</span>
-
-<span class="cm">// The PRD and first implementation</span>
-<span class="cm">// committed in the same session.</span>
-<span class="cm">// Spec is fresh, code follows.</span></code></pre>
+    <div class="tier" style="border-color: #FFBE55;">
+      <div class="tier-num" style="background: #FFBE55;">ADR</div>
+      <div>
+        <div class="tier-label">Architecture Decision Record</div>
+        <div class="tier-desc">Non-obvious choices with rationale — why CBOR, why 4 tiers, why not BitTorrent</div>
+      </div>
+    </div>
+    <div class="tier" style="border-color: #FFBE55;">
+      <div class="tier-num" style="background: #FFBE55;">QA</div>
+      <div>
+        <div class="tier-label">QA Checklist</div>
+        <div class="tier-desc">Bot-verifiable acceptance criteria — written before implementation, tested by automation</div>
+      </div>
+    </div>
+    <div class="tier" style="border-color: #FFBE55;">
+      <div class="tier-num" style="background: #FFBE55;">TODO</div>
+      <div>
+        <div class="tier-label">Feature TODO</div>
+        <div class="tier-desc">Phased roadmap with stage tracking — documentation → implementing → testing → complete</div>
+      </div>
     </div>
   </div>
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 4 — Implement Phase
+// SLIDE 5 — Implement Phase
 // ═══════════════════════════════════════════════════════
 `<div>
   <h2><span class="accent" style="color: #3FF583;">Implement</span> — Phase 2</h2>
-  <p class="dim mb-2">Agent orchestra builds the feature in phased delivery</p>
-  <div class="two-col">
-    <div>
-      <h3 style="color: #3FF583;">Phased Delivery</h3>
-      <div class="tier-stack">
-        <div class="tier" style="border-color: #3FF583;">
-          <div class="tier-num" style="background: #3FF583;">C1</div>
-          <div>
-            <div class="tier-label">Types & Foundation</div>
-            <div class="tier-desc">Types, errors, availability index</div>
-          </div>
-        </div>
-        <div class="tier" style="border-color: #3FF583;">
-          <div class="tier-num" style="background: #3FF583;">C2</div>
-          <div>
-            <div class="tier-label">Wire Protocol</div>
-            <div class="tier-desc">Content server, request/response</div>
-          </div>
-        </div>
-        <div class="tier" style="border-color: #3FF583;">
-          <div class="tier-num" style="background: #3FF583;">D1</div>
-          <div>
-            <div class="tier-label">Small Strategy</div>
-            <div class="tier-desc">Orchestrator, single-peer fetch</div>
-          </div>
-        </div>
-        <div class="tier" style="border-color: #3FF583;">
-          <div class="tier-num" style="background: #3FF583;">D2</div>
-          <div>
-            <div class="tier-label">Multi-Strategy</div>
-            <div class="tier-desc">Medium/large strategies, tier router</div>
-          </div>
-        </div>
+  <p class="dim mb-2">Every session is tracked. Every commit is structured.</p>
+  <div class="tier-stack" style="max-width: 680px;">
+    <div class="tier" style="border-color: #3FF583;">
+      <div class="tier-num" style="background: #3FF583;">→</div>
+      <div>
+        <div class="tier-label">Conversation logger</div>
+        <div class="tier-desc">Every user/model exchange + tool use → daily log + topic heaps</div>
       </div>
     </div>
-    <div>
-      <h3>Micro-Atomic Commits</h3>
-      <pre><code><span class="cm">// Each commit is self-contained</span>
-<span class="cm">// with clear rationale — not megacommits</span>
-
-<span class="fn">feat</span>(<span class="type">p2p</span>): <span class="str">batch 16 blocks per
-  dc.send() to bypass SCTP
-  52-message wall</span>
-
-<span class="fn">feat</span>(<span class="type">content</span>): <span class="str">wire protocol for
-  content server request/response</span>
-
-<span class="cm">// Model selection matters:</span>
-<span class="cm">// Claude Opus 4.6 — 466 commits</span>
-<span class="cm">//   Complex systems, architecture</span>
-<span class="cm">// Claude Sonnet — 58 commits</span>
-<span class="cm">//   Quick fixes, lightweight tasks</span></code></pre>
-      <p class="dim mt-1" style="font-size: 0.85rem;"><span class="bold green">25% of all commits</span> are feat — the build phase is focused but not the longest.</p>
+    <div class="tier" style="border-color: #3FF583;">
+      <div class="tier-num" style="background: #3FF583;">→</div>
+      <div>
+        <div class="tier-label">Session journal</div>
+        <div class="tier-desc">Tool usage, state transitions, lifecycle events per session</div>
+      </div>
+    </div>
+    <div class="tier" style="border-color: #3FF583;">
+      <div class="tier-num" style="background: #3FF583;">→</div>
+      <div>
+        <div class="tier-label">Cost tracker</div>
+        <div class="tier-desc">Token usage and spend logged per session</div>
+      </div>
     </div>
   </div>
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 5 — Debug/Verify Phase
+// SLIDE 6 — Debug/Verify Phase
 // ═══════════════════════════════════════════════════════
 `<div>
   <h2><span class="accent" style="color: #FF7A6B;">Debug / Verify</span> — Phase 3</h2>
@@ -307,186 +290,193 @@ export const slides = [
         <li><span class="red bold">Theory 4:</span> Timeout too aggressive → 30s</li>
         <li><span class="red bold">5-12:</span> Buffer monitoring, ready state, counters...</li>
       </ul>
-      <div class="card mt-1" style="border-color: var(--amber);">
-        <h3 style="color: var(--amber);">/escalate</h3>
-        <p>4 models in parallel: GPT-5.5, Gemini 3.1, DeepSeek V4, Claude Opus</p>
-      </div>
     </div>
     <div>
-      <h3 class="green">The One-Line Fix</h3>
-      <pre><code><span class="cm">// buildBlockIds used hl.idx + i</span>
-<span class="cm">// But idx is hash-list position,</span>
-<span class="cm">// not cumulative block offset!</span>
-
-<span class="cm">// Before (wrong):</span>
-blockId = hl.idx + i;  <span class="cm">// ordinal</span>
-
-<span class="cm">// After (correct):</span>
-blockId = cursor++;    <span class="cm">// cumulative</span>
-
-<span class="cm">// ONE LINE. 22 commits. 3 days.</span></code></pre>
-      <div class="card mt-1" style="border-color: var(--green);">
-        <h3 style="color: var(--green);">GPT-5.5 Found It</h3>
-        <p>"The only model out of 4 to spot the root cause. All SCTP/buffer theories were wrong."</p>
+      <h3 style="color: var(--amber);">/escalate</h3>
+      <div class="tier-stack">
+        <div class="tier" style="border-color: var(--amber); padding: 0.6rem 1rem;">
+          <div class="tier-num" style="background: var(--amber); width: 22px; height: 22px; font-size: 0.7rem;">1</div>
+          <div>
+            <div class="tier-label" style="font-size: 0.9rem;">Gather context</div>
+            <div class="tier-desc">Reads relevant files, git history, error logs</div>
+          </div>
+        </div>
+        <div class="tier" style="border-color: var(--amber); padding: 0.6rem 1rem;">
+          <div class="tier-num" style="background: var(--amber); width: 22px; height: 22px; font-size: 0.7rem;">2</div>
+          <div>
+            <div class="tier-label" style="font-size: 0.9rem;">Fan out to 4 models</div>
+            <div class="tier-desc">GPT-5.5, Gemini 3.1, DeepSeek V4, Claude Opus — in parallel</div>
+          </div>
+        </div>
+        <div class="tier" style="border-color: var(--amber); padding: 0.6rem 1rem;">
+          <div class="tier-num" style="background: var(--amber); width: 22px; height: 22px; font-size: 0.7rem;">3</div>
+          <div>
+            <div class="tier-label" style="font-size: 0.9rem;">Synthesize consensus</div>
+            <div class="tier-desc">Agreements, divergences, and a recommended fix</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 6 — Test Phase
+// SLIDE 7 — Test Phase
 // ═══════════════════════════════════════════════════════
 `<div>
   <h2><span class="accent" style="color: #A7F0C8;">Test</span> — Phase 4</h2>
-  <p class="dim mb-2">The gate before repeat. Verify first, then codify into tests.</p>
-  <div class="two-col">
-    <div>
-      <h3 style="color: #A7F0C8;">Test-After-Verify Pattern</h3>
-      <p>Not TDD — we verify the fix manually first (debug phase), then write regression tests to lock it in. This isn't ideology, it's practical: when you're chasing a bug through 12 wrong theories, writing tests for each theory wastes time.</p>
-      <div class="tier-stack mt-2">
-        <div class="tier" style="border-color: #A7F0C8;">
-          <div class="tier-num" style="background: #A7F0C8;">1</div>
-          <div>
-            <div class="tier-label">Regression Tests</div>
-            <div class="tier-desc">Lock in the fix — ensure the specific bug never recurs</div>
-          </div>
-        </div>
-        <div class="tier" style="border-color: #A7F0C8;">
-          <div class="tier-num" style="background: #A7F0C8;">2</div>
-          <div>
-            <div class="tier-label">Edge Case Coverage</div>
-            <div class="tier-desc">Hash-mismatch rejection, boundary conditions</div>
-          </div>
-        </div>
-        <div class="tier" style="border-color: #A7F0C8;">
-          <div class="tier-num" style="background: #A7F0C8;">3</div>
-          <div>
-            <div class="tier-label">E2E Stubs</div>
-            <div class="tier-desc">Playwright skeletons for the next round</div>
-          </div>
-        </div>
+  <p class="dim mb-2">Verify first, then write tests to lock it in.</p>
+  <div class="tier-stack" style="max-width: 680px;">
+    <div class="tier" style="border-color: #A7F0C8;">
+      <div class="tier-num" style="background: #A7F0C8;">1</div>
+      <div>
+        <div class="tier-label">Regression Tests</div>
+        <div class="tier-desc">Lock in the fix — ensure the specific bug never recurs</div>
       </div>
     </div>
-    <div>
-      <h3>P2P Test Commits (June 7)</h3>
-      <pre><code><span class="cm">// After the fix was verified:</span>
-
-<span class="fn">test</span>(<span class="type">p2p</span>): <span class="str">regression tests for
-  buildBlockIds + batch handling
-  + all strategies</span>
-
-<span class="fn">test</span>(<span class="type">p2p</span>): <span class="str">add hash-mismatch
-  rejection tests + harden
-  RPC path</span>
-
-<span class="cm">// Then documentation:</span>
-<span class="fn">docs</span>(<span class="type">p2p</span>): <span class="str">mark content exchange
-  complete, update ADR-012 status</span>
-
-<span class="cm">// Then refactor:</span>
-<span class="fn">refactor</span>(<span class="type">reader</span>): <span class="str">extract StoryView
-  helpers into focused module</span></code></pre>
-      <p class="dim mt-1" style="font-size: 0.85rem;">Tests gate the loop — once they pass, the feature is <span class="bold cyan">locked</span> and the loop restarts for the next arc.</p>
+    <div class="tier" style="border-color: #A7F0C8;">
+      <div class="tier-num" style="background: #A7F0C8;">2</div>
+      <div>
+        <div class="tier-label">Edge Case Coverage</div>
+        <div class="tier-desc">Hash-mismatch rejection, boundary conditions</div>
+      </div>
+    </div>
+    <div class="tier" style="border-color: #A7F0C8;">
+      <div class="tier-num" style="background: #A7F0C8;">3</div>
+      <div>
+        <div class="tier-label">E2E</div>
+        <div class="tier-desc">Playwright skeletons for the next round</div>
+      </div>
     </div>
   </div>
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 7 — Patterns Library
+// SLIDE 8 — The Stack
+// ═══════════════════════════════════════════════════════
+`<div class="section-divider">
+  <h2>The <span class="accent">Stack</span></h2>
+  <p class="dim" style="font-size: clamp(0.95rem, 1.4vw, 1.15rem); margin-bottom: 1.5rem;">Land on a single stack that works for you. In my case:</p>
+  <p class="mono" style="font-size: clamp(1.1rem, 1.8vw, 1.4rem); color: var(--ink); margin-bottom: 1.5rem;">React + Vite + Supabase + Tailwind + TypeScript</p>
+  <p class="dim" style="font-size: clamp(0.95rem, 1.4vw, 1.15rem);">Not the best stack — <span class="bright">the known stack.</span></p>
+</div>`,
+
+// ═══════════════════════════════════════════════════════
+// SLIDE 9 — Patterns Library
 // ═══════════════════════════════════════════════════════
 `<div>
-  <h2>The <span class="accent">Patterns</span> Library</h2>
+  <h2>Why?</h2>
   <p class="dim mb-2">One repo feeds all 35+ projects — consistent stack, zero reinvention</p>
   <div class="two-col">
-    <div>
-      <h3>~/Development/patterns/</h3>
-      <div class="tier-stack">
-        <div class="tier">
-          <div class="tier-num" style="background: var(--green);">→</div>
-          <div>
-            <div class="tier-label">auth/</div>
-            <div class="tier-desc">Supabase Auth + OAuth — login, signup, protected routes</div>
-          </div>
+    <div class="tier-stack">
+      <div class="tier">
+        <div class="tier-num" style="background: var(--green);">→</div>
+        <div>
+          <div class="tier-label">auth/</div>
+          <div class="tier-desc">Supabase Auth + OAuth — login, signup, protected routes</div>
         </div>
-        <div class="tier">
-          <div class="tier-num" style="background: var(--amber);">→</div>
-          <div>
-            <div class="tier-label">stripe/</div>
-            <div class="tier-desc">Stripe Checkout + webhooks + credit system</div>
-          </div>
+      </div>
+      <div class="tier">
+        <div class="tier-num" style="background: var(--amber);">→</div>
+        <div>
+          <div class="tier-label">stripe/</div>
+          <div class="tier-desc">Stripe Checkout + webhooks + credit system</div>
         </div>
-        <div class="tier">
-          <div class="tier-num" style="background: var(--cyan);">→</div>
-          <div>
-            <div class="tier-label">diagnostics/</div>
-            <div class="tier-desc">Browser telemetry — console, errors, fetch, auth interception</div>
-          </div>
+      </div>
+      <div class="tier">
+        <div class="tier-num" style="background: var(--cyan);">→</div>
+        <div>
+          <div class="tier-label">diagnostics/</div>
+          <div class="tier-desc">Browser telemetry — console, errors, fetch, auth interception</div>
         </div>
-        <div class="tier">
-          <div class="tier-num" style="background: var(--accent);">→</div>
-          <div>
-            <div class="tier-label">claudehooks/</div>
-            <div class="tier-desc">24 lifecycle hooks — cost tracking, git gates, notifications</div>
-          </div>
-        </div>
-        <div class="tier">
-          <div class="tier-num" style="background: var(--pink);">→</div>
-          <div>
-            <div class="tier-label">claudeskills/</div>
-            <div class="tier-desc">19 reusable skills — feature workflows, diagnostics, code review</div>
-          </div>
+      </div>
+      <div class="tier">
+        <div class="tier-num" style="background: var(--accent);">→</div>
+        <div>
+          <div class="tier-label">ai-gateway/</div>
+          <div class="tier-desc">Multi-model routing — Claude, GPT, Gemini, DeepSeek</div>
         </div>
       </div>
     </div>
-    <div>
-      <h3>Why It Matters</h3>
-      <ul class="insight-list">
-        <li><span class="bold accent">Zero cold starts.</span> New project? Copy auth/, stripe/, diagnostics/. You're running in minutes, not days.</li>
-        <li><span class="bold green">AI knows the stack.</span> Same patterns across 35 projects means Claude's context is always warm — it's seen this code before.</li>
-        <li><span class="bold cyan">Bugs fixed everywhere.</span> Fix a Supabase auth edge case once, propagate to all projects via /install-hooks.</li>
-        <li><span class="bold amber">Compound knowledge.</span> Each project's learnings flow back. Glyffiti's P2P debugging improved the /escalate skill for every project.</li>
-      </ul>
-      <div class="card mt-1" style="border-color: var(--accent);">
-        <h3>The Stack</h3>
-        <p class="mono" style="font-size: 0.85rem;">React + Vite + Supabase + Tailwind + TypeScript</p>
-        <p class="dim" style="font-size: 0.8rem;">One stack, deeply known. Not the best stack — <span class="bright">the known stack.</span></p>
+    <div class="tier-stack">
+      <div class="tier">
+        <div class="tier-num" style="background: var(--pink);">→</div>
+        <div>
+          <div class="tier-label">tts/</div>
+          <div class="tier-desc">Text-to-speech — Piper voices, audio generation</div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier-num" style="background: var(--green);">→</div>
+        <div>
+          <div class="tier-label">claudehooks/</div>
+          <div class="tier-desc">24 lifecycle hooks — cost tracking, git gates, notifications</div>
+        </div>
+      </div>
+      <div class="tier">
+        <div class="tier-num" style="background: var(--amber);">→</div>
+        <div>
+          <div class="tier-label">claudeskills/</div>
+          <div class="tier-desc">19 reusable skills — feature workflows, diagnostics, code review</div>
+        </div>
       </div>
     </div>
   </div>
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 9 — Key Insights
+// SLIDE 10 — Key Insights
 // ═══════════════════════════════════════════════════════
 `<div>
   <h2>Key <span class="accent">Insights</span></h2>
   <p class="dim mb-2">What we've learned about coding with AI after 867 commits</p>
-  <div class="two-col">
-    <ol class="insight-list">
-      <li><span class="bold" style="color:#FFBE55;">Document first.</span> A PRD takes 10 minutes. A wrong implementation takes 3 days. Spec before you ship.</li>
-      <li><span class="bold green">Micro-atomic commits.</span> 29 commits in one session — each self-contained with rationale. Git is a lab notebook.</li>
-      <li><span class="bold red">Fix-first culture.</span> 40% of commits are fixes. Ship, then stabilize. Perfection is the enemy.</li>
-      <li><span class="bold cyan">Test after verify.</span> Don't test hypotheses — verify first, then codify. Tests lock in victories.</li>
-      <li><span class="bold amber">One stack, deeply known.</span> React+Vite+Supabase across 35 projects. AI compounds on familiarity.</li>
-    </ol>
-    <ol class="insight-list" start="6">
-      <li><span class="bold" style="color:#FFBE55;">Multi-model debugging.</span> Consult multiple models in parallel. Different perspectives find different bugs.</li>
-      <li><span class="bold green">Patterns compound.</span> Fix it once, propagate everywhere. Hooks and skills travel with you across projects.</li>
-      <li><span class="bold red">Context persists.</span> Notes, specs, and decision logs carry forward across sessions — no cold starts.</li>
-    </ol>
-  </div>
+  <ol class="insight-list" style="max-width: 720px;">
+    <li><span class="bold" style="color:#FFBE55;">Document first.</span> A PRD takes 10 minutes. A wrong implementation takes 3 days. Spec before you ship.
+      <br><span style="font-size: 0.82rem; padding-left: 1.5rem;"><span class="bold" style="color: var(--amber);">Skill:</span> <code>/new-feature</code> — a waterfall of research into documentation</span>
+    </li>
+    <li><span class="bold green">Implement.</span> Phased delivery — each phase is independently deployable and testable.
+      <br><span style="font-size: 0.82rem; padding-left: 1.5rem;"><span class="bold" style="color: var(--mint);">Hooks:</span> create start and stop hooks to log every response between you and model — tool calls, state transitions, cost</span>
+    </li>
+    <li><span class="bold cyan">Test after verify.</span> Don't test hypotheses — verify first, then codify. Tests lock in victories.
+      <br><span style="font-size: 0.82rem; padding-left: 1.5rem;"><span class="bold" style="color: var(--amber);">Skill:</span> <code>/create-tests</code> — regression tests, edge cases, E2E</span>
+    </li>
+  </ol>
 </div>`,
 
 // ═══════════════════════════════════════════════════════
-// SLIDE 10 — End
+// SLIDE 11 — End
 // ═══════════════════════════════════════════════════════
 `<div class="section-divider">
   <h1>Questions?</h1>
   <p class="subtitle mt-2">The Loop: Document → Implement → Debug → Test → Repeat</p>
-  <div class="stat-grid mt-3" style="max-width: 720px;">
-    <div class="stat">
-      <div class="stat-value" style="font-size: 1.05rem; white-space: nowrap;">glyffiti-mobile.vercel.app</div>
-      <div class="stat-label">Try It</div>
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 2.5rem; gap: 5rem;">
+    <div style="text-align: center;">
+      <div style="background: white; padding: 10px; display: inline-block; margin-bottom: 0.5rem;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://glyffiti.com&bgcolor=ffffff&color=000000" width="200" height="200" alt="Glyffiti QR"/>
+      </div>
+      <div style="font-size: 1.3rem; font-weight: 700; color: var(--ink);">Glyffiti</div>
+      <div style="font-size: 0.75rem; color: var(--dim);">Write on Solana</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+      <a href="https://instagram.com/helloimderic" style="color: #E1306C; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.6rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        helloimderic
+      </a>
+      <a href="https://tiktok.com/@omglaserspewpewpew" style="color: #69C9D0; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.6rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#69C9D0"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.7a8.18 8.18 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.13z"/></svg>
+        omglaserspewpewpew
+      </a>
+      <a href="https://linkedin.com/in/dericortiz" style="color: #0A66C2; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.6rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        dericortiz
+      </a>
+    </div>
+    <div style="text-align: center;">
+      <div style="background: white; padding: 10px; display: inline-block; margin-bottom: 0.5rem;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://familia-lake.vercel.app&bgcolor=ffffff&color=000000" width="200" height="200" alt="Familia QR"/>
+      </div>
+      <div style="font-size: 1.3rem; font-weight: 700; color: var(--ink);">Familia</div>
+      <div style="font-size: 0.75rem; color: var(--dim);">Family memory keeper</div>
     </div>
   </div>
 </div>`,

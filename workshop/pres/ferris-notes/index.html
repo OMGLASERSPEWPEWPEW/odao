@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dome — Session Notes, June 24 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #000; color: #d4d4d8; font-family: system-ui, sans-serif; }
+    .slide { display: none; min-height: 100vh; position: relative; }
+    .slide.active { display: flex; flex-direction: column; justify-content: center; }
+    @keyframes fadeUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .fade-up { animation: fadeUp 0.5s ease-out both; }
+    .fade-in { animation: fadeIn 0.4s ease-out both; }
+    .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.2s; } .d3 { animation-delay: 0.3s; }
+    .d4 { animation-delay: 0.4s; } .d5 { animation-delay: 0.5s; } .d6 { animation-delay: 0.6s; }
+    .d7 { animation-delay: 0.7s; }
+    .greek { font-family: "Times New Roman", serif; font-style: italic; }
+    .question { font-family: system-ui; font-weight: 300; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: #3f3f46; transition: all 0.3s; cursor: pointer; }
+    .nav-dot.active { background: #fbbf24; transform: scale(1.4); }
+    .progress { position: fixed; top: 0; left: 0; height: 2px; background: #fbbf24; transition: width 0.4s ease; z-index: 100; }
+  </style>
+</head>
+<body class="bg-black text-zinc-300 overflow-hidden">
+
+  <div class="progress" id="progress"></div>
+
+  <!-- SLIDE 0: TITLE -->
+  <div class="slide active" data-slide="0">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <div class="fade-up d1">
+        <svg viewBox="0 0 600 160" class="w-full max-w-lg mx-auto mb-8" style="max-height:140px;">
+          <path d="M 50 150 Q 300 -20 550 150" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.5"/>
+          <path d="M 90 150 Q 300 20 510 150" fill="none" stroke="#fbbf24" stroke-width="1" opacity="0.25"/>
+          <line x1="100" y1="120" x2="500" y2="120" stroke="#06b6d4" stroke-width="1" stroke-dasharray="5 4" opacity="0.3"/>
+          <g fill="#818cf8" opacity="0.2">
+            <circle cx="160" cy="138" r="3"/><circle cx="200" cy="140" r="3"/><circle cx="240" cy="136" r="3"/>
+            <circle cx="280" cy="139" r="3"/><circle cx="320" cy="137" r="3"/><circle cx="360" cy="141" r="3"/>
+            <circle cx="400" cy="138" r="3"/><circle cx="440" cy="140" r="3"/>
+          </g>
+          <circle cx="300" cy="138" r="5" fill="#f472b6"/>
+          <line x1="300" y1="132" x2="300" y2="50" stroke="#f472b6" stroke-width="2"/>
+          <polygon points="296,52 300,40 304,52" fill="#f472b6"/>
+        </svg>
+      </div>
+      <p class="fade-up d2 font-mono text-xs uppercase tracking-[0.3em] text-amber-500/60 mb-4">Session Notes — June 24, 2026 — CIC Chicago</p>
+      <h1 class="fade-up d3 text-5xl md:text-7xl font-bold text-white mb-4">The Dome</h1>
+      <p class="fade-up d4 text-xl text-zinc-500">Creativity, salons, and building at the frontier</p>
+      <p class="fade-up d5 text-sm text-zinc-700 mt-12 font-mono">→ arrow keys to navigate</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 1: EUDAIMONIA QUESTION -->
+  <div class="slide" data-slide="1">
+    <div class="max-w-3xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The word</p>
+      <p class="fade-up d2 question text-3xl md:text-5xl text-zinc-400 leading-tight mb-6">
+        What does <span class="text-white font-normal">eudaimonia</span> actually mean?
+      </p>
+      <p class="fade-up d3 question text-xl text-zinc-600">Break it down — eu, daimon, -ia. Is -ia a modifier?</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: EUDAIMONIA ANSWER -->
+  <div class="slide" data-slide="2">
+    <div class="max-w-4xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-6">εὐδαιμονία</p>
+      <p class="fade-up d2 text-2xl text-white mb-10">"The state of having a good spirit" — human flourishing</p>
+      <div class="fade-up d3 grid grid-cols-3 gap-6 mb-10">
+        <div class="text-center">
+          <p class="text-4xl md:text-5xl font-bold text-amber-400 greek mb-3">εὖ</p>
+          <div class="h-px bg-amber-500/30 mb-3"></div>
+          <p class="font-mono text-sm text-amber-500 mb-1">eu</p>
+          <p class="text-zinc-400">"good, well"</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl md:text-5xl font-bold text-pink-400 greek mb-3">δαίμων</p>
+          <div class="h-px bg-pink-500/30 mb-3"></div>
+          <p class="font-mono text-sm text-pink-500 mb-1">daimōn</p>
+          <p class="text-zinc-400">"spirit, guardian spirit"</p>
+        </div>
+        <div class="text-center">
+          <p class="text-4xl md:text-5xl font-bold text-cyan-400 greek mb-3">-ία</p>
+          <div class="h-px bg-cyan-500/30 mb-3"></div>
+          <p class="font-mono text-sm text-cyan-500 mb-1">-ia</p>
+          <p class="text-zinc-400">"the state of"</p>
+        </div>
+      </div>
+      <div class="fade-up d4 bg-zinc-900/60 rounded-lg px-5 py-3 inline-block">
+        <p class="text-sm text-zinc-500"><span class="text-cyan-400 font-mono">-ia</span> is a noun-forming suffix, not a modifier — like English <span class="text-zinc-300">-ness</span> or <span class="text-zinc-300">-ity</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: FERRIS QUESTION -->
+  <div class="slide" data-slide="3">
+    <div class="max-w-3xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The space</p>
+      <p class="fade-up d2 question text-3xl md:text-5xl text-zinc-400 leading-tight mb-6">
+        What is <span class="text-white font-normal">The Ferris</span>?
+      </p>
+      <p class="fade-up d3 question text-xl text-zinc-600 leading-relaxed">If I build an app in this space — what are the IP considerations? What's the business model?</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: FERRIS ANSWER -->
+  <div class="slide" data-slide="4">
+    <div class="max-w-4xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-6">ferrischicago.com</p>
+      <p class="fade-up d2 text-2xl text-white mb-8">AI members club — 1 W. Monroe St, Chicago</p>
+      <div class="fade-up d3 grid grid-cols-2 gap-8 mb-8">
+        <div class="space-y-5">
+          <div class="flex gap-3 items-start">
+            <span class="text-amber-500 text-lg mt-0.5">◆</span>
+            <div>
+              <p class="text-white font-medium">Personal AI</p>
+              <p class="text-sm text-zinc-500">Each member gets "Ferris" — learns how you work</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-amber-500 text-lg mt-0.5">◆</span>
+            <div>
+              <p class="text-white font-medium">Curated membership</p>
+              <p class="text-sm text-zinc-500">Application-based, limited, ~$500/mo est.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 items-start">
+            <span class="text-amber-500 text-lg mt-0.5">◆</span>
+            <div>
+              <p class="text-white font-medium">Socratic method</p>
+              <p class="text-sm text-zinc-500">Questions over answers — they reference Socrates</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5">
+          <p class="font-mono text-xs text-amber-500 uppercase tracking-wider mb-3">IP Question</p>
+          <p class="text-zinc-300 text-sm leading-relaxed">If the AI is trained on members — who owns the collective knowledge? What happens to your contributions when you leave?</p>
+          <div class="h-px bg-amber-500/20 my-3"></div>
+          <p class="text-zinc-500 text-xs">Membership-gated AI, personalized models, community knowledge graphs — all novel IP territory.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: SALON QUESTION -->
+  <div class="slide" data-slide="5">
+    <div class="max-w-3xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The precedent</p>
+      <p class="fade-up d2 question text-3xl md:text-5xl text-zinc-400 leading-tight mb-6">
+        If this is a <span class="text-white font-normal">salon for the AI age</span> —
+      </p>
+      <p class="fade-up d3 question text-3xl md:text-5xl text-zinc-400 leading-tight">what's the business framework?</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: SALON ANSWER -->
+  <div class="slide" data-slide="6">
+    <div class="max-w-4xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-6">Salon → Ferris</p>
+      <div class="fade-up d2 flex items-start gap-10 mb-8">
+        <!-- Timeline -->
+        <div class="relative pl-6 border-l-2 border-zinc-800 space-y-6 flex-1">
+          <div>
+            <div class="absolute -left-[5px] w-2 h-2 rounded-full bg-zinc-600"></div>
+            <p class="font-mono text-xs text-zinc-600">1500s Italy</p>
+            <p class="text-zinc-400 text-sm">Informal gatherings in private homes</p>
+          </div>
+          <div>
+            <div class="absolute -left-[5px] w-2 h-2 rounded-full bg-zinc-500"></div>
+            <p class="font-mono text-xs text-zinc-500">1600–1700s France</p>
+            <p class="text-zinc-400 text-sm">Peak salon culture — <em>salonnières</em> host equals, not audiences</p>
+          </div>
+          <div>
+            <div class="absolute -left-[5px] w-2 h-2 rounded-full bg-zinc-400"></div>
+            <p class="font-mono text-xs text-zinc-400">Modern</p>
+            <p class="text-zinc-400 text-sm">TED, Aspen Ideas, coworking, hackathons</p>
+          </div>
+          <div>
+            <div class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+            <p class="font-mono text-xs text-amber-500">2026 Chicago</p>
+            <p class="text-white text-sm font-medium">The Ferris — salon + AI + membership</p>
+          </div>
+        </div>
+        <!-- Framework -->
+        <div class="flex-1 space-y-3">
+          <p class="font-mono text-xs text-cyan-500 uppercase tracking-wider mb-2">The Framework</p>
+          <div class="bg-zinc-900 rounded-lg px-4 py-3 border-l-2 border-zinc-700">
+            <p class="text-sm text-zinc-400"><span class="text-white">Peers, not audience</span> — nonhierarchical</p>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-3 border-l-2 border-zinc-700">
+            <p class="text-sm text-zinc-400"><span class="text-white">Questions, not lectures</span> — Socratic</p>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-3 border-l-2 border-zinc-700">
+            <p class="text-sm text-zinc-400"><span class="text-white">Peer review + social</span> — validation loop</p>
+          </div>
+          <div class="bg-zinc-900 rounded-lg px-4 py-3 border-l-2 border-amber-500">
+            <p class="text-sm text-zinc-400"><span class="text-amber-400">AI compounds on community</span> — network effects</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: CREATIVITY QUESTION -->
+  <div class="slide" data-slide="7">
+    <div class="max-w-3xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The model</p>
+      <p class="fade-up d2 question text-3xl md:text-5xl text-zinc-400 leading-tight mb-6">
+        <span class="text-white font-normal">Domain</span>, <span class="text-white font-normal">field</span>, <span class="text-white font-normal">individual</span> —
+      </p>
+      <p class="fade-up d3 question text-xl text-zinc-600 leading-relaxed">From <em>Creativity</em> by the guy who coined "flow." What were the patterns of success?</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: CREATIVITY ANSWER — DIAGRAM -->
+  <div class="slide" data-slide="8">
+    <div class="max-w-4xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-4">Csikszentmihalyi's Systems Model</p>
+      <p class="fade-up d2 text-lg text-zinc-500 mb-6">His team of PhDs studied 100+ people who changed their domain</p>
+      <div class="fade-up d3 bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 mb-8">
+        <svg viewBox="0 0 600 280" class="w-full" style="max-height: 260px;">
+          <!-- Domain arc -->
+          <path d="M 60 240 Q 300 10 540 240" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+          <text x="480" y="90" fill="#fbbf24" font-size="14" font-family="monospace" font-weight="bold">DOMAIN</text>
+          <text x="480" y="108" fill="#fbbf24" font-size="10" font-family="monospace" opacity="0.5">Mode of Symbols</text>
+          <!-- Field line -->
+          <line x1="100" y1="200" x2="500" y2="200" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="508" y="198" fill="#06b6d4" font-size="14" font-family="monospace" font-weight="bold">FIELD</text>
+          <text x="508" y="216" fill="#06b6d4" font-size="10" font-family="monospace" opacity="0.5">Gatekeepers</text>
+          <!-- Crowd -->
+          <g fill="#818cf8" opacity="0.25">
+            <circle cx="140" cy="230" r="4"/><circle cx="170" cy="234" r="4"/><circle cx="200" cy="228" r="4"/>
+            <circle cx="230" cy="232" r="4"/><circle cx="260" cy="229" r="4"/><circle cx="290" cy="235" r="4"/>
+            <circle cx="320" cy="230" r="4"/><circle cx="350" cy="233" r="4"/><circle cx="380" cy="228" r="4"/>
+            <circle cx="410" cy="232" r="4"/><circle cx="440" cy="230" r="4"/>
+          </g>
+          <!-- Rising individuals -->
+          <g>
+            <circle cx="230" cy="228" r="6" fill="#f472b6"/><line x1="230" y1="222" x2="230" y2="150" stroke="#f472b6" stroke-width="2"/>
+            <polygon points="226,152 230,140 234,152" fill="#f472b6"/>
+          </g>
+          <g>
+            <circle cx="350" cy="230" r="6" fill="#f472b6"/><line x1="350" y1="224" x2="350" y2="110" stroke="#f472b6" stroke-width="2"/>
+            <polygon points="346,112 350,100 354,112" fill="#f472b6"/>
+            <text x="350" y="88" text-anchor="middle" fill="#f472b6" font-size="18">★</text>
+          </g>
+          <text x="300" y="270" text-anchor="middle" fill="#52525b" font-size="10" font-family="monospace">Individuals rise through the Field into the Domain</text>
+        </svg>
+      </div>
+      <div class="fade-up d4 grid grid-cols-3 gap-4">
+        <div class="text-center px-3 py-4 rounded-xl border border-amber-500/20">
+          <p class="font-mono text-xs text-amber-500 mb-1">DOMAIN</p>
+          <p class="text-white text-sm font-medium">The knowledge</p>
+          <p class="text-xs text-zinc-500 mt-1">Rules, procedures, symbols</p>
+        </div>
+        <div class="text-center px-3 py-4 rounded-xl border border-cyan-500/20">
+          <p class="font-mono text-xs text-cyan-500 mb-1">FIELD</p>
+          <p class="text-white text-sm font-medium">The gatekeepers</p>
+          <p class="text-xs text-zinc-500 mt-1">Critics, investors, editors</p>
+        </div>
+        <div class="text-center px-3 py-4 rounded-xl border border-pink-500/20">
+          <p class="font-mono text-xs text-pink-500 mb-1">INDIVIDUAL</p>
+          <p class="text-white text-sm font-medium">The creator</p>
+          <p class="text-xs text-zinc-500 mt-1">Absorbs, transforms, produces</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 9: THE CYCLE -->
+  <div class="slide" data-slide="9">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The creativity cycle</p>
+      <div class="fade-up d2 flex items-center justify-center gap-3 flex-wrap text-lg mb-12">
+        <span class="bg-pink-500/15 text-pink-300 px-5 py-2 rounded-full">Learn from domain</span>
+        <span class="text-zinc-700 text-2xl">→</span>
+        <span class="bg-pink-500/15 text-pink-300 px-5 py-2 rounded-full">Make something new</span>
+        <span class="text-zinc-700 text-2xl">→</span>
+        <span class="bg-cyan-500/15 text-cyan-300 px-5 py-2 rounded-full">Field accepts or rejects</span>
+        <span class="text-zinc-700 text-2xl">→</span>
+        <span class="bg-amber-500/15 text-amber-300 px-5 py-2 rounded-full">Domain changes</span>
+      </div>
+      <div class="fade-up d3 bg-pink-500/10 border border-pink-500/20 rounded-xl p-6 max-w-2xl mx-auto">
+        <p class="text-zinc-300 text-lg">
+          <strong class="text-white">Ferris collapses all three into one room.</strong>
+        </p>
+        <p class="text-zinc-500 text-sm mt-2">The club is the field. The AI learns the domain. The members are the individuals.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10: DOME QUESTION -->
+  <div class="slide" data-slide="10">
+    <div class="max-w-3xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The metaphor</p>
+      <p class="fade-up d2 question text-3xl md:text-5xl text-zinc-400 leading-tight mb-6">
+        A cathedral with a <span class="text-white font-normal">hole in its roof</span> for 100 years.
+      </p>
+      <p class="fade-up d3 question text-xl text-zinc-600 leading-relaxed">The domain existed. The field said impossible. One individual cracked it.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 11: DOME ANSWER -->
+  <div class="slide" data-slide="11">
+    <div class="max-w-4xl mx-auto px-8">
+      <p class="fade-up d1 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-4">Brunelleschi's Dome — Florence</p>
+      <div class="fade-up d2 flex gap-8 items-start mb-8">
+        <!-- Dome SVG -->
+        <div class="flex-1 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5">
+          <svg viewBox="0 0 400 220" class="w-full" style="max-height: 200px;">
+            <rect x="80" y="160" width="240" height="50" fill="none" stroke="#78716c" stroke-width="1.5"/>
+            <rect x="100" y="168" width="30" height="42" fill="none" stroke="#78716c" stroke-width="0.8" opacity="0.4"/>
+            <rect x="150" y="168" width="30" height="42" fill="none" stroke="#78716c" stroke-width="0.8" opacity="0.4"/>
+            <rect x="220" y="168" width="30" height="42" fill="none" stroke="#78716c" stroke-width="0.8" opacity="0.4"/>
+            <rect x="270" y="168" width="30" height="42" fill="none" stroke="#78716c" stroke-width="0.8" opacity="0.4"/>
+            <path d="M 130 160 Q 200 20 270 160" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+            <path d="M 145 160 Q 200 40 255 160" fill="none" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4 3" opacity="0.4"/>
+            <g stroke="#fbbf24" stroke-width="0.5" opacity="0.15">
+              <line x1="170" y1="130" x2="180" y2="120"/><line x1="180" y1="120" x2="190" y2="130"/>
+              <line x1="190" y1="130" x2="200" y2="120"/><line x1="200" y1="120" x2="210" y2="130"/>
+              <line x1="210" y1="130" x2="220" y2="120"/><line x1="175" y1="108" x2="185" y2="98"/>
+              <line x1="185" y1="98" x2="195" y2="108"/><line x1="195" y1="108" x2="205" y2="98"/>
+              <line x1="205" y1="98" x2="215" y2="108"/>
+            </g>
+            <rect x="194" y="16" width="12" height="12" fill="none" stroke="#fbbf24" stroke-width="1"/>
+            <line x1="200" y1="16" x2="200" y2="6" stroke="#fbbf24" stroke-width="1.5"/>
+            <text x="200" y="153" text-anchor="middle" fill="#ef4444" font-size="8" font-family="monospace" opacity="0.6">144 ft — no scaffolding</text>
+          </svg>
+        </div>
+        <!-- Timeline -->
+        <div class="flex-1 relative pl-6 border-l-2 border-zinc-800 space-y-5">
+          <div>
+            <div class="absolute -left-[5px] w-2 h-2 rounded-full bg-zinc-600"></div>
+            <p class="font-mono text-xs text-zinc-600">1296</p>
+            <p class="text-sm text-zinc-400">Construction begins</p>
+          </div>
+          <div>
+            <div class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-red-500"></div>
+            <p class="font-mono text-xs text-red-400">~1380s → 100+ years open</p>
+            <p class="text-sm text-white">150-ft hole in the roof</p>
+            <p class="text-xs text-zinc-600">Not enough timber in Tuscany. No cranes.</p>
+          </div>
+          <div>
+            <div class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+            <p class="font-mono text-xs text-amber-500">1420</p>
+            <p class="text-sm text-white">Brunelleschi starts</p>
+            <p class="text-xs text-zinc-600">Herringbone brick, double shell, no scaffolding</p>
+          </div>
+          <div>
+            <div class="absolute -left-[5px] w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+            <p class="font-mono text-xs text-amber-400">1436</p>
+            <p class="text-sm text-white">Completed</p>
+            <p class="text-xs text-zinc-600">4M bricks · 25K tons · still the largest masonry dome</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 12: SYNTHESIS -->
+  <div class="slide" data-slide="12">
+    <div class="max-w-3xl mx-auto px-8 text-center">
+      <div class="fade-up d1">
+        <svg viewBox="0 0 500 120" class="w-full max-w-md mx-auto mb-10" style="max-height:100px;">
+          <path d="M 40 110 Q 250 -10 460 110" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.4"/>
+          <line x1="80" y1="90" x2="420" y2="90" stroke="#06b6d4" stroke-width="1" stroke-dasharray="5 4" opacity="0.3"/>
+        </svg>
+      </div>
+      <p class="fade-up d2 font-mono text-xs text-amber-500/50 uppercase tracking-widest mb-8">The through-line</p>
+      <div class="fade-up d3 space-y-6 text-left max-w-xl mx-auto mb-10">
+        <div class="flex gap-4 items-start">
+          <span class="text-amber-500 font-mono text-sm mt-1 shrink-0">01</span>
+          <p class="text-lg text-zinc-300"><strong class="text-white">Eudaimonia</strong> — the goal isn't productivity. It's flourishing.</p>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-amber-500 font-mono text-sm mt-1 shrink-0">02</span>
+          <p class="text-lg text-zinc-300"><strong class="text-white">The salon</strong> — peers in conversation, not audiences in lectures.</p>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-amber-500 font-mono text-sm mt-1 shrink-0">03</span>
+          <p class="text-lg text-zinc-300"><strong class="text-white">The model</strong> — domain, field, individual. Creativity is systemic.</p>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-amber-500 font-mono text-sm mt-1 shrink-0">04</span>
+          <p class="text-lg text-zinc-300"><strong class="text-white">The dome</strong> — the field said impossible. One person solved it anyway.</p>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-amber-500 font-mono text-sm mt-1 shrink-0">05</span>
+          <p class="text-lg text-zinc-300"><strong class="text-white">The Ferris</strong> — what if AI collapses domain, field, and individual into one room?</p>
+        </div>
+      </div>
+      <p class="fade-up d5 text-sm text-zinc-700 font-mono">CIC Chicago — June 24, 2026</p>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <div class="fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-50 bg-zinc-900/80 backdrop-blur rounded-full px-4 py-2" id="nav">
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const nav = document.getElementById('nav');
+    const progress = document.getElementById('progress');
+    let current = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      nav.appendChild(dot);
+    });
+
+    function goTo(n) {
+      if (n < 0 || n >= slides.length) return;
+      slides[current].classList.remove('active');
+      current = n;
+      const s = slides[current];
+      s.classList.remove('active');
+      void s.offsetWidth;
+      s.classList.add('active');
+      document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+      progress.style.width = ((current / (slides.length - 1)) * 100) + '%';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+      if (e.key === 'Home') goTo(0);
+      if (e.key === 'End') goTo(slides.length - 1);
+    });
+
+    let touchX = 0;
+    document.addEventListener('touchstart', e => touchX = e.touches[0].clientX);
+    document.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) goTo(current + (dx < 0 ? 1 : -1));
+    });
+  </script>
+</body>
+</html>
