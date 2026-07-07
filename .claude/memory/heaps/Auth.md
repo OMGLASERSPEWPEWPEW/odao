@@ -1159,3 +1159,44 @@ States almost never repeal taxes within the same legislative session they...
 
 ---
 
+## 2026-07-06_19-43-04 (session 95b7323a)
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Got the full picture. Here's the proposal:
+
+---
+
+**Proposed commits (2):**
+
+**1.** `feat(campaign): bill status tracker with ILGA scrape + check log`
+
+> Why: Replaces Perplexity AI search (which hallucinated) with direct ILGA scrape analyzed by Claude Haiku. Adds Ann Marie's tracker name, expandable ILGA actions, and public check log.
+> Files: shared-sections.js, style.css
+
+**2.** `chore(infra): update memory heaps and daily journal`
+
+> Files: daily/2026-07-06.md, heaps/*.md
+
+---
+
+Proceed?
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Two commits ready. Pushing to main.
+
+**assistant**: [tool: Bash]
+
+---
+

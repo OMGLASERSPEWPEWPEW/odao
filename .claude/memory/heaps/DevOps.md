@@ -1595,3 +1595,62 @@ Let me verify the GET endpoint returns the history properly.
 
 ---
 
+## 2026-07-06_19-43-04 (session 95b7323a)
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Got the full picture. Here's the proposal:
+
+---
+
+**Proposed commits (2):**
+
+**1.** `feat(campaign): bill status tracker with ILGA scrape + check log`
+
+> Why: Replaces Perplexity AI search (which hallucinated) with direct ILGA scrape analyzed by Claude Haiku. Adds Ann Marie's tracker name, expandable ILGA actions, and public check log.
+> Files: shared-sections.js, style.css
+
+**2.** `chore(infra): update memory heaps and daily journal`
+
+> Files: daily/2026-07-06.md, heaps/*.md
+
+---
+
+Proceed?
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: [tool: Bash]
+
+**assistant**: Two commits ready. Pushing to main.
+
+**assistant**: [tool: Bash]
+
+---
+
+## 2026-07-06_19-53-13 (session 95b7323a)
+
+**assistant**: Refresh localhost. You should see:
+
+- **Rainbow shimmer bar** across the top of the tracker
+- **Green radar pulse** (live indicator) in the top right
+- **Gradient title** — "Assigned to Committee" in gold-to-pink-to-purple gradient text
+- **Glowing status badge** — gold glow for FILED, red pulsing glow when it hits COMMITTEE
+- **Method pipeline** — three numbered steps in pill badges (1. Scraped ilga.gov → 2. Claude Haiku → 3. Result)
+- **Expandable actions** and **check log** below
+
+---
+[timest...
+
+**user**: ok but technically we found out that it hasn't been assigned to commitee and we should track a log? Like this is the first day tomorrow should be the next day, yes?
+
+---
+
